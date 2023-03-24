@@ -1,14 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- plugin js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.js"
+        integrity="sha512-XOpdFagEEv9XMxN/2EdvFL/PfGtFDjX+AkRznsFHDtdC05YWdkMnz5JZUfrbnEabOQaMc7YNTl2xPbOu3J858Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/main.js"></script>
+    <!-- plugin css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css"
+        integrity="sha512-/AilQf/shuEGfh8c3DoIqcIqHZCKpiImSyt+fxIKJphHiNa6QMPb6AbDly6rkjmGr/5OZd35JtvVkbEKnCZO+A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
     <title>배달의 민족</title>
 </head>
+
 <body>
     <div id="wrap">
+        <div class="inner">
+            <div id="header">
+                <div class="inner">
+                    <h1 class-="logo"><a href="http://218.146.11.85:5500/baemin/index.html" title="배달의민족"><img src="./images/logo@2x.png" alt="배달의민족"/></a></h1>
+                    <div class="topMenu">
+                        <p class="appDwn"><a href="" title="앱다운로드"></a></p>
 
+                        <ul class="sns_list">
+                            <li>
+                                <a href="#none" title="페이스북">
+                                    <img src="./images/iconFacebook@2x.png" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#none" title="인스타그램">
+                                    <img src="./images/iconInstagram@2x.png" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#none" title="네이버 블로그">
+                                    <img src="./images/iconBlog@2x.png" alt="" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#none" title="유튜브">
+                                    <img src="./images/iconYoutube@2x.png" alt="" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div id="fullpage">
+                <div class="section box1">
+                    <div class="inner">
+                        <div class="left_box">
+                            <div class="tit">
+                                <img src="./images/main_text_02@2x.png" src="따뜻한 라떼 한 잔이 생각날 때" />
+                            </div>
+                            <div class="dwlod">
+                                <p class="imgTit">앱스토어 다운로드</p>
+                                <div>
+                                    <button type="button" class="appleS"><i>다운로드 애플스토어</i></button>
+                                    <button type="button" class="googleS"><i>다운로드 구글플레이</i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right_box">
+                            <div>
+                                <p class="imgTit">QR코드 다운로드</p>
+                                <p><img src="./images/qrcode@3x.png" /></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section box2">
+                    <div class="inner">
+                        <div class="left_box">
+                            <div class="tit">
+                                <img src="./images/ctn01_text_02@2x.png" src="그것이 무엇이든 다 있다" />
+                            </div>
+                            <div class="desc">
+                                3천만 이상이 선택한 배달의 민족,<br />
+                                업계 최다 배달가능 업소 보유중!
+                                <p>(2017년 11월 기준)</p>
+                            </div>
+                        </div>
+                        <div class="right_box">
+                            <div>
+                                <img src="./images/img-road@2x.png" />
+                            </div>
+                            <div class="bike">
+                                <img src="./images/img-bike@2x.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section box3">
+                    <div class="inner">
+                        <div class="left_box">
+                            <div class="tit">
+                                <img src="./images/ctn02_text_03@2x.png" src="줄 서서 먹던 맛집도 우리집으로" />
+                            </div>
+                            <div class="desc">
+                                배달이 안되던 동네 맛집까지 ~<br />
+                                '배민1'이 직접 배달해드립니다.
+                                <p>서울 전지역, 경기 및 광역시 일부 지역에서<br />서비스 이용 가능!</p>
+                            </div>
+                        </div>
+                        <div class="right_box">
+                            <div>
+                                <img src="./images/img-people@2x.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section box4">
+                    <div class="inner">
+                        <div class="left_box">
+                            <div class="tit">
+                                <img src="./images/ctn05_text_01@2x.png" src="너에게 밥을 보낸다 배민선물하기" />
+                            </div>
+                            <div class="desc">
+                                지금 밥 한끼 보내주고 싶은 분께<br />
+                                배민 상품권을 선물하세요
+                                <a href="#none" title="배민선물하기-기업용 상품권 신청">
+                                    <img src="./images/btn_b2b@2x.png" alt="기업용 상품권 구매신청하기" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="right_box">
+                            <div>
+                                <img src="./images/img-present@2x.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section box5">
+                    <div class="inner">
+                        <div class="left_box">
+                            <div class="tit">
+                                <img src="./images/ctn02_text_03@2x.png" src="배민 쇼핑라이브는 지금 방송중" />
+                            </div>
+                            <div class="desc">
+                                궁금한 맛은 직접 물어보고, 구경하는 재미<br />
+                                이제 배민에서 생생하게 경험하세요!
+                            </div>
+                        </div>
+                        <div class="right_box">
+                            <div>
+                                <img src="./images/img-shoppinglive_re.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section box6">
+                    <div class="inner">
+                        <div class="left_box">
+                            <div class="tit">
+                                <img src="./images/ctn04_text_01@2x.png" src="주문하면 바로와요 B마트" />
+                            </div>
+                            <div class="desc">
+                                마트까지 가지 않아도, 기다리지 않아도<br />
+                                주문하신 상품을 바로 배달해드립니다.
+                                <p>서울, 인천 및 경기 일부 지역에서<br />서비스 이용 가능!</p>
+                            </div>
+                        </div>
+                        <div class="right_box">
+                            <div>
+                                <img src="./images/bmart_rider@2x.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section box7">
+                    <div class="inner">
+                        <div class="left_box">
+                            <div class="tit">
+                                <img src="./images/ctn03_text_01@2x.png" src="할인받고 결제까지 10초면 끗" />
+                            </div>
+                            <div class="desc">
+                                배민페이, 네이버페이 등은 물론<br />
+                                각종 신용카드까지 결제 가능
+                            </div>
+                        </div>
+                        <div class="right_box">
+                            <div>
+                                <img src="./images/img-flag@2x.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section footer">
+                    <div class="inner">
+                        <div class="left_box">
+                            <ul class="site_list">
+                                <li>
+                                    <a href="#none" title="우아한형제들">
+                                        <img src="./images/link_woowahan@2x.png" alt="우아한형제들" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none" title="배민사장님광장">
+                                        <img src="./images/link_ceosite@2x.png" alt="배민사장님광장" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none" title="배민문방구">
+                                        <img src="./images/link-store@2x.png" alt="배민문방구" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none" title="배민커넥트">
+                                        <img src="./images/link-rider@2x.png" alt="배민커넥트" />
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="sns_list">
+                                <li>
+                                    <a href="#none" title="페이스북">
+                                        <img src="./images/icon-facebook@2x.png" alt="" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none" title="인스타그램">
+                                        <img src="./images/icon-instagram@2x.png" alt="" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none" title="네이버 블로그">
+                                        <img src="./images/icon-blog@2x.png" alt="" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none" title="유튜브">
+                                        <img src="./images/icon-youtube@2x.png" alt="" />
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="right_box">
+                            <div>
+                                <img src="./images/footer-title@2x.png" title="우리가 어떤 민족 입니까 배달의 민족" />
+                            </div>
+                            <a href="#none" title="앱 다운로드">
+                                <img src="./images/btn-download-black-pc@3x.png" title="앱다운로드">
+                            </a>
+                        </div>
+                        <div class="bott_box">
+                            <p><span>(주)우아한형제들</span><br><span>서울시 송파구 위례성대로 2 장은빌딩 2층</span></p>
+                            <p>
+                                <span>사업자번호 : 120-87-65763</span><a href="#none"><span>사업자정보확인</span></a><br/>
+                                <span>통신판매업 : 서울 송파-0515</span></p><p><span>전자금융분쟁처리</span><br/>
+                                <span>TEL : 1600-0987</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>FAX : 050-6050-0400</span><br/>
+                                 MAIL : &nbsp;<a href="#none"><span>help@woowahan.com</span></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
+<script>
+
+</script>
+
 </html>
