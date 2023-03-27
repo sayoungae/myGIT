@@ -1,13 +1,23 @@
 #wrap{width: 100%;}
 /* header */
-#header{width: 100%;}
-#header >.inner{width:1024px; }
-#header .logo{float:left;}
-#header .logo#header .topMenu{ float:left;}
-#header
-#header
-#header
-#header
+#header{width: 100%; position:fixed; z-index:1;}
+#header >.inner{width:1024px; margin: 0 auto; padding: 60px 173px 0px 50px;}
+#header .logo{float: left;}
+#header .logo >a{display: block; width:150px;}
+#header .topMenu{float:right; display: flex; height:48px;}
+#header .topMenu > .appDwn{display: none; width:140px; height:100%; margin-right:20px}
+#header .topMenu > .appDwn.on{display: block;}
+#header .topMenu > .appDwn >a{ display: block; width:100%; height: 100%; background: url('../images/btn-download-white@3x.png') no-repeat; background-size: 100%;;}
+#header .topMenu>ul{display: flex;     align-items: center;}
+#header .topMenu>ul>li{ margin-right:5px; width: 50px;}
+#header .topMenu>ul>li:first-child{width: 45px;}
+#header .topMenu>ul>li >a{display: block; width:34px;}
+#header .rider-noti{width:170px; position:absolute; right:0; top:0; display: block;}
+#header{}
+#header{}
+#header{}
+
+#header >.inner:after{content:''; display: block; clear: both;}
 
 /* 공통 */
 #fullpage .section{width: 100%; height: 100vh; overflow: hidden; background-color: #2AC1BC;}
@@ -87,3 +97,9 @@
 body.fp-viewing-0 #fp-nav,body.fp-viewing-7 #fp-nav{
     display:none;
 }
+#fp-nav.right{right:250px;}
+#fp-nav ul li, .fp-slidesNav ul li{width: 25px; height: 25px;}
+#fp-nav ul li a, .fp-slidesNav ul li a{width: 100%; height:100%;}
+#fp-nav ul li a span, .fp-slidesNav ul li a span{background:url('../images/dotScroll02@2x.png') no-repeat; background-size: 100%; width: 100%; height: 100%; top:0; left:0; margin:0;}
+#fp-nav ul li a.active span, .fp-slidesNav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li:hover a.active span{width: 100%; height: 100%; margin:0; border-radius: 50%; background-image:url('../images/dotSelect@2x.png')}
+#fp-nav ul li:hover a span, .fp-slidesNav ul li:hover a span{width: 100%; height: 100%; margin:0;}
