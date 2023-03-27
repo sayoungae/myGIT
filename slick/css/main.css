@@ -1,0 +1,113 @@
+.program_box { margin-left: -1.25rem; margin-right: -1.25rem; }
+.program_box_wrap{width:1400px; margin:0 auto;}
+.program_box_wrap .p_control { text-align: center; margin-top: 1.27846rem; }
+.program_box .slick-slide{margin:0 10px;}
+
+.program_box::after { display: block; content: ""; clear: both; }
+/* 2023-03-22 */
+.program_box .program_item { padding: 1.25rem;  display:block;}
+
+.program_box .program_item a { /*outline: 0;*/ display: block; border: 1px solid #dddddd; overflow: hidden; height: 26.875rem; -moz-transition: box-shadow 0.3s; -webkit-transition: box-shadow 0.3s; -ms-transition: box-shadow 0.3s; -o-transition: box-shadow 0.3s; transition: box-shadow 0.3s; }
+
+.program_box .program_item a .pi_img_box { position: relative; overflow: hidden; background: #dddddd; }
+
+.program_box .program_item a .pi_img_box:before { content: ''; display: block; padding-top: 13.4375rem; }
+
+.program_box .program_item a .pi_img_box img { display: block; width: 100%; position: absolute; width: 100%; top: 50%; left: 50%; -moz-transform: translate(-50%, -50%); -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); -moz-transition: width 0.3s; -webkit-transition: width 0.3s; -ms-transition: width 0.3s; -o-transition: width 0.3s; transition: width 0.3s; }
+
+.program_box .program_item a .pi_img_box .marker_box { position: absolute; overflow: hidden; z-index: 1; top: 0; left: 0; }
+
+.program_box .program_item a .pi_img_box .marker_box .marker { position: relative; display: block; float: left; letter-spacing: 0.035em; word-break: keep-all; width: 5rem; height: 5.625rem; text-align: center; background: rgba(0, 0, 0, 0.8); color: #ffffff; font-size: 1.125rem; -moz-transition: all 0.3s; -webkit-transition: all 0.3s; -ms-transition: all 0.3s; -o-transition: all 0.3s; transition: all 0.3s; }
+
+.program_box .program_item a .pi_img_box .marker_box .marker > span { display: block; position: absolute; width: 100%; top: 50%; left: 50%; -moz-transform: translate(-50%, -50%); -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); width: 80%; }
+
+.program_box .program_item a .pi_img_box .marker_box .marker.color_1 { background: rgba(63, 120, 212, 0.8); }
+
+.program_box .program_item a .pi_img_box .marker_box .marker.color_2 { background: rgba(224, 140, 52, 0.8); }
+
+.program_box .program_item a .pi_img_box .marker_box .marker.color_3 { background: rgba(158, 97, 228, 0.8); }
+
+.program_box .program_item a .pi_img_box .marker_box .marker.color_4 { background: rgba(240, 84, 132, 0.8); }
+
+.program_box .program_item a .pi_img_box .marker_box .marker.color_5 { background: rgba(31, 181, 147, 0.8); }
+
+.program_box .program_item a .pi_text_box { text-align: center; padding-top: 2.5rem; }
+
+.program_box .program_item a .pi_text_box .pi_tit { margin-top: 0.3125rem; margin-bottom: 1.875rem; padding-left: 0.3125rem; padding-right: 0.3125rem; font-weight: 500; font-size: 1.5rem; }
+
+.program_box .program_item a .pi_text_box .pi_tit > * { display: inline-block; vertical-align: middle; }
+
+.program_box .program_item .catalogue_box { text-align: center; display: block; }
+
+.program_box .program_item .catalogue_box > * { display: inline-block; vertical-align: middle; min-width: 8.4375rem; padding: 0.3125rem 1rem; text-align: center; background-color: transparent; color: #222222; border-radius: 3.125rem; border: 1px solid #cccccc; -moz-transition: all 0.3s; -webkit-transition: all 0.3s; -ms-transition: all 0.3s; -o-transition: all 0.3s; transition: all 0.3s; }
+
+.program_box .program_item .pi_data { padding: 0.9375rem 0; border-top: 1px solid #dddddd; font-size: 1.25rem; line-height: 1.2; }
+
+.program_box .program_item .pi_data > * { display: inline-block; vertical-align: middle; }
+
+.program_box .program_item a:hover a:focus { outline: 0; }
+
+.program_box .program_item a:hover a:focus .pi_img_box img { width: 105%; max-width: none; }
+
+.program_box .program_item a:hover a:focus .catalogue_box > * { background-color: #222222; color: #ffffff; }
+
+.program_box .program_item.color_1 a .catalogue_box > * { border-color: #3f78d4; color: #3f78d4; }
+
+.program_box .program_item.color_1 a .icon_new { background: #3f78d4; }
+
+.program_box .program_item.color_2 a .catalogue_box > * { border-color: #e08c34; color: #e08c34; }
+
+.program_box .program_item.color_2 a .icon_new { background: #e08c34; }
+
+.program_box .program_item.color_3 a .catalogue_box > * { border-color: #9e61e4; color: #9e61e4; }
+
+.program_box .program_item.color_3 a .icon_new { background: #9e61e4; }
+
+.program_box .program_item.color_4 a .catalogue_box > * { border-color: #f05484; color: #f05484; }
+
+.program_box .program_item.color_4 a .icon_new { background: #f05484; }
+
+.program_box .program_item.color_5 a .catalogue_box > * { border-color: #1fb593; color: #1fb593; }
+
+.program_box .program_item.color_5 a .icon_new { background: #1fb593; }
+
+.program_box .program_item.color_1 a:hover, .program_box .program_item.color_1 a:focus { /*outline: 0;*/ outline-offset:-5px;outline-color:#333;box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.16); }
+
+.program_box .program_item.color_1 a:hover .catalogue_box > *, .program_box .program_item.color_1 a:focus .catalogue_box > * { background: #3f78d4; color: #ffffff; }
+
+.program_box .program_item.color_2 a:hover, .program_box .program_item.color_2 a:focus { /* outline: 0; */ box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.16); }
+
+.program_box .program_item.color_2 a:hover .catalogue_box > *, .program_box .program_item.color_2 a:focus .catalogue_box > * { background: #e08c34; color: #ffffff; }
+
+.program_box .program_item.color_3 a:hover, .program_box .program_item.color_3 a:focus { /* outline: 0; */ box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.16); }
+
+.program_box .program_item.color_3 a:hover .catalogue_box > *, .program_box .program_item.color_3 a:focus .catalogue_box > * { background: #9e61e4; color: #ffffff; }
+
+.program_box .program_item.color_4 a:hover, .program_box .program_item.color_4 a:focus { /* outline: 0; */ box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.16); }
+
+.program_box .program_item.color_4 a:hover .catalogue_box > *, .program_box .program_item.color_4 a:focus .catalogue_box > * { background: #f05484; color: #ffffff; }
+
+.program_box .program_item.color_5 a:hover, .program_box .program_item.color_5 a:focus { /* outline: 0; */ box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.16); }
+
+.program_box .program_item.color_5 a:hover .catalogue_box > *, .program_box .program_item.color_5 a:focus .catalogue_box > * { background: #1fb593; color: #ffffff; }
+
+@media screen and (max-width: 1440px) { .program_box_wrap { max-width: 59.375rem; }
+  .program_box .program_item a { height: 24.6875rem; }
+  .program_box .program_item a .pi_img_box::before { padding-top: 10.9375rem; } }
+
+@media screen and (max-width: 767px) { .program_box_wrap { max-width: 45.38538rem; }
+  .program_box_wrap .p_control { text-align: center; margin-top: 1.27846rem; }
+  .program_box { margin-left: -0.95885rem; margin-right: -0.95885rem; }
+  .program_box .program_item { padding-top: 0.95885rem; }
+  .program_box .program_item a { max-width: 21.73385rem; height: 28.12615rem; }
+  .program_box .program_item a .pi_img_box:before { padding-top: 13.10423rem; }
+  .program_box .program_item a .pi_img_box .marker_box { position: absolute; overflow: hidden; z-index: 1; top: 0; left: 0; }
+  .program_box .program_item a .pi_img_box .marker_box .marker { font-size: 1.40631rem; }
+  .program_box .program_item a .pi_text_box { padding-top: 2.10946rem; }
+  .program_box .program_item a .pi_text_box .pi_tit { margin-top: 0.3125rem; margin-bottom: 1.875rem; font-size: 1.78985rem; }
+  .program_box .program_item a .pi_text_box .pi_tit > * { display: inline-block; vertical-align: middle; }
+  .program_box .program_item .catalogue_box { text-align: center; display: block; }
+  .program_box .program_item .catalogue_box > * { min-width: 10.73908rem; font-size: 1.40631rem; } }
+
+
+  .program_box_wrap .p_control { text-align: center; margin-top: 1.27846rem; }
