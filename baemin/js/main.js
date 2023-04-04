@@ -85,7 +85,5 @@ $(document).ready(function() {
 	box3Tit.src=box3TitImg[RandomNum3];
 	box3Tit.alt=box3TitAlt[RandomNum3];
 
-
-
 });
 
