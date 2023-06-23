@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css -->
+    <link rel="stylesheet" href="http://parks.seoul.go.kr/css/main/common.css" />
+    <link rel="stylesheet" href="http://parks.seoul.go.kr/css/main/mediaqueries.css" />
+    <link rel="stylesheet" href="http://parks.seoul.go.kr/css/main/colorbox.css" />
+    <link rel="stylesheet" href="http://parks.seoul.go.kr/css/main/style_wse.css" />
+    <link rel="stylesheet" href="http://parks.seoul.go.kr/css/main/style.css?20181115" />
+    <link rel="stylesheet" href="http://parks.seoul.go.kr/css/main/style_hmg.css" />
+    <link rel="stylesheet" href="http://parks.seoul.go.kr/css/main/jquery.bxslider.css" />
+    <link type="text/css" rel="stylesheet" href="http://parks.seoul.go.kr/css/appendGrid/jquery-ui.structure.min.css">
+    <link type="text/css" rel="stylesheet" href="http://parks.seoul.go.kr/css/appendGrid/jquery-ui.theme.min.css">
+    <link type="text/css" rel="stylesheet" href="http://parks.seoul.go.kr/css/appendGrid/jquery.appendGrid-1.6.3.css">
+
+    <!-- seonhong add calendar plugin (https://github.com/yscoder/Calendar) -->
+    <link type="text/css" rel="stylesheet" href="http://parks.seoul.go.kr/css/egovframework/com/admin/calendar.css">
+    <!-- seonhong add easytree plugin (http://www.easyjstree.com) -->
+    <link type="text/css" rel="stylesheet" href="http://parks.seoul.go.kr/css/egovframework/com/admin/ui-easytree/ui.easytree.css">
+
+    <link rel="stylesheet" type="text/css" href="http://parks.seoul.go.kr/css/main/slick.css">
+    <link rel="stylesheet" type="text/css" href="http://parks.seoul.go.kr/css/main/notosansfont.css">
+    <!-- 20190711 css -->
+    <link rel="stylesheet" href="http://parks.seoul.go.kr/css/main/layout_20190711.css">
+
+    <!-- 20200819 css -->
+    <link rel="stylesheet" href="http://parks.seoul.go.kr/css/main/layout_200820.css">
+    <link rel="stylesheet" href="http://parks.seoul.go.kr/css/main/main_200819.css">
+    <link rel="stylesheet" href="http://parks.seoul.go.kr/css/main/main_20230228.css">
+
+    <script type="text/javascript" src="http://parks.seoul.go.kr/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="./js/slick.min.js"></script>
+</head>
+<script>
+    $(document).ready(function(){
+    	// 메인 공원의 모습 슬라이드
+        $(window).load(function(){
+        $(".slick-cloned").find("a").prop("tabindex","-1");
+    });
+
+        var 	$park_slider = $('.section4 .slider'),
+                $park_slider_btn = $('.main .section4 .slider_btn');
+        $park_slider.slick({
+            arrows : false,
+            dots : false,
+            autoplay : false,
+            infinite : true,
+            slidesToShow : 4,
+            slidesToScroll : 1,
+            autoplay: true,
+		    autoplaySpeed: 2000,
+
+            responsive : [
+                {
+                    breakpoint : 1201,
+                    settings : {
+                        slidesToShow : 3
+                    }
+                },
+                {
+                    breakpoint : 861,
+                    settings : {
+                        slidesToShow : 2
+                    }
+                },
+                {
+                    breakpoint : 481,
+                    settings : {
+                        slidesToShow : 1
+                    }
+                }
+            ]
+        });
+        $park_slider_btn.on('click', function(){
+		if( $(this).hasClass('prev') == true ){ // 이전
+			$park_slider.slick('slickPrev');
+		}else{ // 다음
+			$park_slider.slick('slickNext');
+		}
+		return false;
+	});
+    })
+</script>
+<body>
+    <div class="main">
+        <div class="section section4">
+            <div class="inner">
+                <h2 class="section_title">사진갤러리</h2>
+                <div class="slider_wrap">
+                    <a href="#" class="slider_btn prev" title="공원의 모습 배너 이전">이전</a> <a href="#" class="slider_btn next"
+                        title="공원의 모습 배너 다음">다음</a>
+                    <div class="slider clearfix">
+                        <div class="item">
+                            <a href="http://parks.seoul.go.kr/allphoto/detailView.do?bIdx=296" title="고라니의 산책">
+                                <div class="slider_img">
+                                    <img src="https://parks.seoul.go.kr/file/info/view.do?tableName=GALLERY_LIST&bIdx=296&type=thumb&field=thumbnail"
+                                        alt="고라니의 산책" style="width:100%;">
+                                </div>
+                                <div class="slider_cont" style="padding:27px 20px 36px;">
+                                    <p class="title">고라니의 산책</p>
+                                    <p class="txt">
+                                        <span>강동구 길동생태공원</span> <span>2023.05.10</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="http://parks.seoul.go.kr/allphoto/detailView.do?bIdx=295" title="왜가리 손님">
+                                <div class="slider_img">
+                                    <img src="https://parks.seoul.go.kr/file/info/view.do?tableName=GALLERY_LIST&bIdx=295&type=thumb&field=thumbnail"
+                                        alt="왜가리 손님" style="width:100%;">
+                                </div>
+                                <div class="slider_cont" style="padding:27px 20px 36px;">
+                                    <p class="title">왜가리 손님</p>
+                                    <p class="txt">
+                                        <span>강동구 길동생태공원</span> <span>2023.05.10</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="http://parks.seoul.go.kr/allphoto/detailView.do?bIdx=294" title="산책">
+                                <div class="slider_img">
+                                    <img src="https://parks.seoul.go.kr/file/info/view.do?tableName=GALLERY_LIST&bIdx=294&type=thumb&field=thumbnail"
+                                        alt="산책" style="width:100%;">
+                                </div>
+                                <div class="slider_cont" style="padding:27px 20px 36px;">
+                                    <p class="title">산책</p>
+                                    <p class="txt">
+                                        <span>강북구 북서울꿈의숲</span> <span>2023.05.10</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="http://parks.seoul.go.kr/allphoto/detailView.do?bIdx=293" title="작약">
+                                <div class="slider_img">
+                                    <img src="https://parks.seoul.go.kr/file/info/view.do?tableName=GALLERY_LIST&bIdx=293&type=thumb&field=thumbnail"
+                                        alt="작약" style="width:100%;">
+                                </div>
+                                <div class="slider_cont" style="padding:27px 20px 36px;">
+                                    <p class="title">작약</p>
+                                    <p class="txt">
+                                        <span>강북구 북서울꿈의숲</span> <span>2023.05.10</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="http://parks.seoul.go.kr/allphoto/detailView.do?bIdx=292" title="월영지">
+                                <div class="slider_img">
+                                    <img src="https://parks.seoul.go.kr/file/info/view.do?tableName=GALLERY_LIST&bIdx=292&type=thumb&field=thumbnail"
+                                        alt="월영지" style="width:100%;">
+                                </div>
+                                <div class="slider_cont" style="padding:27px 20px 36px;">
+                                    <p class="title">월영지</p>
+                                    <p class="txt">
+                                        <span>강북구 북서울꿈의숲</span> <span>2023.05.10</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="http://parks.seoul.go.kr/allphoto/detailView.do?bIdx=291" title="사랑">
+                                <div class="slider_img">
+                                    <img src="https://parks.seoul.go.kr/file/info/view.do?tableName=GALLERY_LIST&bIdx=291&type=thumb&field=thumbnail"
+                                        alt="사랑" style="width:100%;">
+                                </div>
+                                <div class="slider_cont" style="padding:27px 20px 36px;">
+                                    <p class="title">사랑</p>
+                                    <p class="txt">
+                                        <span>강북구 북서울꿈의숲</span> <span>2023.05.10</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="http://parks.seoul.go.kr/allphoto/detailView.do?bIdx=290" title="사슴">
+                                <div class="slider_img">
+                                    <img src="https://parks.seoul.go.kr/file/info/view.do?tableName=GALLERY_LIST&bIdx=290&type=thumb&field=thumbnail"
+                                        alt="사슴" style="width:100%;">
+                                </div>
+                                <div class="slider_cont" style="padding:27px 20px 36px;">
+                                    <p class="title">사슴</p>
+                                    <p class="txt">
+                                        <span>강북구 북서울꿈의숲</span> <span>2023.05.10</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="http://parks.seoul.go.kr/allphoto/detailView.do?bIdx=289" title="꼬마 사진사">
+                                <div class="slider_img">
+                                    <img src="https://parks.seoul.go.kr/file/info/view.do?tableName=GALLERY_LIST&bIdx=289&type=thumb&field=thumbnail"
+                                        alt="꼬마 사진사" style="width:100%;">
+                                </div>
+                                <div class="slider_cont" style="padding:27px 20px 36px;">
+                                    <p class="title">꼬마 사진사</p>
+                                    <p class="txt">
+                                        <span>도봉구 서울창포원</span> <span>2023.05.10</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="http://parks.seoul.go.kr/allphoto/detailView.do?bIdx=288" title="게이트 볼">
+                                <div class="slider_img">
+                                    <img src="https://parks.seoul.go.kr/file/info/view.do?tableName=GALLERY_LIST&bIdx=288&type=thumb&field=thumbnail"
+                                        alt="게이트 볼" style="width:100%;">
+                                </div>
+                                <div class="slider_cont" style="padding:27px 20px 36px;">
+                                    <p class="title">게이트 볼</p>
+                                    <p class="txt">
+                                        <span>도봉구 서울창포원</span> <span>2023.05.10</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="http://parks.seoul.go.kr/allphoto/detailView.do?bIdx=287" title="창포원의 봄">
+                                <div class="slider_img">
+                                    <img src="https://parks.seoul.go.kr/file/info/view.do?tableName=GALLERY_LIST&bIdx=287&type=thumb&field=thumbnail"
+                                        alt="창포원의 봄" style="width:100%;">
+                                </div>
+                                <div class="slider_cont" style="padding:27px 20px 36px;">
+                                    <p class="title">창포원의 봄</p>
+                                    <p class="txt">
+                                        <span>도봉구 서울창포원</span> <span>2023.05.10</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="http://parks.seoul.go.kr/allphoto/detailView.do?bIdx=286" title="나들이">
+                                <div class="slider_img">
+                                    <img src="https://parks.seoul.go.kr/file/info/view.do?tableName=GALLERY_LIST&bIdx=286&type=thumb&field=thumbnail"
+                                        alt="나들이" style="width:100%;">
+                                </div>
+                                <div class="slider_cont" style="padding:27px 20px 36px;">
+                                    <p class="title">나들이</p>
+                                    <p class="txt">
+                                        <span>도봉구 서울창포원</span> <span>2023.05.09</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="http://parks.seoul.go.kr/allphoto/detailView.do?bIdx=285" title="햇살 좋은 날">
+                                <div class="slider_img">
+                                    <img src="https://parks.seoul.go.kr/file/info/view.do?tableName=GALLERY_LIST&bIdx=285&type=thumb&field=thumbnail"
+                                        alt="햇살 좋은 날" style="width:100%;">
+                                </div>
+                                <div class="slider_cont" style="padding:27px 20px 36px;">
+                                    <p class="title">햇살 좋은 날</p>
+                                    <p class="txt">
+                                        <span>도봉구 서울창포원</span> <span>2023.05.09</span>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //section -->
+</body>
+
+</html>

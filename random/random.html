@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random</title>
+</head>
+<body>
+    <div>
+        <ul id="Random">
+        </ul>
+        <button onclick="btn()">뽑기</button>
+    </div>
+    <script>
+        function btn(){
+            const Random = document.getElementById('Random');
+
+            console.log(Random)
+            var lotto = [];
+
+            for(var i=0; i<6; i++){
+                var num = Math.floor(Math.random() * 45)+1;
+                for(var j in lotto){
+                    while(num == lotto[j]){ //현재 새로나온 숫자가 기존 숫자와 같으면
+                        num = Math.floor(Math.random() * 45) + 1;
+                    }
+                }
+                lotto.push(num);
+            }
+
+            //오름차순으로 숫자 정렬
+            lotto.sort(function(a,b){
+            return a - b;
+            });
+
+            for(let l=0; l<lotto.length; l++){
+                console.log(lotto[l])
+                Random.insertAdjacentHTML("afterbegin", "<li>"+lotto[l]+"</li>");
+            }
+
+        }
+
+
+    </script>
+</body>
+</html>

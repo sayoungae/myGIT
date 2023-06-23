@@ -40,49 +40,34 @@ $(document).ready(function() {
         navDot[7].style.display = 'none';
 
 	// 방문할때마다 변하는 이미지
-	let box1BgImg = new Array(),
-		box1TitImg = new Array(),
-		box1TitAlt = new Array(),
-		box2TitImg = new Array(),
+	let box1TitAlt = new Array(),
 		box2TitAlt = new Array(),
-		box3TitImg = new Array(),
 		box3TitAlt = new Array();
 
-
 	let box1Bg= document.querySelector('.section.box1'),
-		box1Tit = document.querySelector('.box1 .tit img');
-		box2Tit = document.querySelector('.box2 .tit img');
+		box1Tit = document.querySelector('.box1 .tit img'),
+		box2Tit = document.querySelector('.box2 .tit img'),
 		box3Tit = document.querySelector('.box3 .tit img');
 
 
 
 	// 첫페이지 배경이미지
-	box1BgImg = ["images/main_01@2x.jpg","images/main_02@2x.jpg","images/main_03@2x.jpg","images/main_04@2x.jpg","images/main_05@2x.jpg"];
-	box1TitImg = ["images/main_text_01@2x.png","images/main_text_02@2x.png","images/main_text_03@2x.png","images/main_text_04@2x.png","images/main_text_05@2x.png"];
 	box1TitAlt = ['든든한 집밥 한상이 간절할 때','따뜻한 라떼 한 잔이 생각날 때','가볍게 맛있게 먹고싶을 때','마음에도 당 충전이 필요할 때','공복에 떡볶이가 그리울 때'];
-
-	box2TitImg = ['images/ctn01_text_01@2x.png','images/ctn01_text_02@2x.png'];
 	box2TitAlt =['바로그거 배민에 다 있다','그것이 무엇이든 다 있다'];
-
-	box3TitImg = ['images/ctn02_text_01@2x.png','images/ctn02_text_02@2x.png','images/ctn02_text_03@2x.png'];
 	box3TitAlt =['줄 서서 먹던 맛집도 배달가능','찾아가던 맛집을 원하는 곳에서','줄 서서 먹던 맛집도 우리집으로'];
 
-	const RandomNum5 = [Math.floor(Math.random() * 5)],
-		  RandomNum3 = [Math.floor(Math.random() * 3)];
-		  RandomNum2 = [Math.floor(Math.random() * 2)];
+	const RandomNum5 = [Math.floor(Math.random() * 4)+1],
+		  RandomNum3 = [Math.floor(Math.random() * 2)+1];
+		  RandomNum2 = [Math.floor(Math.random() * 1)+1];
 
+	let box1BgImg = 'images/main_0'+RandomNum5+'@2x.jpg';
+	box1Bg.style.backgroundImage ="url("+box1BgImg+")";
 
-
-	box1Bg.style.backgroundImage = `url(${box1BgImg[RandomNum5]})`;
-
-
-	box1Tit.src=box1TitImg[RandomNum5];
+	box1Tit.src ="images/main_text_0"+RandomNum5+"@2x.png";
+	box2Tit.src ="images/ctn01_text_0"+RandomNum2+"@2x.png";
+	box3Tit.src ="images/ctn02_text_0"+RandomNum3+"@2x.png";
 	box1Tit.alt=box1TitAlt[RandomNum5];
-
-	box2Tit.src=box2TitImg[RandomNum2];
 	box2Tit.alt=box2TitAlt[RandomNum2];
-
-	box3Tit.src=box3TitImg[RandomNum3];
 	box3Tit.alt=box3TitAlt[RandomNum3];
 
 });
