@@ -36,16 +36,33 @@ $(document).ready(function(){
     });
 
     /* quick_menu */
-
+    $(".quick_menu li > a").attr('tabindex','-1');
     $('.quick_menu > a').on('click', function(){
         if($('.quick_menu').hasClass('on')){
             $('.quick_menu').removeClass('on')
 
         }else{
             $('.quick_menu').addClass('on')
-
+            $(".quick_menu li > a").attr('tabindex','0');
         }
-    })
+    });
 
+    // btn_to_top
+    $(".btn_to_top").on('click', function(e){
+        e.preventDefault();
+		$('html, body').animate({ scrollTop: 0 }, 400);
+    });
+
+    //스크롤
+	$(window).on('scroll', function() {
+		var sT = $(this).scrollTop();
+		var headerT = $("#header").outerHeight();
+		// 스크롤탑 버튼
+		if (sT > headerT) {
+			$("#quick").addClass("on");
+			} else {
+			$("#quick").removeClass("on");
+		}
+	});
 
 });

@@ -37,6 +37,28 @@ $(document).ready(function(){
     })
 
 
+    // mob_gnb
+    $(".hamburger-box").click(function(){
+        $(".hamburger").toggleClass("is-active");
+        if( $(".hamburger").hasClass("is-active")){
+            $(".mob_nav").addClass("on")
+        }else{
+            $(".mob_nav").removeClass("on")
+        }
+    });
+
+    $(".m_depth1 >li > a").click(function(){
+        $(".m_depth2").stop().slideUp(200);
+        if($(this).hasClass("on")){
+            $(this).addClass("on").next(".m_depth2").stop().slideUp(200);
+        }else{
+            $(this).addClass("on").next(".m_depth2").stop().slideDown(200);
+
+        }
+
+    })
+
+
     // footer
     $('input[type="text"] , input[type="checkbox"]').keydown(function(event) {
         if (event.keyCode === 13) {

@@ -81,7 +81,7 @@ h2{text-align: center; color:#4C4C4C; font-size:2em; padding-bottom:5px;}
 /* sub_slide */
 .sub_slide{padding-top:165px; padding-bottom:100px; background-color:#F2F2EE;}
 .sub_slide_box{position:relative;}
-.sub_slide_box .slick-arrow{width: 47px; height: 66px; background-image: url(../image/main_icon.png); background-position: -2px -642px; position:absolute; top:50%; transform: translateY(-50%); right:-60px; border:0; text-indent: -9999px;}
+.sub_slide_box .slick-arrow{width: 47px; height: 66px; background-image: url(../image/main_icon.png); background-position: -2px -642px; position:absolute; top:50%; transform: translateY(-50%); right:-60px; border:0; text-indent: -9999px; background-color: transparent;}
 .sub_slide_box .slick-prev.slick-arrow{background-position: -2px -714px; left:-60px}
 .sub_slide_box .slide .slick-slide{box-shadow: 3px 3px 6px rgba(0,0,0,0.1); margin:15px;     transform: translateY(0px); transition:transform 0.5s ease-out; cursor: pointer;}
 .sub_slide_box .slide .slick-track{padding-top: 40px;}
