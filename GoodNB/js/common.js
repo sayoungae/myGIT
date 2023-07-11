@@ -21,16 +21,17 @@ $(document).ready(function(){
             $(dep2).hide();
             $(this).siblings('.depth2').show();
             $(this).siblings('.depth2').find('ul').show();
-            $(this).parent('li').addClass('on');
+            $(this).parent('li').removeClass('on');
         }
     });
 
-    $('#gnb').on('mouseleave ', function(){
+    $('#gnb').on('mouseleave', function(){
         $('.depth2').stop().slideUp(200);
         $('.depth1').removeClass('pms');
+        $('.depth1 >li').removeClass('on');
     });
 
-    $('#gnb').find($('.dona-area')).find('div:last-child >a').focusout(function(){
+    $('#gnb').find($('.dona-area')).find('li:last-child >a').on('focusout',function(){
         $('.depth1').removeClass('pms');
         $('.depth2').stop().slideUp(200);
         $('.depth1 > li').removeClass('on')

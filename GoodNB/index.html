@@ -17,11 +17,22 @@
     <link rel="stylesheet" type="text/css" href="./css/reset.css" />
     <link rel="stylesheet" type="text/css" href="./css/common.css" />
     <link rel="stylesheet" type="text/css" href="./css/main.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- js -->
     <script src="./js/common.js"></script>
     <script src="./js/main.js"></script>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>굿네이버스</title>
+    <script>
+        $( document ).ready( function() {
+          AOS.init();
+          AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-in-out',
+        });
+        } );
+      </script>
 </head>
 <body>
     <div id="wrap">
@@ -544,12 +555,12 @@
                             </div>
                         </div>
                     </section>
-                    <section class="story_sec">
+                    <section class="story_sec" >
                         <div class="inner">
-                            <h2>스토리</h2>
-                            <p>세상을 위한 좋은 변화, 더불어 살아가는 이야기가 함께 합니다.</p>
-                            <div class="tab_box">
-                                <ul class="tap_tit">
+                            <h2 data-aos="fade-up">스토리</h2>
+                            <p data-aos="fade-up">세상을 위한 좋은 변화, 더불어 살아가는 이야기가 함께 합니다.</p>
+                            <div class="tab_box" >
+                                <ul class="tap_tit" data-aos="fade-up">
                                     <li class="on"><a href="#none" rel="tab1" title="지금 뜨는 이야기">#지금 뜨는 이야기</a></li>
                                     <li><a href="#none" rel="tab2" title="결과보고">#결과보고</a></li>
                                     <li><a href="#none" rel="tab3" title="좋은이웃이야기">#좋은이웃이야기</a></li>
@@ -557,7 +568,7 @@
                                 <div class="tab_cont">
                                     <div id="tab1" class="conBox">
                                         <div class="tab_inner">
-                                            <ul class="col1">
+                                            <ul class="col1" data-aos="fade-right"  data-aos-delay="800">
                                                 <li>
                                                     <a href="#none" title="">
                                                         <p class="imgBox">
@@ -570,7 +581,7 @@
                                                     </a>
                                                 </li>
                                             </ul>
-                                            <ul class="col2">
+                                            <ul class="col2" data-aos="fade-left" data-aos-easing="ease-in-out" data-aos-delay="800">
                                                 <li>
                                                     <a href="#none" title="">
                                                         <p class="imgBox">
@@ -616,7 +627,7 @@
                                     </div>
                                     <div id="tab2" class="conBox">
                                         <div class="tab_inner">
-                                            <ul class="col1">
+                                            <ul class="col1" >
                                                 <li>
                                                     <a href="#none" title="">
                                                         <p class="imgBox">
@@ -629,7 +640,7 @@
                                                     </a>
                                                 </li>
                                             </ul>
-                                            <ul class="col2">
+                                            <ul class="col2"  data-aos="fade-left" data-aos-duration="2000">
                                                 <li>
                                                     <a href="#none" title="">
                                                         <p class="imgBox">
@@ -746,7 +757,7 @@
                     <section class="main_gniworld">
                         <div class="gniworld_inner">
                             <div class="gniworld_tit">
-                                <div class="tit_box">
+                                <div class="tit_box" data-aos="fade-left">
                                     <p>Good Change for the world</p>
                                     <div class="m_tit">
                                         굿네이버스는 <span>아동과<br/>
@@ -766,7 +777,7 @@
                             </div>
                             <div class="gniworld_work ">
                                 <ul>
-                                    <li>
+                                    <li data-aos="fade-up">
                                         <p>
                                             UN경제사회이사회로부터<br/>
                                             NGO 최상위 지위인<br/>
@@ -774,7 +785,7 @@
                                         </p>
                                         <span class="icons"></span>
                                     </li>
-                                    <li>
+                                    <li data-aos="fade-up" data-aos-delay="300">
                                         <p>
                                             UN MDGs Award에서<br/>
                                             새천년개발목표상 수상:<br/>
@@ -782,7 +793,7 @@
                                         </p>
                                         <span class="icons"></span>
                                     </li>
-                                    <li>
+                                    <li data-aos="fade-up" data-aos-delay="600">
                                         <p>
                                             한국 NGO 최초<br/>
                                             유엔세계식량계획(WFP)<br/>
@@ -797,9 +808,9 @@
                     </section>
                     <section class="sub_slide">
                         <div class="inner">
-                            <h2>함께 만드는 좋은 변화</h2>
-                            <p>좋은 변화를 만드는 캠페인과 이벤트에 참여해 보세요.</p>
-                            <div class="sub_slide_box">
+                            <h2 data-aos="fade-up">함께 만드는 좋은 변화</h2>
+                            <p data-aos="fade-up">좋은 변화를 만드는 캠페인과 이벤트에 참여해 보세요.</p>
+                            <div class="sub_slide_box" data-aos="fade-up">
                                 <div class="slide">
                                     <div>
                                         <p>
@@ -896,12 +907,12 @@
                     </section>
                     <section class="main_gninews">
                         <div class="inner">
-                            <h2>굿네이버스 소식</h2>
-                            <p>굿네이버스의 다양한 소식을 전달합니다.</p>
+                            <h2 data-aos="fade-up">굿네이버스 소식</h2>
+                            <p data-aos="fade-up">굿네이버스의 다양한 소식을 전달합니다.</p>
                             <div class="gninews_con">
                                 <div>
                                     <ul class="boxWimg">
-                                        <li>
+                                        <li data-aos="fade-right">
                                             <a href="#none" title="아나운서 김해나, 더네이버스클럽 등재">
                                                 <p class="imgBox">
                                                     <img src="./image/d2xEeRPNY.jpg" alt="아나운서 김해나, 더네이버스클럽 등재"/>
@@ -912,7 +923,7 @@
                                                 </div>
                                             </a>
                                         </li>
-                                        <li>
+                                        <li data-aos="fade-right" data-aos-delay="300">
                                             <a href="#none" title="우리 단체, 제3회 KCOC AWARDS ‘든든한 동반자 상’ 수상">
                                                 <p class="imgBox">
                                                     <img src="./image/VGRpRqv1k.jpg" alt="우리 단체, 제3회 KCOC AWARDS ‘든든한 동반자 상’ 수상"/>
@@ -924,7 +935,7 @@
                                             </a>
                                         </li>
                                     </ul>
-                                    <ul class="boxWtxt">
+                                    <ul class="boxWtxt" data-aos="fade-left">
                                         <li>
                                             <a href="#none" title="">
                                                 <div class="txtBox">

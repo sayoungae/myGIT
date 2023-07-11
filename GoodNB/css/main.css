@@ -6,12 +6,19 @@ h2{text-align: center; color:#4C4C4C; font-size:2em; padding-bottom:5px;}
 .main_visual{width: 100%;}
 .main-slide{position: relative;}
 .main-slide .slide_bgBox{height:600px; position:relative;}
-.main-slide .slide_bgBox .txtBox{font-weight: 700;  position:absolute; left: 16%;  top:50%; transform: translateY(-50%); overflow: hidden; }
-.main-slide .slide_bgBox .txtBox >div{color:#fff;}
-.main-slide .slide_bgBox .txtBox >div > span{display: inline-block; font-size: 1em; margin-bottom:20px;}
-.main-slide .slide_bgBox .txtBox >div > h4{font-size:2.8em; line-height:60px; margin-bottom:20px;}
-.main-slide .slide_bgBox .txtBox >div > p{margin-bottom:50px;}
-.main-slide .slide_bgBox .txtBox >div > a.btn_ga_send{display: inline-block; padding:15px 70px; border-radius: 30px; color:#333; background-color:#fff; margin:5px; }
+.main-slide .slide_bgBox .txtBox{font-weight: 700;  position:absolute; left: 18%;  top:50%; transform: translateY(-50%); overflow: hidden; opacity: 1; }
+/* .main-slide .slide_bgBox.slick-active .txtBox{left: 20%; opacity: 1;  transition:all 0.8s ease-in 0.8s; } */
+
+.main-slide .slide_bgBox .txtBox >div{color:#fff; padding-left:50px;}
+.main-slide .slide_bgBox .txtBox >div > span{display: inline-block; font-size: 1em; margin-bottom:20px; transform: translateX(-50px); opacity: 0;}
+.main-slide .slide_bgBox .txtBox >div > h4{font-size:2.8em; line-height:60px; margin-bottom:20px; transform: translateX(-50px); opacity: 0;}
+.main-slide .slide_bgBox .txtBox >div > p{margin-bottom:50px; transform: translateX(-50px); opacity: 0;}
+.main-slide .slide_bgBox .txtBox >div > a.btn_ga_send{display: inline-block; padding:15px 70px; border-radius: 30px; color:#333; background-color:#fff; margin:5px; transform: translateX(-50px); opacity: 0;}
+.main-slide .slide_bgBox.slick-active .txtBox >div >span{transform: translateX(0); opacity: 1;  transition:all 0.8s ease-in 0.8s;}
+.main-slide .slide_bgBox.slick-active .txtBox >div >h4{transform: translateX(0); opacity: 1;  transition:all 0.8s ease-in 1s;}
+.main-slide .slide_bgBox.slick-active .txtBox >div >p{transform: translateX(0); opacity: 1;  transition:all 0.8s ease-in 1.2s;}
+.main-slide .slide_bgBox.slick-active .txtBox >div > a.btn_ga_send{transform: translateX(0); opacity: 1;  transition:all 0.8s ease-in 1.5s;}
+
 .main-slide .slide_bgBox.bg_light .txtBox >div{color:#333;}
 .main-slide .slide_bgBox.bg_light .txtBox >div > a.btn_ga_send{color:#fff; background-color:#6B5954;}
 
@@ -64,7 +71,6 @@ h2{text-align: center; color:#4C4C4C; font-size:2em; padding-bottom:5px;}
     background: #869f30;
     background: -webkit-gradient(linear, left top, right top, from(#869f30), color-stop(23%, #82a031), color-stop(49%, #79a636), color-stop(67%, #69b03f), to(#52be4b));
     background: linear-gradient(90deg, #869f30 0%, #82a031 23%, #79a636 49%, #69b03f 67%, #52be4b 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#97a836', endColorstr='#70aa67',GradientType=1 );
     color: #fff;
 }
 

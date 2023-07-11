@@ -9,7 +9,7 @@ body{
 #wrap{width: 100%; overflow: hidden;}
 #wrap .wrap_inner{width: 100%;}
 
-#header{width:100%;position:relative;-webkit-box-shadow: inset 0px 0px #89A230, inset 0px -1px #89A230;box-shadow: inset 0px 0px #89A230, inset 0px -2px #89A230;padding-top:15px;position:relative;z-index: 1;}
+#header{width:100%;position:relative;-webkit-box-shadow: inset 0px 0px #89A230, inset 0px -1px #89A230;box-shadow: inset 0px 0px #89A230, inset 0px -2px #89A230;padding-top:15px;position:relative;}
 .h_inner{max-width:1280px;margin:0 auto;/* display: flex; *//* justify-content: space-between; */overflow: hidden;}
 .h-cont{}
 
