@@ -75,7 +75,6 @@
     $(document).ready(function(){
         var txtSlider = $('.main_txt_slide'),
             imgSlider = $('.main_img_slide');
-
         txtSlider.slick({
             rows: 1,
             slidesToShow : 1,
@@ -83,19 +82,20 @@
             dots : true,
             arrows : false,
             asNavFor: imgSlider,
+            // autoplay: true,
+            // autoplaySpeed: 2000,
+            fade: true,
             customPaging: function(slider, i) {
                 var num;
                 i  += 1;
                 i < 10 && (num = "0" + i);
                 return `<button class="tab">${num}</button>`;
             },
-            /* 
-            slide_box 에 slick-active가 있으면 자식요소 txt_area 에 id 가져오기
-        */
         }).on('afterChange', function(){
             
             var colrSlideId = $('.slide_box.slick-active').find('.txt_area').attr("id");
             $('.main_txt_slide').css('backgroundColor','#'+colrSlideId);
+            console.log(colrSlideId);
         });
 
         imgSlider.slick({
