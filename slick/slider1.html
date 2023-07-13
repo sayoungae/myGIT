@@ -18,10 +18,49 @@
     #wrap > section{position: relative; margin-top:100px;}
     .main_txt_slide{width: calc(50%); height:480px; background: #0D6376; }
     .main_txt_slide .txt_area{color:#fff;width: 450px;margin: 0 auto 0 240px;padding-top:100px;}
-    .main_txt_slide .txt_area span{display: inline-block; color:#E0C394; padding-bottom:20px;}
-    .main_txt_slide .txt_area .m_tit{font-size:2em; padding-bottom:50px;}
-    .main_txt_slide .txt_area a{color:#fff;}
-    
+    .main_txt_slide .txt_area > span{display: inline-block; color:#E0C394; padding-bottom:20px;}
+    .main_txt_slide .txt_area .m_tit{font-size:2em; padding-bottom:40px;}
+    .main_txt_slide .txt_area a{
+        display: block;
+        color:#fff;
+        position: relative;
+        width: 127px;
+        height: 45px;
+        line-height: 65px;
+        text-align: center;
+        font-size: 15px;
+        overflow: visible;
+        transition:all 0.3s ;
+    }
+    .main_txt_slide .txt_area a .line1,
+    .main_txt_slide .txt_area a .line2{display: inline-block; position: absolute; left:0; top:0; width:100%; height:100%;}
+    .main_txt_slide .txt_area a .line1::before{content: ""; display: inline-block; position:absolute; left:0; top:0;  width: 100%; height:0%; border-left:2px solid transparent;}
+    .main_txt_slide .txt_area a .line1::after{content: ""; display: inline-block; position:absolute; right:0; top:0; width: 0%; height:100%; border-top:2px solid transparent;}
+    .main_txt_slide .txt_area a .line2::before{content: ""; display: inline-block; position:absolute; left:0; bottom:0;  width: 100%; height:0%; border-right:2px solid transparent; }
+    .main_txt_slide .txt_area a .line2::after{content: ""; display: inline-block; position:absolute; left:50%; bottom:0; transform: translateX(-50%); width: 72%; height:1px; border-bottom:2px solid #fff; }
+
+    .main_txt_slide .txt_area a .line1::before,
+    .main_txt_slide .txt_area a .line1::after,
+    .main_txt_slide .txt_area a .line2::before,
+    .main_txt_slide .txt_area a .line2::after{ transition:all 0.2s ;}
+
+    /* on */
+    .main_txt_slide .txt_area a.on .line1::before{ transition-delay: 0.45s ;}
+    .main_txt_slide .txt_area a.on .line1::after{ transition-delay: 0.35s ;}
+    .main_txt_slide .txt_area a.on .line2::before{ transition-delay: 0.2s ;}
+
+    .main_txt_slide .txt_area a.on{line-height: 45px;}
+    .main_txt_slide .txt_area a.on .line1::before{border-color:#fff; height:100%;}
+    .main_txt_slide .txt_area a.on .line1::after{border-color:#fff; width:100%;}
+    .main_txt_slide .txt_area a.on .line2::before{border-color:#fff; height:100%;}
+    .main_txt_slide .txt_area a.on .line2::after{border-color:#fff; left:0; transform: translateX(0); width:100%; }
+
+    /* off */
+    .main_txt_slide .txt_area a.off .line1::before{ transition-delay: 0s ;}
+    .main_txt_slide .txt_area a.off .line1::after{ transition-delay: 0.2s ;}
+    .main_txt_slide .txt_area a.off .line2::before{ transition-delay: 0.35s ;}
+    .main_txt_slide .txt_area a.off .line2::after{transition-delay: 0.45s ;}
+
     /* slick-dots */
     .slick-dots{display: flex; justify-content: flex-end; margin:40px 250px 0 auto;}
     .slick-dots li button{ background-color:transparent; border:0; color: rgba(255,255,255,0.5);  padding:10px 15px; border-bottom: 1px solid rgba(255,255,255,0.5); cursor: pointer;}
@@ -29,7 +68,7 @@
     .slick-dots li.slick-active button{color:#fff; border-bottom:1px solid #fff;}
     .main_img_slide{width:60%;  position: absolute; bottom: -50px; right:0;}
     .main_img_slide .slide_box_img.slick-slide{margin-right:10px;}
-    .main_img_slide .slide_box_img  a{display: block; width:100%;}
+    .main_img_slide .slide_box_img  a{display: block; width:100%; }
     .main_img_slide .slick-slide img{width: 100%;}
 </style>
 <script>
@@ -59,6 +98,15 @@
             arrows: false,
             asNavFor: txtSlider,
         });
+
+        const vMore = $('.main_txt_slide .txt_area a');
+        vMore.mouseover(function(){
+            vMore.removeClass('off');
+            $(this).addClass('on');
+
+        }).mouseleave(function(){
+            $(this).removeClass('on').addClass('off');
+        })
     })
 </script>
 <body>
@@ -72,7 +120,13 @@
                             광주신세계<br />
                             아트바캉스: 여행을 떠나요!
                         </div>
-                        <div><a href="#none" title="">MORE VIEW</a></div>
+                        <div>
+                            <a href="#none" title="">
+                                <span class="line1"></span>
+                                <span class="copy">MORE VIEW</span>
+                                <span class="line2"></span>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="slide_box">
@@ -82,7 +136,13 @@
                             대전신세계 Art & Science<br />
                             아트바캉스: OaSiS
                         </div>
-                        <div><a href="#none" title="">MORE VIEW</a></div>
+                        <div>
+                            <a href="#none" title="">
+                                <span class="line1"></span>
+                                <span class="copy">MORE VIEW</span>
+                                <span class="line2"></span>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="slide_box">
@@ -92,7 +152,13 @@
                             본점<br />
                             오세열: 세월의 흔적
                         </div>
-                        <div><a href="#none" title="">MORE VIEW</a></div>
+                        <div>
+                            <a href="#none" title="">
+                                <span class="line1"></span>
+                                <span class="copy">MORE VIEW</span>
+                                <span class="line2"></span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
