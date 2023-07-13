@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/slick.css" />
+    <title>slider1</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+    * { margin:0; padding: 0; box-sizing: border-box; font-family: 'Montserrat','Noto Sans KR',sans-serif;}
+    a:link, a:visited { color:#333; text-decoration: none;}
+    li{list-style-type:none;}
+    #wrap{width: 100%;}
+    #wrap > section{position: relative; margin-top:100px;}
+    .main_txt_slide{width: calc(50%); height:480px; background: #0D6376; }
+    .main_txt_slide .txt_area{color:#fff;width: 450px;margin: 0 auto 0 240px;padding-top:100px;}
+    .main_txt_slide .txt_area span{display: inline-block; color:#E0C394; padding-bottom:20px;}
+    .main_txt_slide .txt_area .m_tit{font-size:2em; padding-bottom:50px;}
+    .main_txt_slide .txt_area a{color:#fff;}
+    
+    /* slick-dots */
+    .slick-dots{display: flex; justify-content: flex-end; margin:40px 250px 0 auto;}
+    .slick-dots li button{ background-color:transparent; border:0; color: rgba(255,255,255,0.5);  padding:10px 15px; border-bottom: 1px solid rgba(255,255,255,0.5); cursor: pointer;}
+    .slick-dots li button:hover,
+    .slick-dots li.slick-active button{color:#fff; border-bottom:1px solid #fff;}
+    .main_img_slide{width:60%;  position: absolute; bottom: -50px; right:0;}
+    .main_img_slide .slide_box_img.slick-slide{margin-right:10px;}
+    .main_img_slide .slide_box_img  a{display: block; width:100%;}
+    .main_img_slide .slick-slide img{width: 100%;}
+</style>
+<script>
+    $(document).ready(function(){
+        var txtSlider = $('.main_txt_slide'),
+            imgSlider = $('.main_img_slide');
+
+        txtSlider.slick({
+            rows: 1,
+            slidesToShow : 1,
+            slidesToScroll : 1,
+            dots : true,
+            arrows : false,
+            asNavFor: imgSlider,
+            customPaging: function(slider, i) {
+                var num;
+                i  += 1;
+                i < 10 && (num = "0" + i);
+                return `<button class="tab">${num}</button>`;
+            },
+        });
+
+        imgSlider.slick({
+            rows: 1,
+            slidesToShow : 2,
+            slidesToScroll : 1,
+            arrows: false,
+            asNavFor: txtSlider,
+        });
+    })
+</script>
+<body>
+    <div id="wrap">
+        <section>
+            <div class="main_txt_slide">
+                <div class="slide_box">
+                    <div class="txt_area">
+                        <span>SHINSEGAE GALLERY</span>
+                        <div class="m_tit">
+                            광주신세계<br />
+                            아트바캉스: 여행을 떠나요!
+                        </div>
+                        <div><a href="#none" title="">MORE VIEW</a></div>
+                    </div>
+                </div>
+                <div class="slide_box">
+                    <div class="txt_area">
+                        <span>SHINSEGAE GALLERY</span>
+                        <div class="m_tit">
+                            대전신세계 Art & Science<br />
+                            아트바캉스: OaSiS
+                        </div>
+                        <div><a href="#none" title="">MORE VIEW</a></div>
+                    </div>
+                </div>
+                <div class="slide_box">
+                    <div class="txt_area">
+                        <span>SHINSEGAE GALLERY</span>
+                        <div class="m_tit">
+                            본점<br />
+                            오세열: 세월의 흔적
+                        </div>
+                        <div><a href="#none" title="">MORE VIEW</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="main_img_slide">
+                <div class="slide_box_img">
+                    <a class="img_box" href="#none" title="">
+                        <img src="./image/dog-6527479_640.jpg" alt=""/>
+                    </a>
+                </div>
+                <div class="slide_box_img">
+                    <a class="img_box" href="#none" title="">
+                        <img src="./image/dogs-2556820_640.jpg" alt=""/>
+                    </a>
+                </div>
+                <div class="slide_box_img">
+                    <a class="img_box" href="#none" title="">
+                        <img src="./image/dogs-5282275_640.jpg" alt=""/>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
