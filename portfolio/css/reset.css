@@ -1,0 +1,6 @@
+*{margin:0; padding:0; box-sizing: border-box; color: #4c4c4c;}
+a:link,a:visited{color: #4c4c4c; text-decoration: none;}
+li{list-style-type: none;}
+header,footer,section,div,p,ul,ol,li{display: block;}
+img{width: 100%;}
+a{display:inline-block;}
