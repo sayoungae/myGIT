@@ -16,8 +16,9 @@
     li{list-style-type:none;}
     #wrap{width: 100%;}
     #wrap > section{position: relative; margin-top:100px;}
-    .main_txt_slide{width: calc(50%); height:480px; background: #0D6376; }
-    .main_txt_slide .txt_area{color:#fff;width: 450px;margin: 0 auto 0 240px;padding-top:100px;}
+    .main_txt_slide{width: calc(50%); height:480px;}
+    .main_txt_slide .slide_box{height:480px;}
+    .main_txt_slide .txt_area{color:#fff;width: 450px;margin: 0 auto;padding-top:100px;}
     .main_txt_slide .txt_area > span{display: inline-block; color:#E0C394; padding-bottom:20px;}
     .main_txt_slide .txt_area .m_tit{font-size:2em; padding-bottom:40px;}
     .main_txt_slide .txt_area a{
@@ -62,7 +63,7 @@
     .main_txt_slide .txt_area a.off .line2::after{transition-delay: 0.45s ;}
 
     /* slick-dots */
-    .slick-dots{display: flex; justify-content: flex-end; margin:40px 250px 0 auto;}
+    .slick-dots{display: flex; justify-content: flex-end; margin:40px 250px 0 auto; z-index: 1; position:absolute; right:35px; bottom:120px;}
     .slick-dots li button{ background-color:transparent; border:0; color: rgba(255,255,255,0.5);  padding:10px 15px; border-bottom: 1px solid rgba(255,255,255,0.5); cursor: pointer;}
     .slick-dots li button:hover,
     .slick-dots li.slick-active button{color:#fff; border-bottom:1px solid #fff;}
@@ -87,17 +88,29 @@
             autoplaySpeed: 2000,
             fade: true,
             customPaging: function(slider, i) {
-                var num;
-                i  += 1;
-                i < 10 && (num = "0" + i);
+                /*
+                    i  += 1;
+                    i < 10 && (num = "0" + i); 
+                */
+                var num = (i + 1) < 10 ? "0" + (i + 1) : (i + 1);
+                /* 
+                    '?' 는 조건연산자,
+                    세개의 피연산자를 가지며, 조건식이 참인 경우와 거짓인 경우에 각각 다른 값을 반환한다.
+                    ex) 조건식 ? 값1 : 값2
+                    true = 값1
+                    false = 값2
+
+                    즉,'(i + 1)'의 값이 10보다 작은 경우에는 '(i + 1)' 값 앞에 "0"을 붙인 문자열이 대입되고,
+                    10 이상인 경우에는 '(i + 1)' 의 값이 그대로 대입된다.
+                */
+                
                 return `<button class="tab">${num}</button>`;
             },
-        }).on('afterChange', function(){
-            
+        })/* .on('afterChange', function(){
             var colrSlideId = $('.slide_box.slick-active').find('.txt_area').attr("id");
             $('.main_txt_slide').css('backgroundColor','#'+colrSlideId);
             console.log(colrSlideId);
-        });
+        }); */
 
         imgSlider.slick({
             rows: 1,
@@ -107,14 +120,28 @@
             asNavFor: txtSlider,
         });
 
-        const vMore = $('.main_txt_slide .txt_area a');
-        vMore.mouseover(function(){
-            vMore.removeClass('off');
-            $(this).addClass('on');
+        // const vMore = $('.main_txt_slide .txt_area a');
+        // vMore.mouseover(function(){
+        //     vMore.removeClass('off');
+        //     $(this).addClass('on');
 
-        }).mouseleave(function(){
-            $(this).removeClass('on').addClass('off');
-        });
+        // }).mouseleave(function(){
+        //     $(this).removeClass('on').addClass('off');
+        // });
+        var vMore = document.querySelectorAll('.main_txt_slide .txt_area a');
+        vMore.forEach(function(e){
+            e.addEventListener('mouseover', function(){
+                vMore.forEach(function(item){
+                    item.classList.remove('off');
+                });
+                this.classList.add('on');
+            });
+
+            e.addEventListener('mouseleave', function(){
+                this.classList.remove('on');
+                this.classList.add('off');
+            });
+        })
 
         
     });
@@ -123,7 +150,7 @@
     <div id="wrap">
         <section>
             <div class="main_txt_slide">
-                <div class="slide_box">
+                <div class="slide_box" style="background-color: #0D6376;">
                     <div class="txt_area" id="0D6376">
                         <span>SHINSEGAE GALLERY</span>
                         <div class="m_tit">
@@ -139,7 +166,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="slide_box">
+                <div class="slide_box" style="background-color: #0d7648;">
                     <div class="txt_area"  id="0d7648">
                         <span>SHINSEGAE GALLERY</span>
                         <div class="m_tit">
@@ -155,7 +182,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="slide_box">
+                <div class="slide_box" style="background-color: #2d2d2c;">
                     <div class="txt_area"  id="2d2d2c">
                         <span>SHINSEGAE GALLERY</span>
                         <div class="m_tit">
