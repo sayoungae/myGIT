@@ -5,53 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/main.js"></script>
     <!-- css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/animation.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/main.css">
 
     <title>My Git</title>
 </head>
 <body>
+    <div class="sec_bg bg1"></div>
+    <div class="sec_bg bg2"></div>
     <div id="wrap">
         <div class="wrap_inner">
             <header id="header">
                 <div class="inner">
-                    <h1>
-                        <a href="#none" title="youngae portfolio">
-                            <img src="./image/My-project-1.png" alt="youngae"/>
-                        </a>
-                    </h1>
-                    <h2>2023 YOUNGAE PORTFOLIO</h2>
-                    <nav class="nav">
-                        <ul>
-                            <li><a href="#none">INTRO</a></li>
-                            <li><a href="#none">ABOUT</a></li>
-                            <li><a href="#none">WEB REDESIGN</a></li>
-                            <li><a href="#none">CLONE CODING</a></li>
-                        </ul>
-                    </nav>
+                    <div class="headBox">
+                        <h1>2023 YOUNGAE PORTFOLIO</h1>
+                        <nav class="nav">
+                            <ul>
+                                <li><a href="#intro">INTRO</a></li>
+                                <li><a href="#web_publishing">WEB PUBLISHING</a></li>
+                                <li><a href="#clone_coding">CLONE CODING</a></li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </header>
             <div class="container">
                 <div id="fullpage">
-                    <div class="section">
-                        <div class="inner" id="intro">
+                    <div class="section" id="intro">
+                        <div class="inner">
+                            <div class="my_info">
+                                <div class="pfp">
+                                    <span class="line l1"></span>
+                                    <img src="./image/my_pfp.gif" alt=""/>
+                                    <span class="line l2"></span>
+                                </div>
+                                <div class="my_info_all">
+                                    <ul>
+                                        <li>
+                                            <h3>PROFILE</h3>
+                                            <ul>
+                                                <li>
+                                                    <p class="tit">Name</p>
+                                                    <p>사영애</p>
+                                                </li>
+                                                <li>
+                                                    <p class="tit">Birth</p>
+                                                    <p>1993.03.05</p>
+                                                </li>
+                                                <li>
+                                                    <p class="tit">Phone</p>
+                                                    <p>010-8442-3277</p>
+                                                </li>
+                                                <li>
+                                                    <p class="tit">Mail</p>
+                                                    <p>leehso0305@naver.com</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <h3>SKILLS</h3>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section" id="web_publishing">
+                        <div class="inner">
 
                         </div>
                     </div>
-                    <div class="section">
-                        <div class="inner" id="about">
-
-                        </div>
-                    </div>
-                    <div class="section">
-                        <div class="inner" id="web_redesign">
-
-                        </div>
-                    </div>
-                    <div class="section">
-                        <div class="inner" id="clone_coding">
+                    <div class="section" id="clone_coding">
+                        <div class="inner">
 
                         </div>
                     </div>

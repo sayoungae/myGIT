@@ -1,0 +1,28 @@
+.section{width:100%; height:100vh;}
+
+#intro{}
+#intro .my_info{height:calc(100vh - 205px); display:flex; justify-content: center; align-items: center; gap:30px; padding:10px;}
+#intro .my_info .pfp{width:250px; position: relative; }
+#intro .my_info .pfp .line{position:absolute; left:0; top:0; width:100%; height:100%;}
+#intro .my_info .pfp .line::after,
+#intro .my_info .pfp .line::before{display:inline-block; content:''; position:absolute; }
+#intro .my_info .pfp .l1::before{
+    width:100%; height:2px; top:0; left:0;
+    background: rgb(0,113,247);
+    background: linear-gradient(90deg, rgba(207,179,152,1) 0%, rgba(255,254,251,1) 100%);
+}
+#intro .my_info .pfp .l1::after{
+    width:2px; height:100%; top:0; right:0;
+    background: rgb(0,113,247);
+    background: linear-gradient(180deg, rgba(207,179,152,1) 0%, rgba(255,254,251,1) 100%);
+}
+#intro .my_info .pfp .l2::before{
+    width:100%; height:2px; bottom:0; right:0;
+    background: rgb(207,179,152);
+background: linear-gradient(270deg, rgba(207,179,152,1) 0%, rgba(255,254,251,1) 100%);
+}
+#intro .my_info .pfp .l2::after{
+    width:2px; height:100%; bottom:0; left:0;
+    background: rgb(207,179,152);
+background: linear-gradient(0deg, rgba(207,179,152,1) 0%, rgba(255,254,251,1) 100%);
+}
