@@ -84,8 +84,8 @@
             dots : true,
             arrows : false,
             asNavFor: imgSlider,
-            autoplay: true,
-            autoplaySpeed: 2000,
+            /* autoplay: true,
+            autoplaySpeed: 2000, */
             fade: true,
             customPaging: function(slider, i) {
                 /*
@@ -93,7 +93,8 @@
                     i < 10 && (num = "0" + i); 
                 */
                 var num = (i + 1) < 10 ? "0" + (i + 1) : (i + 1);
-                /* 
+                
+                /*
                     '?' 는 조건연산자,
                     세개의 피연산자를 가지며, 조건식이 참인 경우와 거짓인 경우에 각각 다른 값을 반환한다.
                     ex) 조건식 ? 값1 : 값2
@@ -105,12 +106,15 @@
                 */
                 
                 return `<button class="tab">${num}</button>`;
+
             },
         })/* .on('afterChange', function(){
             var colrSlideId = $('.slide_box.slick-active').find('.txt_area').attr("id");
             $('.main_txt_slide').css('backgroundColor','#'+colrSlideId);
             console.log(colrSlideId);
         }); */
+
+ 
 
         imgSlider.slick({
             rows: 1,
@@ -143,7 +147,6 @@
             });
         })
 
-        
     });
 </script>
 <body>

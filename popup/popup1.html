@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <title>popup1</title>
+</head>
+<style>
+    .ns0530-pop {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 99999;
+    background: rgba(0, 0, 0, 0.5);
+}
+.ns0530-pop .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+ .ns0530-pop .box .img {
+   margin: 0;
+   max-width:1428px;
+   width: 90%;
+}
+.ns0530-pop .box .img img {
+  width: 100%;
+  height: auto;
+  max-height: 100vh;
+}
+.ns0530-pop .box .close-pop {
+  position: relative;
+  font-size: 0;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border: 1px solid #000;
+}
+.ns0530-pop .box .close-pop::before,
+.ns0530-pop .box .close-pop::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 30px;
+  background: #000;
+  top: calc(50% - 15px);
+  left: calc(50% - 1px);
+}
+.ns0530-pop .box .close-pop::before {
+  transform: rotate(45deg);
+}
+.ns0530-pop .box .close-pop::after {
+  transform: rotate(-45deg);
+}
+.ns0530-btn {
+  background: #ddd;
+  border-radius: 10px;
+  color: #000;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.ns0530-pop .box .img-box {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+img[usemap] {
+  border: none;
+  height: auto;
+  max-width: 100%;
+  width: auto;
+}
+</style>
+<script>
+    
+        $(function (e) {
+            function imgLoading() {
+                $(".ns0530-pop .box .load").show();
+                $(".ns0530-pop .box .close-pop").hide();
+                let timer = setInterval(function () {
+                if ($(".ns0530-pop .box .img img")[0].complete) {
+                    $(".ns0530-pop .box .load").hide();
+                    $(".ns0530-pop .box .close-pop").show();
+                    clearInterval(timer);
+                }
+                });
+            }
+            
+            $(".ns0530-pop").click(function () {
+                $(this).fadeOut("fast");
+            });
+            $(".ns0530-pop a.close-pop").click(function (e) {
+                e.preventDefault();
+            });
+            $("#ns0530-pop1").click(function () {    
+                $(".ns0530-pop .box .img").html('<img src="https://cdn.pixabay.com/photo/2022/08/17/15/46/labrador-7392840_1280.jpg" alt="">');
+                $(".ns0530-pop").fadeIn("fast");
+                imgLoading();
+            });
+            
+            $("#ns0530-pop2").click(function () {
+                $(".ns0530-pop .box .img").html('<img src="https://cdn.pixabay.com/photo/2023/06/19/15/45/paraglider-8074916_1280.jpg" alt="">');
+                $(".ns0530-pop").fadeIn("fast");
+                imgLoading();
+            });
+
+            $("#ns0530-pop3").click(function () {
+                $(".ns0530-pop .box .img").html('<img src="https://cdn.pixabay.com/photo/2023/06/12/00/11/smartphone-8057248_1280.jpg" alt="">');
+                $(".ns0530-pop").fadeIn("fast");
+                imgLoading();
+            });
+            
+            $("#ns0530-pop4").click(function () {
+                $(".ns0530-pop .box .img").html('<img src="https://cdn.pixabay.com/photo/2023/06/18/16/50/european-roe-deer-8072439_1280.jpg" alt="">');
+                $(".ns0530-pop").fadeIn("fast");
+                imgLoading();
+            });
+        });
+    
+</script>
+<body>
+    <div class="btn_area">
+        <a href="javascript:void()" class="ns0530-btn" id="ns0530-pop1">바로보기</a>
+        <a href="javascript:void()" class="ns0530-btn" id="ns0530-pop2">바로보기</a>
+        <a href="javascript:void()" class="ns0530-btn" id="ns0530-pop3">바로보기</a>
+        <a href="javascript:void()" class="ns0530-btn" id="ns0530-pop4">바로보기</a>
+    </div>
+    <div class="ns0530-pop">
+        <div class="box">
+          <div class="load">
+            <img src="https://www.gangdong.go.kr/web/newportal/file/image/uu/92fff39079014022806718cdd7ddab49" alt=""> </div>
+          <div class="img-box">
+            <div class="img"></div> <a href="#" class="close-pop">닫기</a>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
