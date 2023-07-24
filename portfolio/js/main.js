@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
     $('#fullpage').fullpage({
         licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
@@ -6,6 +7,8 @@ $(document).ready(function(){
         autoScrolling:true,
         scrollHorizontally: true,
         keyboardScrolling: true,
+		slidesNavigation: true,
+		slidesNavPosition: 'bottom',
         onLeave: function(){
 			$('.section [data-aos]').each(function(){
 				$(this).removeClass("aos-animate")
@@ -25,6 +28,17 @@ $(document).ready(function(){
 			$('.section.active [data-aos]').each(function(){
 				$(this).addClass("aos-animate")
 			});
+			let section = $('.section');
+			section.removeClass('on')
+			if(section.hasClass('active')){
+				this.addClass('on')
+			}else{
+				this.removeClass('on')
+			}
+			
+			
 		}
     });
+	
 });
+

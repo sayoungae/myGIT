@@ -1,28 +1,114 @@
+:root {
+    /* color */
+    --color-slide1 :rgba(237, 180, 112,0.8)
+}
 .section{width:100%; height:100vh;}
+h2{display:none;}
 
-#intro{}
-#intro .my_info{height:calc(100vh - 205px); display:flex; justify-content: center; align-items: center; gap:30px; padding:10px;}
-#intro .my_info .pfp{width:250px; position: relative; }
+#intro .my_info{height:255px; display:flex; justify-content: center; align-items: center; gap:70px; }
+#intro .my_info .pfp{width:250px; position: relative; background-color: rgba(242 236 225,0); transition:all 0.3s 1.3s; }
+#intro.on .my_info .pfp{background-color:rgba(242 236 225,0.2);}
 #intro .my_info .pfp .line{position:absolute; left:0; top:0; width:100%; height:100%;}
 #intro .my_info .pfp .line::after,
-#intro .my_info .pfp .line::before{display:inline-block; content:''; position:absolute; }
+#intro .my_info .pfp .line::before{display:inline-block; content:''; position:absolute; transition:all 0.3s; box-shadow: -1px 8px 21px 1px rgba(237,209,187,1);
+    -webkit-box-shadow: -1px 8px 21px 1px rgba(237,209,187,1);
+    -moz-box-shadow: -1px 8px 21px 1px rgba(237,209,187,1);}
 #intro .my_info .pfp .l1::before{
-    width:100%; height:2px; top:0; left:0;
-    background: rgb(0,113,247);
-    background: linear-gradient(90deg, rgba(207,179,152,1) 0%, rgba(255,254,251,1) 100%);
+    width:0%; height:2px; top:0; left:0;
+    background: rgb(207,179,152);
+    transition-delay : 0.2s;
 }
 #intro .my_info .pfp .l1::after{
-    width:2px; height:100%; top:0; right:0;
-    background: rgb(0,113,247);
-    background: linear-gradient(180deg, rgba(207,179,152,1) 0%, rgba(255,254,251,1) 100%);
+    width:2px; height:0%; top:0; right:0;
+    background: rgb(207,179,152);
+    transition-delay : 0.6s;
 }
 #intro .my_info .pfp .l2::before{
-    width:100%; height:2px; bottom:0; right:0;
+    width:0%; height:2px; bottom:0; right:0;
     background: rgb(207,179,152);
-background: linear-gradient(270deg, rgba(207,179,152,1) 0%, rgba(255,254,251,1) 100%);
+    transition-delay : 0.9s;
 }
 #intro .my_info .pfp .l2::after{
-    width:2px; height:100%; bottom:0; left:0;
+    width:2px; height:0%; bottom:0; left:0;
     background: rgb(207,179,152);
-background: linear-gradient(0deg, rgba(207,179,152,1) 0%, rgba(255,254,251,1) 100%);
+    transition-delay : 1.2s;
+}
+/*  on */
+#intro.on .my_info .pfp .l1::before{
+    width:100%;
+}
+#intro.on .my_info .pfp .l1::after{
+     height:100%;
+}
+#intro.on .my_info .pfp .l2::before{
+    width:100%;
+}
+#intro.on .my_info .pfp .l2::after{
+    height:100%;
+}
+
+#intro .my_info_all{height:100%; padding:10px;}
+#intro .my_info_all > ul{height:100%; display:flex; align-items: flex-start; gap:40px;}
+#intro .my_info_all > ul >li >h3{margin-bottom:20px; font-size:20px;}
+#intro .my_info_all > ul .info >ul >li{display: flex; padding:3px 0; font-size:14px;}
+
+#intro .my_info_all > ul .info p:nth-child(1){font-weight: 700;}
+#intro .my_info_all > ul .profile p:nth-child(1){width:80px;}
+#intro .my_info_all > ul .info.skills p:nth-child(1){width:120px;}
+#intro .my_info_all > ul .info.skills .level span{display: inline-block; width:45px; height:6px; border-radius: 20px; text-align: center; margin-right:5px;}
+#intro .my_info_all > ul .info.skills .level span.fill{background-color:#edb470;}
+#intro .my_info_all > ul .info.skills .level span.empty{background-color:#ead0b1;}
+
+/* web_publishing */
+.fp-controlArrow.fp-prev{border-color: transparent #444 transparent transparent;}
+.fp-controlArrow.fp-next{border-color: transparent transparent transparent #444;}
+#web_publishing .fp-controlArrow.fp-prev{left:75px;}
+#web_publishing .fp-controlArrow.fp-next{right:75px;}
+
+#web_publishing .content{max-width:1280px; min-height:600px; margin:0 auto; display: flex; gap:75px; position: relative;}
+#web_publishing .content .mockup{width:600px; position:relative;}
+
+#web_publishing .content .mockup .dev{ background-size: 100%; background-repeat: no-repeat; background-position: center;}
+#web_publishing .content .mockup .dev.pc{
+    width:600px;
+    height:100%;
+    background-image: url('../image/pc_dev.png');
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+}
+
+#web_publishing .content .desc_my_wep{width:calc(100% - 675px); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap:30px;  }
+#web_publishing .content .title_all{width:100%; border-bottom:1px solid #444; padding-bottom:30px;}
+#web_publishing .content .title_all h3{font-size:28px; letter-spacing: 0.1em; font-family: 'Black Han Sans', sans-serif;}
+#web_publishing .content .desc_all > li{display: flex; padding:3px 0;}
+#web_publishing .content .desc_all > li >p:nth-child(1){width:120px; font-size:18px;}
+#web_publishing .content .desc_all > li >p:nth-child(2){font-size:15px;}
+#web_publishing .content .website{margin-left:20px;}
+#web_publishing .content .website >a{display: block; padding:8px 12px; font-family: 'Black Han Sans', sans-serif; border:1px solid #444; border-radius: 5px; box-shadow: 1px 1px 0 rgba(0,0,0,1);}
+#web_publishing .content .website >a:hover{transform: translate(-3px,-3px); box-shadow: 3px 3px 0 rgba(0,0,0,1);}
+
+#web_publishing .slide .fp-tableCell{position:relative;}
+#web_publishing .slide .fp-tableCell:after{content:''; display: block; width:80%; height:80%; background-color:rgba(255,255,255,0.2); position:absolute; left:50%; top:50%; transform: translate(-50%,-50%); transition:all ease-out 0.2s; z-index:-1;}
+
+#web_publishing.on .slide .fp-tableCell:after{width:100%; height:400px; background-color:rgba(255,255,255,0.5);}
+#web_publishing .slide .bg_circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 0;
+    height: 0;
+    border-radius: 1000px;
+    z-index: -1;
+    transition:all 0.5s ease-in;
+    background:rgba(237, 180, 112,0);
+}
+#web_publishing.on .slide .bg_circle {
+    border-radius: 0px;
+    width: 100vw;
+    height: 100vh;
+    background:#edb470cc;
+    background: linear-gradient(142deg, rgba(237,180,112,1) 34%, rgba(255,238,218,1) 100%);
 }
