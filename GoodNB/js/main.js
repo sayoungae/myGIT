@@ -6,7 +6,7 @@ $(document).ready(function(){
             $('.main-slide').find('.slick-current').removeClass('reset-animation').addClass('slick-active');
         }, 1);
     });
-    // 메인슬라이더
+    // 메인슬라이드
     $('.main-slide').slick({
         rows: 1,
         infinite : true,
@@ -17,8 +17,6 @@ $(document).ready(function(){
         draggable: true,
         accessibility: true
     });
-
-
 
     // 탭박스
     $(".conBox").hide();
@@ -73,5 +71,5 @@ $(document).ready(function(){
 			$("#quick").removeClass("on");
 		}
 	});
-
+    
 });

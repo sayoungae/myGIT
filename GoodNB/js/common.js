@@ -1,5 +1,37 @@
 $(document).ready(function(){
-
+    $(function () {
+        screenResponse();
+    });
+ 
+    $(window).on('resize', function () {
+            screenResponse();
+        });
+    
+    
+    function screenResponse(){
+        let $html = $('html'),
+        pc = matchMedia("screen and (min-width:1025px)").matches,
+        mob =  matchMedia("screen and (max-width:600px)").matches;
+    
+        $html.removeAttr("class");
+        
+        if(pc){
+            isPc = true;
+            $html.addClass('pc');
+            //이벤트    
+        }else{
+            isDesktop = false;
+            $html.addClass("mob");
+        }
+        
+        if(mob){
+            isPhone = true;
+            $('.main-slide').addClass('mob');
+        }else{
+            isPhone = false;
+            $('.main-slide').removeClass('mob');
+        }
+    }
     // GNB
     const   dep1 = $('.depth1 > li >a'),
             dep2 = $('.depth2 >ul ');
@@ -51,9 +83,9 @@ $(document).ready(function(){
     $(".m_depth1 >li > a").click(function(){
         $(".m_depth2").stop().slideUp(200);
         if($(this).hasClass("on")){
-            $(this).addClass("on").next(".m_depth2").stop().slideUp(200);
+            $(this).removeClass("on").next(".m_depth2").stop().slideUp(200);
         }else{
-            $(this).addClass("on").next(".m_depth2").stop().slideDown(200);
+            $(this).addClass('on').next(".m_depth2").stop().slideDown(200);
 
         }
 
