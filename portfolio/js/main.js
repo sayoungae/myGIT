@@ -9,6 +9,7 @@ $(document).ready(function(){
         keyboardScrolling: true,
 		slidesNavigation: true,
 		slidesNavPosition: 'bottom',
+		anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
         onLeave: function(){
 			$('.section [data-aos]').each(function(){
 				$(this).removeClass("aos-animate")
