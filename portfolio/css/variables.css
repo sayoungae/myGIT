@@ -1,3 +1,8 @@
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+}
 :root{
     /* web-color */
     --color-web1: #166562;

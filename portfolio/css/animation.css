@@ -2,3 +2,12 @@
     0% {background-position: left;}
     100% {background-position: right;}
 }
+
+@keyframes spin{
+    0% {
+        --rotate: 0deg;
+      }
+      100% {
+        --rotate: 360deg;
+      }
+}
