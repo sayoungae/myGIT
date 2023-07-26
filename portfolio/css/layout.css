@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Stylish&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
 
-body{font-family: 'Noto Sans KR', sans-serif;}
+body{font-family: 'Noto Sans KR', sans-serif; color:#4f4f4f;}
 .sec_bg{position:fixed; top:0; left:0; width:100%; height:100%; background-position: left bottom; background-repeat: no-repeat; animation: bgMove 150s linear infinite; z-index:-1;}
 .bg1{background-color: #fffefb;
     background: -moz-linear-gradient(0deg, rgba(255,254,251,1) 0%, rgba(233,223,207,1) 100%);

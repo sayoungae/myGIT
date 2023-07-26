@@ -1,3 +1,4 @@
+
 .section{width:100%; height:100vh;}
 
 #intro .my_info{height:255px; display:flex; justify-content: center; align-items: center; gap:70px; }
@@ -83,7 +84,7 @@
 .web_publishing .fp-tableCell{position:relative;}
 .web_publishing .fp-tableCell:after{content:''; display: block; width:80%; height:80%; background-color:rgba(255,255,255,0.2); position:absolute; left:50%; top:50%; transform: translate(-50%,-50%); transition:all ease-out 0.2s; z-index:-1;}
 
-.web_publishing.on .fp-tableCell:after{width:100%; height:400px; background-color:rgba(255,255,255,0.5);}
+.web_publishing.on .fp-tableCell:after{width:100%; height:400px; background-color:rgba(255,255,255,0.6);}
 .web_publishing .bg_circle {
     position: absolute;
     top: 50%;
@@ -103,8 +104,17 @@
     background:#edb470cc;
     background: linear-gradient(142deg, rgba(237,180,112,1) 34%, rgba(255,238,218,1) 100%);
 }
-
-#wep1.on .bg_circle{
+/* 배민 */
+.web_publishing.web1.on{color:var(--color-web1);}
+.web_publishing.web1.on .content .title_all{border-color:var(--color-web1);}
+.web_publishing.web1.on .bg_circle{
     background: rgb(42,193,188);
-    background: linear-gradient(142deg, rgba(42,193,188,1) 19%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(142deg, rgba(42,193,188,1) 28%, rgba(14,112,109,1) 100%);
+}
+/* 굿네이버스 */
+.web_publishing.web2.on{color:var(--color-web2);}
+.web_publishing.web2.on .content .title_all{border-color:var(--color-web2);}
+.web_publishing.web2.on .bg_circle{
+    background: #97a836;
+    background: linear-gradient(to right, #97a836 0%, #70aa67 100%);
 }
