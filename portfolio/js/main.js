@@ -43,7 +43,7 @@ $(document).ready(function(){
 		text1: document.getElementById("txt1"),
 		text2: document.getElementById("txt2")
 	};
-
+	
 	const texts = [
 		"hello",
 		"wellcome",

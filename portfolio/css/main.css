@@ -1,6 +1,7 @@
 
 .section{width:100%; height:100vh;}
 
+#intro .inner{display: flex;flex-direction: column; justify-content: space-between; }
 #intro .welcome_tit{width: 500px; height:80px; margin:0 auto 100px; position:relative; text-align:center; filter: url(#threshold) blur(0.6px); }
 #intro .welcome_tit span{display: inline-block; width:100%;  position:absolute; left:0; top:0; font-family: 'DynaPuff', cursive; font-size: 80px; font-weight:700;text-align:center; text-transform: uppercase; color:#ec9325; letter-spacing: 0.12em;}
 
@@ -95,6 +96,13 @@
 #intro .my_info_all > ul .info.skills .level span.fill{background-color:#edb470;}
 #intro .my_info_all > ul .info.skills .level span.empty{background-color:#ead0b1;}
 
+#intro .scroll_down{display: flex;}
+#intro .scroll_down > div{width:100px;  margin:180px auto 0;}
+#intro .scroll_down > div > .mouse{width:45px; height:80px; margin: 0 auto; border:2px solid #fff; border-radius: 50px; position:relative; padding:5px; box-sizing: border-box; box-shadow: 2px 2px 3px rgba(255,255,255,0.6); overflow: hidden;}
+#intro .scroll_down > div > .mouse >span{display: inline-block; width:10px; height:10px; border-radius: 50%; background-color:#fff; position: absolute; left:50%; transform: translateX(-50%); animation: move 2s linear infinite;}
+#intro .scroll_down > div .txt{text-align: center; font-size:1em; padding-top:10px; color:#fff; font-weight: 700;}
+
+
 /* web_publishing */
 .web_publishing .content{max-width:1280px; min-height:600px; margin:0 auto; display: flex; gap:75px; position: relative;}
 .web_publishing .content .mockup{width:600px; position:relative;}
@@ -118,8 +126,8 @@
 .web_publishing .content .desc_all > li >p:nth-child(1){width:120px; font-size:18px;}
 .web_publishing .content .desc_all > li >p:nth-child(2){font-size:15px;}
 .web_publishing .content .website{margin-left:20px;}
-.web_publishing .content .website >a{display: block; padding:8px 12px; font-family: 'Do Hyeon', sans-serif; border:1px solid #444; border-radius: 5px; box-shadow: 1px 1px 0 rgba(0,0,0,1);}
-.web_publishing .content .website >a:hover{transform: translate(-3px,-3px); box-shadow: 3px 3px 0 rgba(0,0,0,1);}
+.web_publishing .content .website >a{display: block; padding:8px 12px; font-family: 'Do Hyeon', sans-serif; border:1px solid #444; border-radius: 5px; box-shadow: 3px 3px 0 rgba(0,0,0,1); transform: translate(-3px,-3px);}
+.web_publishing .content .website >a:hover{ transform: translate(0px,0px); box-shadow: 1px 1px 0 rgba(0,0,0,1);}
 
 .web_publishing .fp-tableCell{position:relative;}
 .web_publishing .fp-tableCell:after{content:''; display: block; width:80%; height:80%; background-color:rgba(255,255,255,0.2); position:absolute; left:50%; top:50%; transform: translate(-50%,-50%); transition:all ease-out 0.2s; z-index:-1;}
