@@ -15,9 +15,9 @@ window.onload = function() {
         const apparent = document.querySelector('.apparent > p > .data');
         const humi = document.querySelector('.humidity > p > .data');
         const wind = document.querySelector('.wind > p > .data');
-        const weatherId = data.weather[0].id;
         const weatherGradi = document.querySelector('#weather-gradient');
-        
+
+        let weatherId = data.weather[0].id;
         city.innerText = data.name;
         temper[0].innerText = Math.round(data.main.temp);
         temper[1].innerText = Math.round(data.main.temp);
@@ -72,14 +72,16 @@ window.onload = function() {
   let day = today.getDate();
   const WEEKDAY = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   let week = WEEKDAY[today.getDay()].slice(0, 3);
-  
+  console.log(WEEKDAY)
   document.querySelector('.days').innerText = week;
   document.querySelector('.month').innerText = month;
   document.querySelector('.year').innerText = year;
 
-  let select_day = Array.from(document.querySelectorAll('.select_day .day'));
-  
-  for (i = 0; i < 6; i++) {
-    select_day[i].innerHTML =  WEEKDAY[today.getDay()+i].slice(0, 3);
+  let select_day = document.querySelectorAll('.select_day .day');
+  let select_arr = new Array();
+  for (i = 0; i < 4; i++) {
+    select_arr.push(WEEKDAY[(today.getDay() + i) % 7]);
+    // console.log(select_arr, typeof(select_arr))
+    select_day[i].innerText = select_arr[i].slice(0,3)
   }
 }
