@@ -12,7 +12,7 @@ $(document).ready(function(){
 		anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thpage','6thpage', 'lastpage'],
         onLeave: function(){
 			$('.section [data-aos]').each(function(){
-				$(this).removeClass("aos-animate")
+				$(this).removeClass("aos-animate");
 			});
 		},
 		onSlideLeave: function(){
