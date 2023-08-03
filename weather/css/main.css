@@ -65,8 +65,8 @@
     }
     #data-content .data_inner .select_day li .day{font-size:13px;}
 
-    #data-content .data_inner .select_day li.on{background-color:#fff; color:#333;}
-    #data-content .data_inner .select_day li:hover{background-color:#fff; color:#333;}
+    #data-content .data_inner .select_day li.on{background:var(--gradi-sunny);}
+    #data-content .data_inner .select_day li:hover{background:var(--gradi-sunny);}
  
     /* weather_icon */
     #weather-gradient .weather_icon{width:60px; height:60px;}
@@ -74,8 +74,11 @@
     /* .weather_icon.sunny{background-image:url("./image/sunny.svg")}
     .weather_icon.cloudy{background-image:url("./image/cloudy.svg")}
     .weather_icon.rainy{background-image:url("//cdn.weatherapi.com/weather/64x64/day/116.png")} */
-    #data-content .data_inner .select_day li.on > .weather_icon{filter: invert(11%) sepia(42%) saturate(4%) hue-rotate(339deg) brightness(90%) contrast(77%);}
-    #data-content .data_inner .select_day li:hover > .weather_icon{filter: invert(11%) sepia(42%) saturate(4%) hue-rotate(339deg) brightness(90%) contrast(77%);}
+    #data-content .data_inner .select_day li > .weather_icon{ filter: invert(11%) sepia(42%) saturate(4%) hue-rotate(339deg) brightness(90%) contrast(77%);} 
+    #data-content .data_inner .select_day li.on > .weather_icon{filter:none}
+    #data-content .data_inner .select_day li.hover > .weather_icon{filter:none}
+
+    /* #data-content .data_inner .select_day li:hover > .weather_icon{filter: invert(11%) sepia(42%) saturate(4%) hue-rotate(339deg) brightness(90%) contrast(77%);} */
 
 
     #data-content .data_inner .change_loc{
