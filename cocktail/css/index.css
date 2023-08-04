@@ -256,16 +256,15 @@
 .pina-colada  .ingredients .pineapple_juice{height:45%; padding-top: 10px; margin-top: -15px; }
 .pina-colada  .ingredients .coconut_cream{height:30%; padding-top: 20px; border-top: 1px dashed rgba(75, 75, 75, 0.3); }
 
-/* long-iland */
-.cup.long-iland{}
-.long-iland .ingredients .gin{height:23%; padding-top: 22px; margin-top:-15px;}
-.long-iland .ingredients .vodka{height:23%; padding-top: 22px; margin-top:-15px;}
-.long-iland .ingredients .white_rum{height:23%; padding-top: 22px;margin-top:-15px;}
-.long-iland .ingredients .tequila{height:23%; padding-top: 25px; margin-top:-25px;}
-.long-iland .ingredients .cointreau{height:23%; padding-top: 22px; margin-top:-25px;}
-.long-iland .ingredients .lemon_juice{height:25%; padding-top: 20px; margin-top:-15px;}
-.long-iland .ingredients .simple_syrup{height:25%; padding-top: 20px; margin-top:-25px;}
-.long-iland .ingredients .coke{height:25%; padding-top: 20px; margin-top:-15px;}
+/* long-island */
+.long-island .ingredients .gin{height:23%; padding-top: 22px; margin-top:-15px;}
+.long-island .ingredients .vodka{height:23%; padding-top: 22px; margin-top:-15px;}
+.long-island .ingredients .white_rum{height:23%; padding-top: 22px;margin-top:-15px;}
+.long-island .ingredients .tequila{height:23%; padding-top: 25px; margin-top:-25px;}
+.long-island .ingredients .cointreau{height:23%; padding-top: 22px; margin-top:-25px;}
+.long-island .ingredients .lemon_juice{height:25%; padding-top: 20px; margin-top:-15px;}
+.long-island .ingredients .simple_syrup{height:25%; padding-top: 20px; margin-top:-25px;}
+.long-island .ingredients .coke{height:25%; padding-top: 20px; margin-top:-15px;}
 
 /* midori-sour */
 .midori-sour .ingredients .midori{height:35%; padding-top:15px; margin-top:-20px;}
