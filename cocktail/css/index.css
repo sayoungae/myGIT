@@ -132,11 +132,11 @@
     display: flex;
     flex-direction: column-reverse;
     justify-content: end;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.9);    
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
     clip-path: path('m 0 0 q 4.59 145.8 34.425 155.52 c 29.835 8.1 68.85 8.1 96.39 0 q 29.835 -9.72 29.835 -155.52 C 143 11 16 13 0 0 Z');
-
-}
-
+} 
 .ingredients li{
     width: 100%;
     height: 0;
@@ -172,6 +172,11 @@
 .ingredients .mint{background-image: url('../image/mint.png'); background-size: 100%; background-repeat: no-repeat; color:#fff;}
 .ingredients .orange_twist{background-image: url('../image/orange_twist.png'); background-size: 100%; background-repeat: no-repeat; background-position: center center; color:#000;}
 
+.cup .ingredients :is( .vodka, .white_rum, .gin, .sweet_sour_mix,.tequila, .tonic ,.sparkling_water, .sugar, .salt,
+.vodka_citron, .cointreau, .agave_tequila, .triple_sec, .lime_juice, .lemon_juice, .coconut_cream, .milk, .simple_syrup)::before{
+    border-bottom: 1px dashed rgba(75, 75, 75, 0.5);
+    opacity: 0.8;
+}
 .ingredients li::before{
     content: '';
     display: block;
@@ -182,16 +187,11 @@
     top: -10%;
     transition: all 1s ease-in-out;
     opacity: 0.1;
-    background: #fff;
+    /* background: #fff; */
     z-index: inherit; 
 }
-
-.cup .ingredients :is( .vodka, .white_rum, .gin, .sweet_sour_mix,.tequila, .tonic ,.sparkling_water, .sugar, .salt,
-.vodka_citron, .cointreau, .agave_tequila, .triple_sec, .lime_juice, .lemon_juice, .coconut_cream, .milk, .simple_syrup)::before{
-    border-bottom: 1px dashed rgba(75, 75, 75, 0.5);
-    opacity: 1;
-}
 .cup .ingredients :is(.coconut_cream, .milk, .simple_syrup)::before{background-color: rgb(255 250 223 / 50%); }
+
 .cup .ingredients::before {
     content: '';
     display: block;
