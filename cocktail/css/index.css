@@ -161,18 +161,16 @@
 .ingredients .whiskey{background: #cf8127;}
 .ingredients .calua{background-color:#3D2713; color:#fff;}
 .ingredients .midori{background-color:#39A330; color:#fff;}
-.ingredients .blue_curaso{background-color:#1C3886;}
-.ingredients :is(.orange_juice, .orange_twist){background-color: #F6AF2F;}
+.ingredients .blue_curaso{background-color:#1C3886; color:#fff;}
+.ingredients .orange_juice{background-color: #F6AF2F;}
 .ingredients .pineapple_juice{background-color: #F6D403;}
 .ingredients .cranberry_juice{background-color: #B60003; color:#fff;}
 .ingredients .salt, .sugar{background-color: #f2f2f2; background-image: url('../image/salt.png'); background-size: 100%; background-repeat: no-repeat;}
 
-.ingredients :is(.coconut_cream, .milk, .simple_syrup){background-color: rgba(255, 251, 231,1);}
+.ingredients :is(.coconut_cream, .milk, .simple_syrup){background-color: rgba(255, 253, 244,1);}
 .ingredients .coke{background: radial-gradient(circle, rgba(233,96,53,1) 0%, rgba(86,61,51,1) 100%);}
 .ingredients .mint{background-image: url('../image/mint.png'); background-size: 100%; background-repeat: no-repeat; color:#fff;}
-.ingredients :is(.coconut_cream, .milk, .simple_syrup)::before{
-    background-color: rgba(255, 249, 218,1)
-}
+.ingredients .orange_twist{background-image: url('../image/orange_twist.png'); background-size: 100%; background-repeat: no-repeat; background-position: center center; color:#000;}
 
 .ingredients li::before{
     content: '';
@@ -193,7 +191,7 @@
     border-bottom: 1px dashed rgba(75, 75, 75, 0.5);
     opacity: 1;
 }
-.cup .ingredients :is(.coconut_cream, .milk, .simple_syrup)::before{background-color:rgba(253, 247, 217, 0.5); }
+.cup .ingredients :is(.coconut_cream, .milk, .simple_syrup)::before{background-color: rgb(255 250 223 / 50%); }
 .cup .ingredients::before {
     content: '';
     display: block;
@@ -239,8 +237,8 @@
 /* Tequila-Sunrise */
 .tequila-sunrise .ingredients .tequila{
     height:30%;
-    padding-top: 10px;
-    margin-top: -15px;
+    padding-top: 20px;
+    margin-top: -23px;
 }
 .tequila-sunrise .ingredients .orange_juice{
     height:60%;
@@ -250,6 +248,7 @@
 .tequila-sunrise .ingredients .grenadine_syrup{
     height:15%;
 }
+.tequila-sunrise .ingredients .grenadine_syrup::before{height:15px;}
 
 /* pina-colada */
 .pina-colada  .ingredients .white_rum{height:30%; padding-top: 10px; margin-top: -21px; }
@@ -282,14 +281,43 @@
 .mojito .ingredients .sparkling_water{height:30%; padding-top:25px; margin-top: -30px;}
 .mojito .ingredients .mint{height:50%;  padding-top:15px; margin-top: -20px;}
 .mojito .ingredients .sugar{height:23%; padding-top:25px; margin-top: -20px;}
-
-
-
 /* white-russian */
+.white-russian .ingredients .vodka{height:45%; padding-top:15px; margin-top:-20px;}
+.white-russian .ingredients .calua{height:25%; padding-top:15px; margin-top:-20px;}
+.white-russian .ingredients .milk{height:40%; padding-top:15px;}
+
 /* calua-milk */
+.calua-milk .ingredients .calua{height:30%; padding-top:15px; margin-top:-20px;}
+.calua-milk .ingredients .milk{height:65%; padding-top:15px;}
 /* daiquiri */
+.daiquiri .ingredients .white_rum{height:65%; padding-top:15px; margin-top:-20px;}
+.daiquiri .ingredients .lime_juice{height:23%; padding-top:25px; margin-top:-20px;}
+.daiquiri .ingredients .sugar{height:23%; padding-top:25px; }
 /* blue-hawaii */
+.blue-hawaii .ingredients .white_rum{height:25%; padding-top:15px; margin-top:-20px;}
+.blue-hawaii .ingredients .vodka{height:25%; padding-top:15px; margin-top:-20px;}
+.blue-hawaii .ingredients .sweet_sour_mix{height:25%; padding-top:20px; margin-top:-22px;}
+.blue-hawaii .ingredients .blue_curaso{height:20%; padding-top:20px; margin-top:-20px;}
+.blue-hawaii .ingredients .pineapple_juice{height:45%; padding-top:15px;}
+
 /* god-father */
+.god-father .ingredients .whiskey{height:40%;  padding-top:15px; margin-top:-20px;}
+.god-father .ingredients .disaronno{height:20%;  padding-top:15px; margin-top:-20px;}
+.god-father .ingredients .disaronno::before{height:15px;}
+.god-father .ingredients .orange_twist{height:40%; padding-top:15px;}
 /* god-mother */
+.god-mother .ingredients .vodka{height:40%;  padding-top:15px; margin-top:-20px;}
+.god-mother .ingredients .disaronno{height:20%;  padding-top:15px; margin-top:-20px;}
+.god-mother .ingredients .disaronno::before{height:15px;}
+.god-mother .ingredients .orange_twist{height:40%; padding-top:15px;}
 /* margarita */
+.margarita .ingredients .tequila{height:45%;  padding-top:15px; margin-top:-20px;}
+.margarita .ingredients .triple_sec{height:25%;  padding-top:20px; margin-top:-20px;}
+.margarita .ingredients .lime_juice{height:25%;  padding-top:20px;}
 /* cosmopolitan */
+.cosmopolitan .ingredients .vodka_citron{height:45%;  padding-top:15px; margin-top:-20px;}
+.cosmopolitan .ingredients .cointreau{height:25%;  padding-top:18px; margin-top:-23px;}
+.cosmopolitan .ingredients .cranberry_juice{height:30%;  padding-top:15px; margin-top:-20px;}
+.cosmopolitan .ingredients .lime_juice{height:25%;  padding-top:15px;}
+
+
