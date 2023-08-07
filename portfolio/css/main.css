@@ -185,8 +185,8 @@
 
 #person_pro .content ul >li >div.txt_box .website >a{color:#fff; border: 1px solid #fff;  box-shadow: 3px 3px 0 rgba(255,255,255,1);}
 #person_pro .content ul >li >div.txt_box .website >a:hover {transform: translate(0px,0px); box-shadow: 1px 1px 0 rgba(255,255,255,1);}
-#person_pro .content ul >li:nth-child(1) div.txt_box{background-color:rgb(236, 147, 37)}
-#person_pro .content ul >li:nth-child(2){background-color:#70aa67}
+#person_pro .content ul >li:nth-child(1) div.txt_box{background-color:#65B2ED;}
+#person_pro .content ul >li:nth-child(2) div.txt_box{background-color:#FFA99F;}
 #person_pro .content ul >li:nth-child(3){background-color:#97a836}
 #person_pro .content ul >li:nth-child(4){background-color:#fda085}
 
