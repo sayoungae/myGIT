@@ -136,6 +136,7 @@
     border-radius: 0 0 8px 8px;
     overflow: hidden;
     clip-path: path('m 0 0 q 4.59 145.8 34.425 155.52 c 29.835 8.1 68.85 8.1 96.39 0 q 29.835 -9.72 29.835 -155.52 C 143 11 16 13 0 0 Z');
+    
 }
 .ingredients li{
     width: 100%;
