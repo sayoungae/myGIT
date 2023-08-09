@@ -23,17 +23,17 @@
     position:absolute;
     background-color: pink;
     transform: rotate(225deg);
-    top: -28px;
-    left: -160px;
+    top: -6px;
+    left: -145px;
 }
 .menu .option li{
     cursor: pointer;
     --_speed: 4;
-    padding: 4px 12px 1px 22px;
+    padding: 4px 12px 1px 29px;
     background-color:rgba(255,255,255,0.6);
     border-radius: 5px;
     position:absolute;
-    transform-origin: -170px 50%;
+    transform-origin: -145px 50%;
     /* transform: translate(46px, 0); */
     animation: rotateC calc(var(--_speed) * 36s) linear infinite;
     z-index:1;
