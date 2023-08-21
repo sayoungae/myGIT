@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DYNAMIC 충남청년</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" type="text/css" href="/chnYouth/css/common2.css">
+    <link rel="stylesheet" type="text/css" href="/chnYouth/css/index.css">
+
+    <script type="text/javascript" src="/chnYouth/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/chnYouth/js/slick.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+    <!-- calendar titleFomat -->
+    <script src='https://cdn.jsdelivr.net/npm/moment@2.27.0/min/moment.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/moment@5.5.0/main.global.min.js'></script>
+    <!-- //calendar titleFomat -->
+    <script type="text/javascript" src="/chnYouth/js/common.js"></script>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        titleFormat : 'YYYY . MM',
+        headerToolbar: {
+            left: 'prev',
+            center: 'title',
+            right: 'next'
+        },
+        contentHeight: 290,
+        dayMaxEvents: 3,
+        showNonCurrentDates: false,
+        events: [
+            {
+                title: ' Meeting',
+                start: '2023-08-10T14:30:00'
+            },
+            {
+                title: 'Happy Hour',
+                start: '2023-08-10T17:30:00'
+            },
+            {
+                title: 'Dinner',
+                start: '2023-08-10T20:00:00'
+            },
+            {
+                title: ' Meeting',
+                start: '2023-8-10T14:30:00'
+            },
+            {
+                title: 'Meeting',
+                start: '2023-08-12T14:30:00'
+            },
+            {
+                title: 'Happy Hour',
+                start: '2023-08-12T17:30:00'
+            },
+            {
+                title: 'Dinner',
+                start: '2023-08-12T20:00:00'
+            },
+            {
+                title: 'Birthday Party',
+                start: '2023-08-13T07:00:00'
+            },
+            {
+            title: ' Meeting',
+            start: '2023-09-30T14:30:00'
+            },
+            {
+                title: 'Happy Hour',
+                start: '2023-09-30T14:30:00'
+            },
+            {
+                title: 'Dinner',
+                start: '2023-09-30T14:30:00'
+            },
+        ],
+        eventContent: function (arg) {
+            const eventTitle = arg.event.title;
+
+            return {
+                html: `<span>아이콘</span>`,
+            };
+        },
+        eventClassNames: function(info) {
+            var classes = []
+            if (info.view.type == 'dayGridMonth' && info.event.title == 'break') {
+                classes.push('hidden')
+            }
+            // other rules for classes
+            return classes
+        }
+    });
+
+    calendar.render();
+
+    var eventHarnesses = document.querySelectorAll('.fc-daygrid-event-harness');
+
+    // event 인라인 style 제거
+    eventHarnesses.forEach(function(eventHarness) {
+        eventHarness.removeAttribute('style');
+    });
+    
+});
+
+</script>
+<body>
+    <!-- <div id="skip-nav" title="스킵내비게이션">
+        <a href="#center">본문내용 바로가기</a>
+        <a href="#gnb">상단메뉴 가기</a>
+    </div> -->
+    <div id="wrap">
+        <!-- HEADER -->
+        <header id="header">
+            <div class="header_top">
+                <div class="inner">
+                    <ul>
+                        <li><a href="#none">로그인</a></li>
+                        <li><a href="#none">회원가입</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header_box">
+                <div class="inner">
+                    <h1><a href="/" title="다이나믹충남청년"><img src="image/newLogo.png" alt="다이나믹충남청년"/></a></h1>
+                    <nav id="gnb">
+                        <ul class="depth1">
+                            <li>
+                                <a href="#none" title="충남청년정책">충남청년정책</a>
+                                <div>
+                                    <ul class="depth2"></ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#none" title="충남지원사업">충남지원사업</a>
+                                <div>
+                                    <ul class="depth2"></ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#none" title="청년소통">청년소통</a>
+                                <div>
+                                    <ul class="depth2"></ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#none" title="청년공간">청년공간</a>
+                                <div>
+                                    <ul class="depth2"></ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#none" title="청년제안">청년제안</a>
+                                <div>
+                                    <ul class="depth2"></ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="serch_btn">
+                        <button type="button" class="search" title="검색창 열기">
+                            <span class="material-symbols-outlined">search</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="totalSearch">
+                    <div class="inner">
+                        <div class="search_form">
+                            <form action="#" method="post">
+                                <label for="fKeyword">검색어</label>
+                                <input type="text" id="fKeyword" placeholder="검색어를 입력해주세요.">
+                                <button class="btn_totalSearch" type="button">검색</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- // HEADER -->
+        <!-- container -->
+        <div id="container">
+            <div id="main-f1">
+                <h2 class="blind">지원정책 검색</h2>
+                <div class="inner">
+                    <div class="content">
+                        <div class="left_cont">
+                            <h3>
+                                관심있는 <span>지원정책</span>을 찾아보세요.
+                            </h3>
+                            <div class="subSearch">
+                                <form id="srchFrm">
+                                    <div class="serch_in">
+                                        <input type="text" id="sKeyword" placeholder="검색어를 입력해주세요." title="검색어 입력">
+                                        <button type="button" class="search" title="검색창 열기">
+                                            <span class="material-symbols-outlined">search</span>
+                                        </button>
+                                    </div>
+                                    <div class="suggest">
+                                        <h4 class="blind">검색어 추천 목록</h4>
+                                        <a href="#none" title="충남청년">#충남청년</a>
+                                        <a href="#none" title="구인구직">#구인구직</a>
+                                        <a href="#none" title="소상공인">#소상공인</a>
+                                        <a href="#none" title="지원금">#지원금</a>
+                                    </div>
+                                    <div class="service_area">
+                                        <div class="chk_list">
+                                            <ul>
+                                                <li>
+                                                    <input type="checkbox" id="picAll" class="srchPicAll">
+                                                    <label for="picAll">
+                                                        <div>
+                                                            <!-- <img src="./image/f1_icon01.PNG"/> -->
+                                                            <span>전체</span>
+                                                        </div>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox"  id="srchPic_1" name="srchPic">
+                                                    <label for="srchPic_10">
+                                                        <div>
+                                                            <img src="./image/f1_icon01.PNG"/>
+                                                            <span>전체</span>
+                                                        </div>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox"  id="srchPic_2" name="srchPic">
+                                                    <label for="srchPic_2">
+                                                        <div>
+                                                            <img src="./image/f1_icon01.PNG"/>
+                                                            <span>교육</span>
+                                                        </div>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox"  id="srchPic_3" name="srchPic">
+                                                    <label for="srchPic_3">
+                                                        <div>
+                                                            <img src="./image/f1_icon01.PNG"/>
+                                                            <span>창업</span>
+                                                        </div>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox"  id="srchPic_4" name="srchPic" >
+                                                    <label for="srchPic_4">
+                                                        <div>
+                                                            <img src="./image/f1_icon01.PNG"/>
+                                                            <span>예술</span>
+                                                        </div>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox"  id="srchPic_5" name="srchPic" >
+                                                    <label for="srchPic_5">
+                                                        <div>
+                                                            <img src="./image/f1_icon01.PNG"/>
+                                                            <span>복지</span>
+                                                        </div>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox"  id="srchPic_6" name="srchPic" >
+                                                    <label for="srchPic_6">
+                                                        <div>
+                                                            <img src="./image/f1_icon01.PNG"/>
+                                                            <span>청년활동</span>
+                                                        </div>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox"  id="srchPic_7" name="srchPic" >
+                                                    <label for="srchPic_7">
+                                                        <div>
+                                                            <img src="./image/f1_icon01.PNG"/>
+                                                            <span>영농정착</span>
+                                                        </div>
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox"  id="srchPic_8" name="srchPic" >
+                                                    <label for="srchPic_8">
+                                                        <div>
+                                                            <img src="./image/f1_icon01.PNG"/>
+                                                            <span>주거</span>
+                                                        </div>
+                                                    </label>
+                                                </li>
+                                            </ul>
+                                            <div class="srh-select">
+                                                <select class="select1">
+                                                    <option value="" selected disabled hidden >대상별</option>
+                                                </select>
+                                                <select class="select2">
+                                                    <option value="" selected disabled hidden >연령별</option>
+                                                </select>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="policy_count">
+                                            <div class="img_box">
+                                                <img src="" >
+                                            </div>
+                                            <div class="txt_box">
+                                                현재 <span>49</span>건<br/>
+                                                신청가능해요
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="right_cont">
+                            <h3>실시간 정책순위</h3>
+                            <ul class="suggest">
+                                <li>
+                                    <p>1</p>
+                                    <span>충남희망이음</span>
+                                </li>
+                                <li>
+                                    <p>2</p>
+                                    <span>주택전세자금 대출 이자지원</span>
+                                </li>
+                                <li>
+                                    <p>3</p>
+                                    <span>지역특화 청년무역전문가</span>
+                                </li>
+                                <li>
+                                    <p>4</p>
+                                    <span>충남청년 네트워크</span>
+                                </li>
+                                <li>
+                                    <p>5</p>
+                                    <span>청년 공익활동가 육성</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="main-f2">
+                <h2 class="blind">메인배너</h2>
+                <div class="inner">
+                    <div class="main_slide">
+                        <a href="#none" title="" class="slider">
+                            <div class="img_box"><img src="" alt=""/>1</div>
+                        </a>
+                        <a href="#none" title="" class="slider">
+                            <div class="img_box"><img src="" alt=""/>2</div>
+                        </a>
+                        <a href="#none" title="" class="slider">
+                            <div class="img_box"><img src="" alt=""/>3</div>
+                        </a>
+                        <a href="#none" title="" class="slider">
+                            <div class="img_box"><img src="" alt=""/>4</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="main-f3">
+                <div class="inner">
+                    <div class="section1">
+                        <h2>지원가능한 청년지원사업</h2>
+                        <div class="tab_box">
+                            <ul class="tap_tit">
+                                <li class="on"><a href="#none" rel="tab1" title="전체">전체</a></li>
+                                <li><a href="#none" rel="tab2" title="일자리">일자리</a></li>
+                                <li><a href="#none" rel="tab3" title="주거">주거</a></li>
+                                <li><a href="#none" rel="tab4" title="복지문화">복지문화</a></li>
+                                <li><a href="#none" rel="tab5" title="영농">영농</a></li>
+                            </ul>
+                            <div class="cont_box">
+                                <div id="tab1" class="conBox" style="display: block;">
+                                    <ul class="tab_inner">
+                                        <li>
+                                            <a href="#none" title="">
+                                                <div class="img_box">
+                                                    <img src="./image/f3_img01.png"" alt=""/>
+                                                </div>
+                                                <div class="txt_box">
+                                                    <span class="region">충남</span>
+                                                    <h4>어린이집 보육교도우미 지원</h4>
+                                                    <span class="date">2023.07.01~2023.12.31</span>
+                                                </div>
+                                            </a>
+                                            <span>모집중</span>
+                                        </li>
+                                        <li>
+                                            <a href="#none" title="">
+                                                <div class="img_box">
+                                                    <img src="./image/f3_img01.png"" alt=""/>
+                                                </div>
+                                                <div class="txt_box">
+                                                    <span class="region">충남</span>
+                                                    <h4>어린이집 보육교도우미 지원</h4>
+                                                    <span class="date">2023.07.01~2023.12.31</span>
+                                                </div>
+                                            </a>
+                                            <span>모집중</span>
+                                        </li>
+                                        <li>
+                                            <a href="#none" title="">
+                                                <div class="img_box">
+                                                    <img src="./image/f3_img01.png"" alt=""/>
+                                                </div>
+                                                <div class="txt_box">
+                                                    <span class="region">충남</span>
+                                                    <h4>어린이집 보육교도우미 지원</h4>
+                                                    <span class="date">2023.07.01~2023.12.31</span>
+                                                </div>
+                                            </a>
+                                            <span>모집중</span>
+                                        </li>
+                                        <li>
+                                            <a href="#none" title="">
+                                                <div class="img_box">
+                                                    <img src="./image/f3_img01.png"" alt=""/>
+                                                </div>
+                                                <div class="txt_box">
+                                                    <span class="region">충남</span>
+                                                    <h4>어린이집 보육교도우미 지원</h4>
+                                                    <span class="date">2023.07.01~2023.12.31</span>
+                                                </div>
+                                            </a>
+                                            <span>모집중</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <a href="" title="더보기" class="t_more"><img src="" alt=""/></a>
+                        </div>
+                    </div>
+                    <div class="section2">
+                        <div class="left_box">
+                            <div class="notice">
+                                <h3>공지사항</h3>
+                                <div class="noti_slide">
+                                    <a href="#none" title="">
+                                        [당첨자 발표]취업성공 축하 설문조사 이벤트
+                                    </a>
+                                    <a href="#none" title="">
+                                        2023년 청년마을 만들기 지원사업 공모 안내
+                                    </a>
+                                    <a href="#none" title="">
+                                        청년월세 한시 특별지원 사업 안내
+                                    </a>
+                                    <a href="#none" title="">
+                                        2023년 청년공동체 활성화 사업 참여팀 모집 안내
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="commu">
+                                <h3>청년 커뮤니티</h3>
+                                <div class="commu_list">
+                                    <ul>
+                                        <li>
+                                            <p class="img_box">
+                                                <img src="" alt=""/>
+                                            </p>
+                                            <a href="#none" title="">'다이나믹 충남청년' 이란 무엇인가요?</a>
+                                            <span class="date">2023-07-21</span>
+                                        </li>
+                                        <li>
+                                            <p class="img_box">
+                                                <img src="" alt=""/>
+                                            </p>
+                                            <a href="#none" title="">'다이나믹 충남청년' 이란 무엇인가요?</a>
+                                            <span class="date">2023-07-21</span>
+                                        </li>
+                                        <li>
+                                            <p class="img_box">
+                                                <img src="" alt=""/>
+                                            </p>
+                                            <a href="#none" title="">'다이나믹 충남청년' 이란 무엇인가요?</a>
+                                            <span class="date">2023-07-21</span>
+                                        </li>
+                                        <li>
+                                            <p class="img_box">
+                                                <img src="" alt=""/>
+                                            </p>
+                                            <a href="#none" title="">'다이나믹 충남청년' 이란 무엇인가요?</a>
+                                            <span class="date">2023-07-21</span>
+                                        </li>
+                                    </ul>
+                                    <a href="" title="더보기" class="t_more"><img src="" alt=""/></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right_box">
+                            <div class="calendar_box">
+                                <h3>2023 <span>정책</span> 캘린더</h3>
+                                <div id="calendar">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="main-f4">
+                <div class="inner">
+                    <h2>청년생활 <span>꿀</span>팁!</h2>
+                    <div class="tab_box2">
+                        <ul class="tab_tit2">
+                            <li class="on"><a href="#none" rel="f5_tab1" title="취업준비생">취업준비생</a></li>
+                            <li><a href="#none" rel="f5_tab2" title="사회초년생">사회초년생</a></li>
+                            <li><a href="#none" rel="f5_tab3" title="신혼부부">신혼부부</a></li>
+                            <li><a href="#none" rel="f5_tab4" title="창업준비">창업준비</a></li>
+                        </ul>
+                        <div class="cont_box" id="cont_box2">
+                            <div id="f5_tab1" class="conBox" style="display: block;">
+                                <div class="tab_menu">
+                                    <ul class="list">
+                                        <li class="is_on">
+                                            <a href="#f5_tab1_list1" class="btn">금융관련</a>
+                                            <div id="f5_tab1_list1" class="cont">
+                                                <a href="#" title="">
+                                                    <span>청년수당</span>
+                                                    
+                                                </a>
+                                                <a href="#" title="">
+                                                    <span>대학생 학자금 대출이자 지원</span>
+                                                    
+                                                </a>
+                                                <a href="#" title="">
+                                                    <span>신용회복 사업</span>
+                                                    
+                                                </a>
+                                                <a href="#" title="">
+                                                    <span>청년층의 건강한 금융활동 지원</span>
+                                                    
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#f5_tab1_list2" class="btn">고민</a>
+                                            <div id="f5_tab1_list2" class="cont">
+                                                <a href="#" title="">
+                                                    <span>청년수당2</span>
+                                                    
+                                                </a>
+                                                <a href="#" title="">
+                                                    <span>대학생 학자금 대출이자 지원2</span>
+                                                    
+                                                </a>
+                                                <a href="#" title="">
+                                                    <span>신용회복 사업2</span>
+                                                    
+                                                </a>
+                                                <a href="#" title="">
+                                                    <span>청년층의 건강한 금융활동 지원2</span>
+                                                    
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#f5_tab1_list3" class="btn">스터디</a>
+                                            <div id="f5_tab1_list3" class="cont">
+                                                <a href="#" title="">
+                                                    <span>청년수당3</span>
+                                                    
+                                                </a>
+                                                <a href="#" title="">
+                                                    <span>대학생 학자금 대출이자 지원3</span>
+                                                    
+                                                </a>
+                                                <a href="#" title="">
+                                                    <span>신용회복 사업3</span>
+                                                    
+                                                </a>
+                                                <a href="#" title="">
+                                                    <span>청년층의 건강한 금융활동 지원3</span>
+                                                    
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#f5_tab1_list4" class="btn">면접정장</a>
+                                            <div id="f5_tab1_list4" class="cont">
+                                                <a href="#" title="">
+                                                    <span>청년수당4</span>
+                                                    
+                                                </a>
+                                                <a href="#" title="">
+                                                    <span>대학생 학자금 대출이자 지원4</span>
+                                                    
+                                                </a>
+                                                <a href="#" title="">
+                                                    <span>신용회복 사업4</span>
+                                                    
+                                                </a>
+                                                <a href="#" title="">
+                                                    <span>청년층의 건강한 금융활동 지원4</span>
+                                                    
+                                                </a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="f5_tab2" class="conBox" >
+                                <div class="tab_menu">
+                                    <ul class="list">
+                                        <li class="is_on">
+                                            <a href="#f5_tab1_list1" class="btn">금융관련</a>
+                                            <div id="f5_tab1_list1" class="cont">
+                                                <a href="#" title="">
+                                                    <span>청년수당</span>
+                                                    
+                                                </a>
+                                                <a href="#" title="">
+                                                    <span>대학생 학자금 대출이자 지원</span>
+                                                    
+                                                </a>
+                                                <a href="#" title="">
+                                                    <span>신용회복 사업</span>
+                                                    
+                                                </a>
+                                                <a href="#" title="">
+                                                    <span>청년층의 건강한 금융활동 지원</span>
+                                                    
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#f5_tab1_list2" class="btn">고민</a>
+                                            <div id="f5_tab1_list2" class="cont">
+                                                <a href="#" title="">
+                                                    <span>청년수당</span>
+                                                    
+                                                </a>
+                                                <a href="#" title="">
+                                                    <span>대학생 학자금 대출이자 지원</span>
+                                                    
+                                                </a>
+                                                <a href="#" title="">
+                                                    <span>신용회복 사업</span>
+                                                    
+                                                </a>
+                                                <a href="#" title="">
+                                                    <span>청년층의 건강한 금융활동 지원</span>
+                                                    
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#f5_tab1_list3" class="btn">스터디</a>
+                                            <div id="f5_tab1_list3" class="cont">
+                                                <a href="#" title="">
+                                                    <span>청년수당</span>
+                                                    
+                                                </a>
+                                                <a href="#" title="">
+                                                    <span>대학생 학자금 대출이자 지원</span>
+                                                    
+                                                </a>
+                                                <a href="#" title="">
+                                                    <span>신용회복 사업</span>
+                                                    
+                                                </a>
+                                                <a href="#" title="">
+                                                    <span>청년층의 건강한 금융활동 지원</span>
+                                                    
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#f5_tab1_list4" class="btn">면접정장</a>
+                                            <div id="f5_tab1_list4" class="cont">
+                                                <a href="#" title="">
+                                                    <span>청년수당</span>
+                                                    
+                                                </a>
+                                                <a href="#" title="">
+                                                    <span>대학생 학자금 대출이자 지원</span>
+                                                    
+                                                </a>
+                                                <a href="#" title="">
+                                                    <span>신용회복 사업</span>
+                                                    
+                                                </a>
+                                                <a href="#" title="">
+                                                    <span>청년층의 건강한 금융활동 지원</span>
+                                                </a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="" title="더보기" class="t_more"><img src="" alt=""/></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //container -->
+        <!-- footer -->
+        <footer id="footer">
+            <div class="inner">
+                <div class="copy_cnlogo"><img src="./image/copy_logo.png" alt="충청남도로고"></div>
+                <div class="f_bottom">
+                    <ul class="fnb">
+                        <li><a class="siteMap_open">사이트맵</a></li>
+                        <li><a href="/listIndvdlInfoPolicy.do">이용약관</a></li>
+                        <li><a href="/CpyrhtPrtcPolicyInqire.do">개인정보처리방침</a></li>
+                    </ul>
+                    <div class="foot_pra">
+                        <p>32255 충청남도 홍성군 홍북읍 충남대로 21 <span>전화 : 041-635-3995 </span></p>
+                        <p>COPYRIGHTⓒ2020 DYNAMIC충남청년 .ALLRIGHT RESERVED.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- //footer -->
+        <div id="reading_sns">
+            <ul>
+                <li>
+                    <a target="_blank" href="https://www.youtube.com/channel/UCboJhXNpjKROxeOsjvkyk9w" title="유튜브">
+                        <img src="./image/youtube.png" alt="">
+                        <span>유튜브</span>
+                    </a>
+                </li>
+                <li><a target="_blank" href="https://ko-kr.facebook.com/echungnam/" title="페이스북"><img src="./image/facebook.png" alt=""><span>페이스북</span></a></li>
+                <li><a target="_blank" href="https://www.instagram.com/chungnam_official/?hl=ko" title="인스타그램"><img src="./image/instargram.png" alt=""><span>인스타그램</span></a></li>
+                <li><a target="_blank" href="#none" title="블로그"><img src="./image/blog.png" alt=""><span>블로그</span></a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

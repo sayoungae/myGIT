@@ -1,0 +1,1924 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DYNAMIC 충남청년</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,-25" />
+    <!-- FullCalendar CSS -->
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.5.1/main.min.css' rel='stylesheet' />
+
+    <link rel="stylesheet" type="text/css" href="/chnYouth/css/common1.css">
+    <link rel="stylesheet" type="text/css" href="/chnYouth/css/main1.css">
+    <link rel="stylesheet" type="text/css" href="./css/respon1.css">
+
+    <script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="./js/slick.js"></script>
+     <!-- FullCalendar JS and Bootstrap JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+    <!-- calendar titleFomat -->
+    <!-- <script src='https://cdn.jsdelivr.net/npm/moment@2.27.0/min/moment.min.js'></script> -->
+    <!-- <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/moment@5.5.0/main.global.min.js'></script> -->
+    <!-- //calendar titleFomat -->
+    <script type="text/javascript" src="./js/common1.js"></script>
+    <script type="text/javascript" src="./js/draft1.js"></script>
+    
+
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        locale: "ko",
+        // titleFormat : 'MM YYYY [정책캘린더]',
+        headerToolbar: {
+            left: '',
+            center: '',
+            right: 'prev next'
+        },
+        showNonCurrentDates: false,
+        dayMaxEvents: 0,
+        events: [
+            {
+                title: ' Meeting',
+                start:  '2023-08-07',
+                display: 'list-item',
+            },
+            {
+                title: ' Meeting',
+                start: '2023-08-07',
+                display: 'list-item',
+            },
+            {
+                title: ' Meeting',
+                start: '2023-08-07',
+                display: 'list-item',
+            },
+            {
+                title: 'Meeting',
+                start: '2023-08-12',
+                display: 'list-item',
+            },
+            {
+                title: 'Birthday Party',
+                start: '2023-08-13',
+                display: 'list-item',
+            },
+            {
+                title: ' Meeting',
+                start: '2023-09-30',
+                display: 'list-item',
+            },
+
+        ],
+ /*         eventContent: function (arg, info) {
+            // 이벤트
+            const eventTitle = arg.event.title;
+
+            return {
+                html: `<span>event</span>`,
+            };
+        },*/
+        datesSet: function(info) {
+            var y = info.view.currentStart.getFullYear();
+            var m = info.view.currentStart.getMonth();
+
+            m = ('0' + (m + 1)).slice(-2)
+            console.log('year  = ' + y + ' month  = ' + m);
+            var month = document.getElementById('month');
+            var year = document.getElementById('year');
+            month.textContent = m;
+            year.textContent = y;
+        },
+    });
+
+    
+    calendar.render();
+
+    var eventHarnesses = document.querySelectorAll('.fc-daygrid-event-harness');
+    
+    // event 인라인 style 제거
+    eventHarnesses.forEach(function(eventHarness) {
+        eventHarness.removeAttribute('style');
+    });
+});
+
+</script>
+<body>
+    <!-- <div id="skip-nav" title="스킵내비게이션">
+        <a href="#center">본문내용 바로가기</a>
+        <a href="#gnb">상단메뉴 가기</a>
+    </div> -->
+    <div id="wrap">
+        <!-- HEADER -->
+        <header id="header">
+            <div class="header_top">
+                <div class="inner">
+                    <ul>
+                        <li><a href="#none">로그인</a></li>
+                        <li><a href="#none">회원가입</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header_box">
+                <div class="inner">
+                    <h1><a href="#none" title="다이나믹충남청년"><img src="image/newLogo.png" alt="다이나믹충남청년"/></a></h1>
+                    <nav id="gnb" class="header-menu">
+                        <ul class="depth1">
+                            <li class="on">
+                                <a href="#none" title="충남청년정책">충남청년정책</a>
+                                <div class="depth2" style="background-color:red">
+                                    <ul class="dep2_inner">1</ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#none" title="충남지원사업">충남지원사업</a>
+                                <div class="depth2" style="background-color:orange">
+                                    <ul class="dep2_inner">2</ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#none" title="청년소통">청년소통</a>
+                                <div class="depth2" style="background-color:yellow">
+                                    <ul class="dep2_inner">3</ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#none" title="청년공간">청년공간</a>
+                                <div class="depth2" style="background-color:green">
+                                    <ul class="dep2_inner">4</ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#none" title="청년제안">청년제안</a>
+                                <div class="depth2" style="background-color:plum">
+                                    <ul class="dep2_inner">5</ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="serch_box">
+                        <button type="button" class="search_btn" title="검색창 열기">
+                            <img src="./image/search1.svg"/>
+                        </button>
+                        <div class="nav_all">
+                            <a href="#none" class="hambur_box">
+                                <span class="hambur_inner"></span>
+                            </a>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="totalSearch">
+                    <div class="inner">
+                        <div class="search_form">
+                            <form action="#" method="post">
+                                <label for="fKeyword">검색어</label>
+                                <input type="text" id="fKeyword" placeholder="검색어를 입력해주세요.">
+                                <button class="btn_totalSearch" type="button">검색</button>
+                            </form>
+                        </div>
+                        <button type="button" title="검색창닫기" class="search_form_close">
+                            <span class="material-symbols-outlined">close</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="all_menu">
+                    <div class="all_menu_inner">
+                        <ul>
+                            <li><a href="" title=""></a></li>
+                        </ul>
+                        <button type="button" title="전체메뉴닫기" class="all_menu_close">
+                            <span class="material-symbols-outlined">close</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- // HEADER -->
+        <!-- container -->
+        <div id="container">
+            <section id="main-f1">
+                <h2 class="blind">메인배너</h2>
+                <div class="inner">
+                    <div class="top_cont">
+                        <div class="l_cont">
+                            <div class="main_slider">
+                                <a href="#none">
+                                    <img src=""/>
+                                </a>
+                                <a href="#none">
+                                    <img src=""/>
+                                </a>
+                            </div>
+                            <div class="controler">
+                                <div id="dots">
+                                </div>
+                                <button class="play" title="재생">
+                                    <span class="material-symbols-outlined">play_arrow</span>
+                                </button>
+                                <button class="stop" title="정지">
+                                    <span class="material-symbols-outlined">pause</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="r_cont">
+                            <div class="m_ranking">
+                                <h3>실시간 청년정책 순위</h3>
+                                <p>청년들이 가장 선호하는 정책을 확인해보세요!</p>
+                                <div class="rank_slide">
+                                    <a href="#none" class="slide">
+                                        <div>
+                                            <span class="numbering">1</span>
+                                            <span>충남희망이음</span>
+                                            <span class="up"></span>
+                                        </div>
+                                    </a>
+                                    <a href="#none" class="slide">
+                                        <div>
+                                            <span class="numbering">2</span>
+                                            <span>청년 소상공인 창업</span>
+                                            <span class="dw"></span>
+                                        </div>
+                                    </a>
+                                    <a href="#none" class="slide">
+                                        <div>
+                                            <span class="numbering">2</span>
+                                            <span>청년 소상공인 창업</span>
+                                            <span class="dw"></span>
+                                        </div>
+                                    </a>
+                                    <a href="#none" class="slide">
+                                        <div>
+                                            <span class="numbering">2</span>
+                                            <span>청년 소상공인 창업</span>
+                                            <span class="dw"></span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="tit">
+                                    <h3>맞춤 정책 검색</h3>
+                                    <p>신청 가능한 정책 <span>4</span>건</p>
+                                    <p class="bg_img"><img src="./image/main_f1_bgicon01.png" /></p>
+                                </div>
+                                <div class="select_box">
+                                    <form action="">
+                                        <select class="select1">
+                                            <option value="" selected disabled hidden >대상별</option>
+                                        </select>
+                                        <select class="select2">
+                                            <option value="" selected disabled hidden >연령별</option>
+                                        </select>
+                                        <select class="select2">
+                                            <option value="" selected disabled hidden >분야별</option>
+                                        </select>
+                                        <p><input type="button" value="정책찾기" title="정책찾기"/></p>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bott_cont">
+                        <div class="cont_b1">
+                            <h3>공지사항</h3>
+                            <ul>
+                                <li>
+                                    <a href="">
+                                        <p>충남시, 청년 대표 거점 공간 '청년작당소'에서 '작당모의'르르를르르를</p>
+                                        <span class="dateline">2023.07.19</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <p>청년의 고립·은둔 실태 조사</p>
+                                        <span class="dateline">2023.07.19</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <p>국토교통부 2030자문단 모집(청년정책위원단)</p>
+                                        <span class="dateline">2023.07.19</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <p>대학일자리플러스센터 거점형 프로그램(인공지능, 빅데이터)</p>
+                                        <span class="dateline">2023.07.18</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <p>충남시, 청년 대표 거점 공간 '청년작당소'에서 '작당모의'르르를르르를</p>
+                                        <span class="dateline">2023.07.19</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <a href="#none" title="공지사항 더보기" class="more">더보기</a>
+                        </div>
+                        <div class="cont_b2">
+                            <h3>충남청년의 <span>PICK!</span></h3>
+                            <ul>
+                                <li>
+                                    <a href="" title="청년생활 꿀팀">
+                                        <p class="img_box"><img src="./image/temImg01.PNG"/></p>
+                                        <p class="txt_box">청년생활 꿀팁</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="청년생활 커뮤니티">
+                                        <p class="img_box"><img src="./image/temImg02.PNG"/></p>
+                                        <p class="txt_box">청년생활 커뮤니티</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="청년공간정보">
+                                        <p class="img_box"><img src="./image/temImg03.PNG"/></p>
+                                        <p class="txt_box">청년공간정보</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="청년제안">
+                                        <p class="img_box"><img src="./image/temImg04.PNG"/></p>
+                                        <p class="txt_box">청년제안</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="cont_b3">
+                            <div class="calTitle">
+                                <p id="month"></p>
+                                <div>
+                                    <span id="year"></span>
+                                    <h3 class="tit">정책캘린더</h3>
+                                </div>
+                            </div>
+                            <div id="calendar" class="calendar">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="main-f2">
+                <h2>지원가능한 청년지원사업</h2>
+                <span>충남청년을 위해 다양한 프로그램을 운영하고 있습니다.</span>
+                <div class="tab_content">
+                    <div class="buttons">
+                        <button type="button" class="tab_btn active" data-filter="*">전체</button>
+                        <button type="button" class="tab_btn" data-filter="a">일자리</button>
+                        <button type="button" class="tab_btn" data-filter="b">주거</button>
+                        <button type="button" class="tab_btn" data-filter="c">교육</button>
+                        <button type="button" class="tab_btn" data-filter="d">복지문화</button>
+                        <button type="button" class="tab_btn" data-filter="e">영농</button>
+                    </div>
+                    <div class="tabs">
+                        <div class="tab active">
+                            <div class="tab_slider">
+                                <a href="" class="item a">
+                                    <div class="item_inner">
+                                        <div class="marks dj">
+                                            <span>충남</span>
+                                            <p class="area">당진시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>청년도전지원사업</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item b">
+                                    <div class="item_inner">
+                                        <div class="marks dj">
+                                            <span>충남</span>
+                                            <p class="area">당진시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>어린이집 보육도우미 지원</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item c">
+                                    <div class="item_inner">
+                                        <div class="marks ss">
+                                            <span>충남</span>
+                                            <p class="area">서산시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>서산시 청년네트워크 운영</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item d">
+                                    <div class="item_inner">
+                                        <div class="marks tan">
+                                            <span>충남</span>
+                                            <p class="area">태안군</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>청년인턴제 운영</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item e">
+                                    <div class="item_inner">
+                                        <div class="marks br">
+                                            <span>충남</span>
+                                            <p class="area">보령시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>태안학사 운영</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item f">
+                                    <div class="item_inner">
+                                        <div class="marks dj">
+                                            <span>충남</span>
+                                            <p class="area">당진시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>자격증지원사업</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <!-- 중복↓ -->
+                                <a href="" class="item a">
+                                    <div class="item_inner">
+                                        <div class="marks dj">
+                                            <span>충남</span>
+                                            <p class="area">당진시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>청년도전지원사업</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item b">
+                                    <div class="item_inner">
+                                        <div class="marks dj">
+                                            <span>충남</span>
+                                            <p class="area">당진시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>어린이집 보육도우미 지원</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item c">
+                                    <div class="item_inner">
+                                        <div class="marks ss">
+                                            <span>충남</span>
+                                            <p class="area">서산시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>서산시 청년네트워크 운영</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item d">
+                                    <div class="item_inner">
+                                        <div class="marks tan">
+                                            <span>충남</span>
+                                            <p class="area">태안군</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>청년인턴제 운영</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item e">
+                                    <div class="item_inner">
+                                        <div class="marks br">
+                                            <span>충남</span>
+                                            <p class="area">보령시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>태안학사 운영</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item f">
+                                    <div class="item_inner">
+                                        <div class="marks dj">
+                                            <span>충남</span>
+                                            <p class="area">당진시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>자격증지원사업</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item a">
+                                    <div class="item_inner">
+                                        <div class="marks dj">
+                                            <span>충남</span>
+                                            <p class="area">당진시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>청년도전지원사업</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item b">
+                                    <div class="item_inner">
+                                        <div class="marks dj">
+                                            <span>충남</span>
+                                            <p class="area">당진시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>어린이집 보육도우미 지원</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item c">
+                                    <div class="item_inner">
+                                        <div class="marks ss">
+                                            <span>충남</span>
+                                            <p class="area">서산시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>서산시 청년네트워크 운영</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item d">
+                                    <div class="item_inner">
+                                        <div class="marks tan">
+                                            <span>충남</span>
+                                            <p class="area">태안군</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>청년인턴제 운영</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item e">
+                                    <div class="item_inner">
+                                        <div class="marks br">
+                                            <span>충남</span>
+                                            <p class="area">보령시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>태안학사 운영</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item f">
+                                    <div class="item_inner">
+                                        <div class="marks dj">
+                                            <span>충남</span>
+                                            <p class="area">당진시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>자격증지원사업</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <!-- //중복끝 -->
+                            </div>
+                            <div class="tabArrows">
+                                <button type="button" class="tabPrev">←</button>
+                                <button type="button" class="tabNext">→</button>
+                            </div>
+                        </div>
+                        <!-- 일자리 -->
+                        <!-- <div class="tab">
+                            <div class="tab_slider">
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks dj">
+                                            <span>충남</span>
+                                            <p class="area">당진시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>청년도전지원사업</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks dj">
+                                            <span>충남</span>
+                                            <p class="area">당진시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>어린이집 보육도우미 지원</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks ss">
+                                            <span>충남</span>
+                                            <p class="area">서산시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>서산시 청년네트워크 운영</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks tan">
+                                            <span>충남</span>
+                                            <p class="area">태안군</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>청년인턴제 운영</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks br">
+                                            <span>충남</span>
+                                            <p class="area">보령시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>태안학사 운영</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks dj">
+                                            <span>충남</span>
+                                            <p class="area">당진시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>자격증지원사업</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="tabArrows">
+                                <button type="button" class="tabPrev">←</button>
+                                <button type="button" class="tabNext">→</button>
+                            </div>
+                        </div> -->
+                        <!-- //일자리 -->
+                        <!-- 주거 -->
+                        <!-- <div class="tab">
+                            <div class="tab_slider">
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks dj">
+                                            <span>충남</span>
+                                            <p class="area">당진시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>청년도전지원사업</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks dj">
+                                            <span>충남</span>
+                                            <p class="area">당진시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>어린이집 보육도우미 지원</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks ss">
+                                            <span>충남</span>
+                                            <p class="area">서산시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>서산시 청년네트워크 운영</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks tan">
+                                            <span>충남</span>
+                                            <p class="area">태안군</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>청년인턴제 운영</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks br">
+                                            <span>충남</span>
+                                            <p class="area">보령시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>태안학사 운영</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks dj">
+                                            <span>충남</span>
+                                            <p class="area">당진시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>자격증지원사업</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="tabArrows">
+                                <button type="button" class="tabPrev">←</button>
+                                <button type="button" class="tabNext">→</button>
+                            </div>
+                        </div> -->
+                        <!-- //주거 -->
+                        <!-- 교육 -->
+                        <!-- <div class="tab">
+                            <div class="tab_slider">
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks dj">
+                                            <span>충남</span>
+                                            <p class="area">당진시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>청년도전지원사업</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks dj">
+                                            <span>충남</span>
+                                            <p class="area">당진시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>어린이집 보육도우미 지원</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks ss">
+                                            <span>충남</span>
+                                            <p class="area">서산시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>서산시 청년네트워크 운영</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks tan">
+                                            <span>충남</span>
+                                            <p class="area">태안군</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>청년인턴제 운영</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks br">
+                                            <span>충남</span>
+                                            <p class="area">보령시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>태안학사 운영</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks dj">
+                                            <span>충남</span>
+                                            <p class="area">당진시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>자격증지원사업</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="tabArrows">
+                                <button type="button" class="tabPrev">←</button>
+                                <button type="button" class="tabNext">→</button>
+                            </div>
+                        </div> -->
+                        <!-- //교육 -->
+                        <!-- 복지문화 -->
+                        <!-- <div class="tab">
+                            <div class="tab_slider">
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks dj">
+                                            <span>충남</span>
+                                            <p class="area">당진시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>청년도전지원사업</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks dj">
+                                            <span>충남</span>
+                                            <p class="area">당진시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>어린이집 보육도우미 지원</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks ss">
+                                            <span>충남</span>
+                                            <p class="area">서산시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>서산시 청년네트워크 운영</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks tan">
+                                            <span>충남</span>
+                                            <p class="area">태안군</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>청년인턴제 운영</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks br">
+                                            <span>충남</span>
+                                            <p class="area">보령시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>태안학사 운영</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks dj">
+                                            <span>충남</span>
+                                            <p class="area">당진시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>자격증지원사업</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="tabArrows">
+                                <button type="button" class="tabPrev">←</button>
+                                <button type="button" class="tabNext">→</button>
+                            </div>
+                        </div> -->
+                        <!-- //복지문화 -->
+                        <!-- 영농 -->
+                        <!-- <div class="tab">
+                            <div class="tab_slider">
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks dj">
+                                            <span>충남</span>
+                                            <p class="area">당진시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>청년도전지원사업</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks dj">
+                                            <span>충남</span>
+                                            <p class="area">당진시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>어린이집 보육도우미 지원</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks ss">
+                                            <span>충남</span>
+                                            <p class="area">서산시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>서산시 청년네트워크 운영</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks tan">
+                                            <span>충남</span>
+                                            <p class="area">태안군</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>청년인턴제 운영</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks br">
+                                            <span>충남</span>
+                                            <p class="area">보령시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>태안학사 운영</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="item">
+                                    <div class="item_inner">
+                                        <div class="marks dj">
+                                            <span>충남</span>
+                                            <p class="area">당진시</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img src="./image/temImg4_1.jpg" alt=""/>
+                                        </div>
+                                        <div class="txt_box">
+                                            <h4>자격증지원사업</h4>
+                                            <ul>
+                                                <li>
+                                                    <span>대상</span>
+                                                    <span>19세 이상 청년</span>
+                                                </li>
+                                                <li>
+                                                    <span>모집기간</span>
+                                                    <span>2023-07-01~2023-12-31</span>
+                                                </li>
+                                                <li>
+                                                    <span>신청방법</span>
+                                                    <span>온라인 연계신청</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="tabArrows">
+                                <button type="button" class="tabPrev">←</button>
+                                <button type="button" class="tabNext">→</button>
+                            </div>
+                        </div> -->
+                        <!-- //영농 -->
+                    </div>
+                </div>
+            </section>
+            <section id="main-f3">
+                <div class="inner">
+                    <div class="cont1">
+                        <h3>충남청년 커뮤니티 최신글</h3>
+                        <div class="cont_inner">
+                            <ul>
+                                <li>
+                                    <span class="img_box"><img src="" alt=""/></span>
+                                    <a href="#none" title="" class="txt_box">
+                                        다들 돈 관리 어떻게 하고 계신가요?
+                                    </a>
+                                </li>
+                                <li>
+                                    <span class="img_box"><img src="" alt=""/></span>
+                                    <a href="#none" title="" class="txt_box">
+                                        사회생활 어떻게 해야 할지 모르겠네요..도와주세요
+                                    </a>
+                                </li>
+                                <li>
+                                    <span class="img_box"><img src="" alt=""/></span>
+                                    <a href="#none" title="" class="txt_box">
+                                        취업관련 고민이 있습니다.
+                                    </a>
+                                </li>
+                                <li>
+                                    <span class="img_box"><img src="" alt=""/></span>
+                                    <a href="#none" title="" class="txt_box">
+                                        22살 진로 고민
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#none" title="공지사항 더보기" class="more">더보기</a>
+                    </div>
+                    <div class="cont2">
+                        <h3>충남 SNS 소식</h3>
+                        <div class="tab_box">
+                            <ul class="tap_tit">
+                                <li class="on"><a href="#none" rel="tab1" title="유튜브">유튜브</a></li>
+                                <li><a href="#none" rel="tab2" title="페이스북">페이스북</a></li>
+                                <li><a href="#none" rel="tab3" title="인스타그램">인스타그램</a></li>
+                                <li><a href="#none" rel="tab4" title="블로그">블로그</a></li>
+                            </ul>
+                            <div class="cont_box">
+                                <div id="tab1" class="conBox" style="display: block;">
+                                    <ul class="tab_inner">
+                                        <li>
+                                            <a href="#none">
+                                                <div class="img_box"></div>
+                                                <div class="tit_box">
+                                                    <h4>[당충전] 전국 최초</h4>
+                                                    <p> #일회용품근절 #탈플라스틱 #충남도청 #탄소중립실천</p>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#none">
+                                                <div class="img_box"></div>
+                                                <div class="tit_box">
+                                                    <h4>[당충전] 충남청년마을 '아산도고 청년마을'</h4>
+                                                    <p> #충남청년마을 #아산도고청년마을 #도더지굴 #도고도고 #청년</p>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- //container-->
+        <!-- footer -->
+        <footer id="footer">
+            <div class="inner">
+                <div class="f_top">
+                    <div class="f_banner">
+                        <a href="#none" title="" class="slide">
+                            <img src="" alt=""/>
+                        </a>
+                        <a href="#none" title="" class="slide">
+                            <img src="" alt=""/>
+                        </a>
+                        <a href="#none" title="" class="slide">
+                            <img src="" alt=""/>
+                        </a>
+                        <a href="#none" title="" class="slide">
+                            <img src="" alt=""/>
+                        </a>
+                        <a href="#none" title="" class="slide">
+                            <img src="" alt=""/>
+                        </a>
+                        <a href="#none" title="" class="slide">
+                            <img src="" alt=""/>
+                        </a>
+                        <a href="#none" title="" class="slide">
+                            <img src="" alt=""/>
+                        </a>
+                    </div>
+                    <div class="controler">
+                        <button class="f_play" title="재생">
+                            <span class="material-symbols-outlined">play_arrow</span>
+                        </button>
+                        <button class="f_stop" title="정지">
+                            <span class="material-symbols-outlined">pause</span>
+                        </button>
+                        <button class="arrow f_banner_prev" >
+                            <span class="material-symbols-outlined">chevron_left</span>
+                        </button>
+                        <button class="arrow  f_banner_next">
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </button>
+                    </div>
+
+                </div>
+                <div class="f_bottom">
+                    <ul class="fnb">
+                        <li><a href="#none">홈페이지 도우미</a></li>
+                        <li class="bl"><a href="#none">개인정보처리방침</a></li>
+                        <li><a href="#none" class="siteMap_open">사이트맵</a></li>
+                        <li><a href="/listIndvdlInfoPolicy.do">이용약관</a></li>
+                        <li><a href="#none">오시는길</a></li>
+                    </ul>
+                    <div class="copy">
+                        <div class="copy_cnlogo"><img src="./image/copy_logo.png" alt="충청남도로고"></div>
+                        <div class="foot_pra">
+                            <p>[32255] 충청남도 홍성군 홍북읍 충남대로 21 </p>
+                            <p>전화 : 041-635-3995 </p>
+                            <p>COPYRIGHT ⓒ 2020 DYNAMIC충남청년 .ALLRIGHT RESERVED.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- //footer -->
+    </div>
+</body>
+</html>

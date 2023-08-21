@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="/chnYouth/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+    <!-- calendar titleFomat -->
+    <script src='https://cdn.jsdelivr.net/npm/moment@2.27.0/min/moment.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/moment@5.5.0/main.global.min.js'></script>
+    <!-- //calendar titleFomat -->
+    <title>Document</title>
+</head>
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var calendarEl = document.getElementById('calendar');
+  
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+          titleFormat : 'YYYY . MM',
+          headerToolbar: {
+              left: 'prev',
+              center: 'title',
+              right: 'next'
+          },
+        dayMaxEvents: true,
+        events: [
+            {
+            title: ' Meeting',
+            start: '2023-08-10T14:30:00'
+          },
+          {
+            title: 'Happy Hour',
+            start: '2023-08-10T17:30:00'
+          },
+          {
+            title: 'Dinner',
+            start: '2023-08-10T20:00:00'
+          },
+
+          {
+            title: ' Meeting',
+            start: '2023-8-10T14:30:00'
+          },
+          {
+            title: 'Meeting',
+            start: '2023-08-12T14:30:00'
+          },
+          {
+            title: 'Happy Hour',
+            start: '2023-08-12T17:30:00'
+          },
+          {
+            title: 'Dinner',
+            start: '2023-08-12T20:00:00'
+          },
+          {
+            title: 'Birthday Party',
+            start: '2023-08-13T07:00:00'
+          },
+        ],
+        eventContent: function (arg) {
+              const eventTitle = arg.event.title;
+  
+              return {
+                html: `<span>아이콘</span>`,
+              };
+          },
+          eventClassNames: function(info) {
+              var classes = []
+              if (info.view.type == 'dayGridMonth' && info.event.title == 'break') {
+                  classes.push('hidden')
+              }
+              // other rules for classes
+              return classes
+          }
+      });
+
+        calendar.render();
+       
+        var eventHarnesses = document.querySelectorAll('.fc-daygrid-event-harness');
+
+        // event 인라인 style 제거
+        eventHarnesses.forEach(function(eventHarness) {
+            eventHarness.removeAttribute('style');
+        });
+      
+    });
+  
+</script>
+<style>
+    *{margin:0; padding:0;}
+    body {
+      margin: 40px 10px;
+      padding: 0;
+      font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+      font-size: 14px;
+    }
+    .calendar_box{max-width:400px; padding:0 30px 30px; background-color: #FFD3D0; border-radius: 20px;}
+    .calendar_box h3{text-align: center; font-size:25px; padding:20px 0 15px;}
+    .calendar_box h3 >span{color:#F66351;}
+    #calendar {
+      /* max-width: 300px; */
+      padding:20px; 
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 2px 6px 15px rgba(0,0,0,0.2);
+    }
+    .fc-theme-standard .fc-scrollgrid{border:0;}
+    .fc-theme-standard td, .fc-theme-standard th{border:0;}
+
+    .fc .fc-daygrid-day.fc-day-today{background-color:transparent; color:#fff; position: relative;}
+    .fc .fc-daygrid-day.fc-day-today::before{content: ''; display:  block; width:45px; height:45px; background-color:rgba(0, 218, 191,0.8); border-radius: 50%; position: absolute; left:50%; top:50%; transform: translate(-50%,-50%);}
+    .fc .fc-daygrid-day-top{justify-content: center; padding-top: 10px;}
+    .fc .fc-daygrid-body-balanced .fc-daygrid-day-events{position:static; display: flex; align-items: center; justify-content: center; gap:3px;}
+    .fc .fc-daygrid-event-harness{text-indent: -9999px; width:8px; height:8px; background-color:#1D77CB; border-radius: 50%; position:static; visibility: initial;}
+    .fc .fc-daygrid-event-harness:nth-child(2){background-color:#6523C1}
+    .fc .fc-daygrid-event-harness:nth-child(3){background-color:#E66054}
+    .fc-daygrid-dot-event{height:5px;}
+    .fc-daygrid-dot-event.fc-event-mirror, .fc-daygrid-dot-event:hover{background-color:transparent;}
+    .fc .fc-daygrid-day-bottom{display: block;}
+  
+</style>
+  
+<body>
+    <div class="calendar_box">
+        <h3>2023 <span>정책</span> 캘린더</h3>
+        <div id="calendar">
+        
+        </div>
+    </div>
+</body>
+</html>
