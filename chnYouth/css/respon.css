@@ -1,0 +1,29 @@
+@media screen and (max-width : 1280px) {
+    #container > section >.inner{max-width: 95%;}
+    .bg_img::before{width:340px; height:335px; top:137px; outline:1px solid red;}
+    .bg_img::after {width:560px; height:440px; right:0; top:-13px;}
+
+}
+@media screen and (max-width : 1024px){
+   
+    .m_cont1 .srh_menu {padding:45px 35px;}
+    .m_cont1 .menu_box div{width: 75%;}
+    .m_cont1 .menu_box select{width: calc(50% - 20px); margin-bottom:20px; margin-right:10px;}
+    .m_cont1 .menu_box .sm_btn{width: 25%; margin-top: 45px;}
+
+}
+@media screen and (max-width : 640px){
+    .bg_img::before, .bg_img::after{display: none;}
+
+}
+
+@media screen and (max-width : 480px){
+    .bg_img::before, .bg_img::after{display: none;}
+    .m_cont1 .t_cont h2{font-size:37px;}
+    .m_cont1 .t_cont h2 >span::before{width: 22px;  height: 22px;    top: -16px; left:20px;}
+    .m_cont1 .cont_inner > p{font-size:14px;}
+
+    .m_cont1 .menu_box div{width: 100%;}
+    .m_cont1 .menu_box select{width: 100%;}
+    .m_cont1 .menu_box .sm_btn{width: 100%; margin-top:20px;}
+}

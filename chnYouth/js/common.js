@@ -1,63 +1,111 @@
-window.onload = function(){
-    // 메인배너
-    $('.main_slide').slick({
-      slide: 'a',
-      rows: 1,
-      slidesToShow : 3,
-      slidesToScroll : 1,
-      dots: true,
-      dotsClass: 'dots_custom',
-      arrows: true,
+$(document).ready(function(){
+    /* header */
+    // gnb
+    let dep1 = $('.depth1 >li >a');
+    dep1.bind('focus mouseover',function(){
+		if (window.innerWidth > 480){
+			if (! $('.header-menu').hasClass('pms')){
+				$('.header-menu').addClass('pms');
+				$('.depth1 > li').removeClass('on');
+				$(this).next('.depth2').slideDown(200);
+				$(this).parents('li').addClass('on');
+				$("#wrap").addClass('Menu-bg');
+			}else{
+				$('.depth1 > li').removeClass('on');
+				$(this).parents('li').addClass('on');
+				$('.depth2').hide();
+				$(this).next('.depth2').show();
+			}
+		}
+	});
+    $('.depth2').mouseleave(function(){        
+        $('.depth1 >li').removeClass('on')
+        $('.depth2').stop().slideUp(200);
+    });
+    dep1.focusout(function(){
+        setTimeout(function(){
+            if($('.depth1 a:focus').length < 1){
+                $(".depth1 > li").removeClass('on');
+                $(".depth2").removeClass('on');
+                $(".depth2").slideUp(200);
+            }
+        },100);
+	});
+
+    // totalSearch open
+    $('.search_btn').on('click keydown', function(e) {
+        if (e.type === 'click' || (e.type === 'keyup' && e.key === 'Enter')) {
+            $('.totalSearch').slideDown(200);
+            $('#fKeyword').focus();
+        }
+    });
+    // totalSearch close
+    $('.search_form_close').on('click keyup', function(e) {
+        if (e.type === 'click' || (e.type === 'keyup' && e.key === 'Enter')) {
+            $('.totalSearch').slideUp(200);
+            $('.search_btn').focus();
+        }
+    });
+     // all_menu open
+    $('.nav_all').on('click keyup', function(e) {
+        if (e.type === 'click' || (e.type === 'keyup' && e.key === 'Enter')) {
+            $('.all_menu').slideDown(200);
+        }
+    });
+     //  all_menu close
+    $('.all_menu_close').on('click keyup', function(e) {
+        if (e.type === 'click' || (e.type === 'keyup' && e.key === 'Enter')) {
+            $('.all_menu').slideUp(200);
+        }
     });
 
-    // 탭박스
-    $(".conBox").hide();
-    $(".conBox:first-child").show();
-    $(".tap_tit > li >a").on('click', function(){
-        $(".tap_tit li").removeClass("on");
-        $(this).parent().addClass("on");
-        $(this).closest("ul").siblings().find(".conBox").hide();
-
-        var activeTab = $(this).attr('rel');
-        $("#"+activeTab).fadeIn();
-        console.log(activeTab);
+    /*  footer */
+    $('.f_banner').slick({
+        slide: 'a',
+        slidesToShow : 5,
+        slidesToScroll : 1,
+        infinite : true,
+        arrows: false,
+        prevArrow: $('.f_banner_prev'),
+        nextArrow: $('.f_banner_next'),
+        autoplay: true,
+        autoplaySpeed: 3000,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 620,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            },
+        ]
+    });
+    $('.f_banner_prev').click(function(){
+        $('.f_banner').slick('slickPrev');
     });
 
-    // #main-f4 
-    $('.tab_tit2 >li >a').on('click', function(){
-      $(".tab_tit2 >li ").removeClass("on");
-      $(this).parent().addClass("on");
-      $(this).closest("ul").siblings().find(".conBox").hide();
-
-      var activeTab = $(this).attr('rel');
-      $("#"+activeTab).fadeIn();
-      console.log(activeTab);
-    })
-
-    $('.tab_menu .list > li >a').on('click', function(){
-      $(this).parent().siblings().removeClass('is_on');
-      $(this).parent().addClass('is_on');
-
-    })
-
-    // 공지사항
-    $('.noti_slide').slick({
-      slide: 'a',
-      rows: 1,
-      slidesToShow : 1,
-      slidesToScroll : 1,
-      arrows: true,
-      vertical: true,
-      
+    $('.f_banner_next').click(function(){
+        $('.f_banner').slick('slickNext');
     });
-
-    // 달력
-    document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'dayGridMonth'
-        });
-        calendar.render();
-        
-      });
-}
+    $('.f_play').click(function(){
+        $('.f_banner').slick('slickPlay');
+    });
+     
+    $('.f_stop').click(function(){
+        $('.f_banner').slick('slickPause');
+    });
+});
