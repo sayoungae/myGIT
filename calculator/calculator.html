@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <div id="wrap">
+        <div class="content">
+            <input type="text" readonly id="operator">
+            <input type="text" readonly id="result">
+            <div id="num_btn_box">
+                <div class="row">
+                    <button id="num-7">7</button>
+                    <button id="num-8">8</button>
+                    <button id="num-9">9</button>
+                    <button id="plus">+</button>
+                </div>
+                <div class="row">
+                    <button id="num-4">4</button>
+                    <button id="num-5">5</button>
+                    <button id="num-6">6</button>
+                    <button id="minus">-</button>
+                </div>
+                <div class="row">
+                    <button id="num-1">1</button>
+                    <button id="num-2">2</button>
+                    <button id="num-3">3</button>
+                    <button id="divide">/</button>
+                </div>
+                <div class="row">
+                    <button id="clear">C</button>
+                    <button id="num-0">0</button>
+                    <button id="calcultor">=</button>
+                    <button id="multiply">X</button>
+                </div>
+            </div>
+            <script>
+                let numOne = "";
+                let operator ="";
+                let numTwo ="";
+
+                const $operator = document.querySelector('#operator');
+                const $result = document.querySelector('#result');
+
+                const onClickNumber = (e) => {
+                    if(operator){
+                        numTwo += e.target.textContent;
+                    }else{
+                        numOne += e.target.textContent;                        
+                    }
+                    $result.value += e.target.textContent;
+                };
+
+                for(i = 0; i < 10; i++){
+                    document.querySelector(`#num-${i}`).addEventListener('click', onClickNumber);
+                }
+
+                const onClickOperator = (op) =>()=>{
+                    if(numOne){
+                        operator = op;
+                        $operator.value = op;
+                    }else{
+                        alert('숫자를 입력하시오');
+                    }
+                }
+
+                document.querySelector('#plus').addEventListener('click', onClickOperator('+'));
+                document.querySelector('#minus').addEventListener('click', onClickOperator('-'));
+                document.querySelector('#divide').addEventListener('click', onClickOperator('/'));
+                document.querySelector('#multiply').addEventListener('click', onClickOperator('*'));
+
+                document.querySelector('#calculate').addEventListener('click',() => {
+                    if(numTwo){
+                        switch(operator){
+                            case '+':
+                            $result.value = parseInt(numOne) + parseInt(numTwo);
+                            break;
+                            case '-':
+                            $result.value = parseInt(numOne) - parseInt(numTwo);
+                            break;
+                            case '/':
+                            $result.value = parseInt(numOne) / parseInt(numTwo);
+                            break;
+                            case '*':
+                            $result.value = parseInt(numOne) * parseInt(numTwo);
+                            break;
+                            default:
+                            break;
+
+                        }
+                        numOne = $result.value; 0
+                        numTwo ='';
+                    }
+                    if(numOne){
+                        operator = op;
+                        $operator.value = op
+                    }
+                    else{
+                        if(op === '-'){
+                            numOne = op;
+                            $result.value = numOne;
+                        }
+                        else{
+                            alet('숫자를 먼저 입력하세요')
+                        }
+                    }
+                })
+
+            </script>
+        </div>
+    </div>
+</body>
+</html>

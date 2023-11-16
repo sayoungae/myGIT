@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/calendar/css/naMain.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="/calendar/js/naSchd1.js"></script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="todayAssembly">
+            <!-- 현재 일자의 오늘의 국회 내용 -->
+            <div class="">
+                <!-- 의사일정 -->
+                <div class="Nacalendar">
+                    <!-- tab area -->
+                    <div>
+                        <div class="sub_tab" id="tab-schdl-btn-sect">
+                            <div class="mobile_sub_tab">
+                                <a href="javascript:;" class="on" title="선택됨">국회일정</a>
+                            </div>
+                            <ul id="tab-schdl" style="display: flex;">
+                                <li><a href="javascript:void(0);" id="ALL" data-no="0" title="국회일정 선택됨"
+                                        class="on">국회일정</a></li>
+                                <li><a href="javascript:void(0);" id="ASSEM_ALCMT" data-no="1">본회의/전원위</a></li>
+                                <li><a href="javascript:void(0);" id="CMMIT_PHCMT" data-no="2">위원회/공청회</a></li>
+                                <li><a href="javascript:void(0);" id="SPEAK_SBSPK" data-no="3">국회의장단</a></li>
+                                <li><a href="javascript:void(0);" id="PRESS" data-no="4">기자회견</a></li>
+                                <li><a href="javascript:void(0);" id="NAEVT" data-no="5">국회행사</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //tab area -->
+                    <div>
+                        <div class="calendar-wrap" style="width:100%;">
+                            <div class="assemblycalendarNew" style="display:block; width: 100%;">
+                                <div class="calendar-btn">
+                                    <strong id="calendar__meetYM" class="calendar-date">2023. 10</strong>
+                                    <ul>
+                                        <li><a href="javascript:;" id="calendar__btn_prev"><span
+                                                    class="sr-only">이전</span></a></li>
+                                        <li><a href="javascript:;" id="calendar__btn_next"><span
+                                                    class="sr-only">다음</span></a></li>
+                                    </ul>
+                                </div>
+                                <table>
+                                    <caption><strong>국회일정</strong>
+                                        <details>
+                                            <summary>설명</summary>
+                                            <p>일, 월, 화, 수, 목, 금, 토 정보를 포함하는 표</p>
+                                        </details>
+                                    </caption>
+                                    <colgroup>
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th class="sunday" scope="col">일</th>
+                                            <th scope="col">월</th>
+                                            <th scope="col">화</th>
+                                            <th scope="col">수</th>
+                                            <th scope="col">목</th>
+                                            <th scope="col">금</th>
+                                            <th scope="col" class="saturday">토</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="agenda_calendar__body">
+                                        <tr>
+                                            <td id="calDate__2023-10-01"><a href="javascript:;"><em
+                                                        style="color: rgb(247, 83, 56);">1</em>
+                                                    <ul></ul>
+                                                </a></td>
+                                            <td id="calDate__2023-10-02"><a href="javascript:;"><em
+                                                        style="color: rgb(247, 83, 56);">2</em>
+                                                    <ul></ul>
+                                                </a></td>
+                                            <td id="calDate__2023-10-03"><a href="javascript:;"><em
+                                                        style="color: rgb(247, 83, 56);">3</em>
+                                                    <ul></ul>
+                                                </a></td>
+                                            <td id="calDate__2023-10-04"><a href="javascript:;"><em>4</em>
+                                                    <ul>
+                                                        <li class="calenter_category_i_cmmit_phcmt"
+                                                            data-gubun="CMMIT_PHCMT"></li>
+                                                        <li class="calenter_category_i_speak_sbspk"
+                                                            data-gubun="SPEAK_SBSPK"></li>
+                                                        <li class="calenter_category_i_naevt" data-gubun="NAEVT"></li>
+                                                        <li class="calenter_category_i_press" data-gubun="PRESS"></li>
+                                                    </ul>
+                                                </a></td>
+                                            <td id="calDate__2023-10-05"><a href="javascript:;"><em>5</em>
+                                                    <ul>
+                                                        <li class="calenter_category_i_cmmit_phcmt"
+                                                            data-gubun="CMMIT_PHCMT"></li>
+                                                        <li class="calenter_category_i_speak_sbspk"
+                                                            data-gubun="SPEAK_SBSPK"></li>
+                                                        <li class="calenter_category_i_naevt" data-gubun="NAEVT"></li>
+                                                        <li class="calenter_category_i_press" data-gubun="PRESS"></li>
+                                                    </ul>
+                                                </a></td>
+                                            <td id="calDate__2023-10-06"><a href="javascript:;"><em>6</em>
+                                                    <ul>
+                                                        <li class="calenter_category_i_assem_alcmt"
+                                                            data-gubun="ASSEM_ALCMT"></li>
+                                                        <li class="calenter_category_i_cmmit_phcmt"
+                                                            data-gubun="CMMIT_PHCMT"></li>
+                                                        <li class="calenter_category_i_speak_sbspk"
+                                                            data-gubun="SPEAK_SBSPK"></li>
+                                                        <li class="calenter_category_i_naevt" data-gubun="NAEVT"></li>
+                                                        <li class="calenter_category_i_press" data-gubun="PRESS"></li>
+                                                    </ul>
+                                                </a></td>
+                                            <td id="calDate__2023-10-07"><a href="javascript:;"><em
+                                                        style="color: rgb(21, 81, 253);">7</em>
+                                                    <ul></ul>
+                                                </a></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="calDate__2023-10-08"><a href="javascript:;"><em
+                                                        style="color: rgb(247, 83, 56);">8</em>
+                                                    <ul></ul>
+                                                </a></td>
+                                            <td id="calDate__2023-10-09"><a href="javascript:;"><em
+                                                        style="color: rgb(247, 83, 56);">9</em>
+                                                    <ul></ul>
+                                                </a></td>
+                                            <td id="calDate__2023-10-10"><a href="javascript:;"><em>10</em>
+                                                    <ul>
+                                                        <li class="calenter_category_i_cmmit_phcmt"
+                                                            data-gubun="CMMIT_PHCMT"></li>
+                                                        <li class="calenter_category_i_speak_sbspk"
+                                                            data-gubun="SPEAK_SBSPK"></li>
+                                                        <li class="calenter_category_i_press" data-gubun="PRESS"></li>
+                                                    </ul>
+                                                </a></td>
+                                            <td id="calDate__2023-10-11"><a href="javascript:;"><em>11</em>
+                                                    <ul>
+                                                        <li class="calenter_category_i_cmmit_phcmt"
+                                                            data-gubun="CMMIT_PHCMT"></li>
+                                                        <li class="calenter_category_i_speak_sbspk"
+                                                            data-gubun="SPEAK_SBSPK"></li>
+                                                        <li class="calenter_category_i_naevt" data-gubun="NAEVT"></li>
+                                                        <li class="calenter_category_i_press" data-gubun="PRESS"></li>
+                                                    </ul>
+                                                </a></td>
+                                            <td id="calDate__2023-10-12"><a href="javascript:;"><em>12</em>
+                                                    <ul>
+                                                        <li class="calenter_category_i_cmmit_phcmt"
+                                                            data-gubun="CMMIT_PHCMT"></li>
+                                                        <li class="calenter_category_i_speak_sbspk"
+                                                            data-gubun="SPEAK_SBSPK"></li>
+                                                        <li class="calenter_category_i_naevt" data-gubun="NAEVT"></li>
+                                                        <li class="calenter_category_i_press" data-gubun="PRESS"></li>
+                                                    </ul>
+                                                </a></td>
+                                            <td id="calDate__2023-10-13"><a href="javascript:;"><em>13</em>
+                                                    <ul>
+                                                        <li class="calenter_category_i_cmmit_phcmt"
+                                                            data-gubun="CMMIT_PHCMT"></li>
+                                                        <li class="calenter_category_i_speak_sbspk"
+                                                            data-gubun="SPEAK_SBSPK"></li>
+                                                        <li class="calenter_category_i_naevt" data-gubun="NAEVT"></li>
+                                                        <li class="calenter_category_i_press" data-gubun="PRESS"></li>
+                                                    </ul>
+                                                </a></td>
+                                            <td id="calDate__2023-10-14"><a href="javascript:;"><em
+                                                        style="color: rgb(21, 81, 253);">14</em>
+                                                    <ul></ul>
+                                                </a></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="calDate__2023-10-15"><a href="javascript:;"><em
+                                                        style="color: rgb(247, 83, 56);">15</em>
+                                                    <ul>
+                                                        <li class="calenter_category_i_speak_sbspk"
+                                                            data-gubun="SPEAK_SBSPK"></li>
+                                                    </ul>
+                                                </a></td>
+                                            <td id="calDate__2023-10-16"><a href="javascript:;"><em>16</em>
+                                                    <ul>
+                                                        <li class="calenter_category_i_cmmit_phcmt"
+                                                            data-gubun="CMMIT_PHCMT"></li>
+                                                        <li class="calenter_category_i_speak_sbspk"
+                                                            data-gubun="SPEAK_SBSPK"></li>
+                                                        <li class="calenter_category_i_naevt" data-gubun="NAEVT"></li>
+                                                        <li class="calenter_category_i_press" data-gubun="PRESS"></li>
+                                                    </ul>
+                                                </a></td>
+                                            <td id="calDate__2023-10-17"><a href="javascript:;"><em>17</em>
+                                                    <ul>
+                                                        <li class="calenter_category_i_cmmit_phcmt"
+                                                            data-gubun="CMMIT_PHCMT"></li>
+                                                        <li class="calenter_category_i_speak_sbspk"
+                                                            data-gubun="SPEAK_SBSPK"></li>
+                                                        <li class="calenter_category_i_naevt" data-gubun="NAEVT"></li>
+                                                        <li class="calenter_category_i_press" data-gubun="PRESS"></li>
+                                                    </ul>
+                                                </a></td>
+                                            <td id="calDate__2023-10-18"><a href="javascript:;"><em>18</em>
+                                                    <ul>
+                                                        <li class="calenter_category_i_cmmit_phcmt"
+                                                            data-gubun="CMMIT_PHCMT"></li>
+                                                        <li class="calenter_category_i_speak_sbspk"
+                                                            data-gubun="SPEAK_SBSPK"></li>
+                                                        <li class="calenter_category_i_naevt" data-gubun="NAEVT"></li>
+                                                        <li class="calenter_category_i_press" data-gubun="PRESS"></li>
+                                                    </ul>
+                                                </a></td>
+                                            <td id="calDate__2023-10-19"><a href="javascript:;"><em>19</em>
+                                                    <ul>
+                                                        <li class="calenter_category_i_cmmit_phcmt"
+                                                            data-gubun="CMMIT_PHCMT"></li>
+                                                        <li class="calenter_category_i_speak_sbspk"
+                                                            data-gubun="SPEAK_SBSPK"></li>
+                                                        <li class="calenter_category_i_press" data-gubun="PRESS"></li>
+                                                    </ul>
+                                                </a></td>
+                                            <td id="calDate__2023-10-20"><a href="javascript:;"><em>20</em>
+                                                    <ul>
+                                                        <li class="calenter_category_i_speak_sbspk"
+                                                            data-gubun="SPEAK_SBSPK"></li>
+                                                        <li class="calenter_category_i_naevt" data-gubun="NAEVT"></li>
+                                                        <li class="calenter_category_i_press" data-gubun="PRESS"></li>
+                                                    </ul>
+                                                </a></td>
+                                            <td id="calDate__2023-10-21"><a href="javascript:;"><em
+                                                        style="color: rgb(21, 81, 253);">21</em>
+                                                    <ul>
+                                                        <li class="calenter_category_i_speak_sbspk"
+                                                            data-gubun="SPEAK_SBSPK"></li>
+                                                    </ul>
+                                                </a></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="calDate__2023-10-22"><a href="javascript:;"><em
+                                                        style="color: rgb(247, 83, 56);">22</em>
+                                                    <ul>
+                                                        <li class="calenter_category_i_speak_sbspk"
+                                                            data-gubun="SPEAK_SBSPK"></li>
+                                                    </ul>
+                                                </a></td>
+                                            <td id="calDate__2023-10-23"><a href="javascript:;"><em>23</em>
+                                                    <ul>
+                                                        <li class="calenter_category_i_cmmit_phcmt"
+                                                            data-gubun="CMMIT_PHCMT"></li>
+                                                        <li class="calenter_category_i_speak_sbspk"
+                                                            data-gubun="SPEAK_SBSPK"></li>
+                                                        <li class="calenter_category_i_naevt" data-gubun="NAEVT"></li>
+                                                        <li class="calenter_category_i_press" data-gubun="PRESS"></li>
+                                                    </ul>
+                                                </a></td>
+                                            <td id="calDate__2023-10-24"><a href="javascript:;"><em>24</em>
+                                                    <ul>
+                                                        <li class="calenter_category_i_cmmit_phcmt"
+                                                            data-gubun="CMMIT_PHCMT"></li>
+                                                        <li class="calenter_category_i_speak_sbspk"
+                                                            data-gubun="SPEAK_SBSPK"></li>
+                                                        <li class="calenter_category_i_naevt" data-gubun="NAEVT"></li>
+                                                        <li class="calenter_category_i_press" data-gubun="PRESS"></li>
+                                                    </ul>
+                                                </a></td>
+                                            <td id="calDate__2023-10-25"><a href="javascript:;"><em>25</em>
+                                                    <ul>
+                                                        <li class="calenter_category_i_speak_sbspk"
+                                                            data-gubun="SPEAK_SBSPK"></li>
+                                                        <li class="calenter_category_i_naevt" data-gubun="NAEVT"></li>
+                                                        <li class="calenter_category_i_press" data-gubun="PRESS"></li>
+                                                    </ul>
+                                                </a></td>
+                                            <td id="calDate__2023-10-26"><a href="javascript:;"><em>26</em>
+                                                    <ul>
+                                                        <li class="calenter_category_i_speak_sbspk"
+                                                            data-gubun="SPEAK_SBSPK"></li>
+                                                        <li class="calenter_category_i_naevt" data-gubun="NAEVT"></li>
+                                                        <li class="calenter_category_i_press" data-gubun="PRESS"></li>
+                                                    </ul>
+                                                </a></td>
+                                            <td id="calDate__2023-10-27" class="today on"><a href="javascript:;"
+                                                    title="선택일자"><em>27</em>
+                                                    <ul>
+                                                        <li class="calenter_category_i_cmmit_phcmt"
+                                                            data-gubun="CMMIT_PHCMT"></li>
+                                                        <li class="calenter_category_i_naevt" data-gubun="NAEVT"></li>
+                                                        <li class="calenter_category_i_press" data-gubun="PRESS"></li>
+                                                    </ul>
+                                                </a></td>
+                                            <td id="calDate__2023-10-28"><a href="javascript:;"><em
+                                                        style="color: rgb(21, 81, 253);">28</em>
+                                                    <ul></ul>
+                                                </a></td>
+                                        </tr>
+                                        <tr>
+                                            <td id="calDate__2023-10-29"><a href="javascript:;"><em
+                                                        style="color: rgb(247, 83, 56);">29</em>
+                                                    <ul></ul>
+                                                </a></td>
+                                            <td id="calDate__2023-10-30"><a href="javascript:;"><em>30</em>
+                                                    <ul>
+                                                        <li class="calenter_category_i_naevt" data-gubun="NAEVT"></li>
+                                                        <li class="calenter_category_i_press" data-gubun="PRESS"></li>
+                                                    </ul>
+                                                </a></td>
+                                            <td id="calDate__2023-10-31"><a href="javascript:;"><em>31</em>
+                                                    <ul>
+                                                        <li class="calenter_category_i_cmmit_phcmt"
+                                                            data-gubun="CMMIT_PHCMT"></li>
+                                                        <li class="calenter_category_i_naevt" data-gubun="NAEVT"></li>
+                                                        <li class="calenter_category_i_press" data-gubun="PRESS"></li>
+                                                    </ul>
+                                                </a></td>
+                                            <td><em></em>
+                                                <ul></ul>
+                                            </td>
+                                            <td><em></em>
+                                                <ul></ul>
+                                            </td>
+                                            <td><em></em>
+                                                <ul></ul>
+                                            </td>
+                                            <td><em style="color: rgb(21, 81, 253);"></em>
+                                                <ul></ul>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- schedule list -->
+                <div class="Naschedule">
+                    <div class="dateDiv" id="agenda__meetYmd">2023.10.27 (금)</div>
+                    <p class="nmain_more"><a id="goNaSchdl" href="javascript:void(0);" title="국회일정 더보기">더보기</a></p>
+                    <div class="Naschedule_list Assemscroll" id="agendaSchl__list">
+                        <ul>
+                            <li data-id="CMMIT"> <a href="javascript:void(0);" style="cursor:pointer;"
+                                    title="새창열림. 정무위원회 국정감사(금융위원회 등) [10:00]">
+                                    <dl>
+                                        <dt><span class="calenter_category_i_cmmit_phcmt"></span>정무위원회 국정감사(금융위원회 등)
+                                            [10:00]</dt>
+                                        <dd> <span class="time meetingTime">감사계속</span> <span
+                                                class="infoName">정무위원회</span> </dd>
+                                    </dl>
+                                </a></li>
+                            <li data-id="CMMIT"> <a href="javascript:void(0);" style="cursor:pointer;"
+                                    title="새창열림. 기획재정위원회 국정감사(기획재정부 등) [10:00]">
+                                    <dl>
+                                        <dt><span class="calenter_category_i_cmmit_phcmt"></span>기획재정위원회 국정감사(기획재정부 등)
+                                            [10:00]</dt>
+                                        <dd> <span class="time meetingTime">감사계속</span> <span
+                                                class="infoName">기획재정위원회</span> </dd>
+                                    </dl>
+                                </a></li>
+                            <li data-id="CMMIT"> <a href="javascript:void(0);" style="cursor:pointer;"
+                                    title="새창열림. 외교통일위원회 국정감사(외교부 등) [10:00]">
+                                    <dl>
+                                        <dt><span class="calenter_category_i_cmmit_phcmt"></span>외교통일위원회 국정감사(외교부 등)
+                                            [10:00]</dt>
+                                        <dd> <span class="time meetingTime">감사계속</span> <span
+                                                class="infoName">외교통일위원회</span> </dd>
+                                    </dl>
+                                </a></li>
+                            <li data-id="CMMIT"> <a href="javascript:void(0);" style="cursor:pointer;"
+                                    title="새창열림. 국방위원회 국정감사(국방부 등) [10:00]">
+                                    <dl>
+                                        <dt><span class="calenter_category_i_cmmit_phcmt"></span>국방위원회 국정감사(국방부 등)
+                                            [10:00]</dt>
+                                        <dd> <span class="time meetingTime">감사계속</span> <span
+                                                class="infoName">국방위원회</span> </dd>
+                                    </dl>
+                                </a></li>
+                            <li data-id="CMMIT"> <a href="javascript:void(0);" style="cursor:pointer;"
+                                    title="새창열림. 과학기술정보방송통신위원회 국정감사(과학기술정보통신부 등) [10:00]">
+                                    <dl>
+                                        <dt><span class="calenter_category_i_cmmit_phcmt"></span>과학기술정보방송통신위원회
+                                            국정감사(과학기술정보통신부 등) [10:00]</dt>
+                                        <dd> <span class="time meetingTime">감사계속</span> <span
+                                                class="infoName">과학기술정보방송통신위원회</span> </dd>
+                                    </dl>
+                                </a></li>
+                            <li data-id="CMMIT"> <a href="javascript:void(0);" style="cursor:pointer;"
+                                    title="새창열림. 산업통상자원중소벤처기업위원회 국정감사(중소벤처기업부 등) [10:00]">
+                                    <dl>
+                                        <dt><span class="calenter_category_i_cmmit_phcmt"></span>산업통상자원중소벤처기업위원회
+                                            국정감사(중소벤처기업부 등) [10:00]</dt>
+                                        <dd> <span class="time meetingTime">감사계속</span> <span
+                                                class="infoName">산업통상자원중소벤처기업위원회</span> </dd>
+                                    </dl>
+                                </a></li>
+                            <li data-id="CMMIT"> <a href="javascript:void(0);" style="cursor:pointer;"
+                                    title="새창열림. 환경노동위원회 국정감사(환경부 등) [10:00]">
+                                    <dl>
+                                        <dt><span class="calenter_category_i_cmmit_phcmt"></span>환경노동위원회 국정감사(환경부 등)
+                                            [10:00]</dt>
+                                        <dd> <span class="time meetingTime">감사계속</span> <span
+                                                class="infoName">환경노동위원회</span> </dd>
+                                    </dl>
+                                </a></li>
+                            <li data-id="CMMIT"> <a href="javascript:void(0);" style="cursor:pointer;"
+                                    title="새창열림. 국토교통위원회 국정감사(국토교통부 등) [10:00]">
+                                    <dl>
+                                        <dt><span class="calenter_category_i_cmmit_phcmt"></span>국토교통위원회 국정감사(국토교통부 등)
+                                            [10:00]</dt>
+                                        <dd> <span class="time meetingTime">감사계속</span> <span
+                                                class="infoName">국토교통위원회</span> </dd>
+                                    </dl>
+                                </a></li>
+                            <li data-id="NAEVT"> <a href="javascript:void(0);" style="cursor:pointer;"
+                                    title="새창열림. 소비자법과 형사처벌 : 방문판매법을 중심으로">
+                                    <dl>
+                                        <dt><span class="calenter_category_i_naevt"></span>소비자법과 형사처벌 : 방문판매법을 중심으로</dt>
+                                        <dd> <span class="time meetingTime">13:30~15:20</span> <span
+                                                class="infoName">의원회관 제2소회의실</span> </dd>
+                                    </dl>
+                                </a></li>
+                            <li data-id="NAEVT"> <a href="javascript:void(0);" style="cursor:pointer;"
+                                    title="새창열림. 혐오 차별 대응 방안 모색 토론회">
+                                    <dl>
+                                        <dt><span class="calenter_category_i_naevt"></span>혐오 차별 대응 방안 모색 토론회</dt>
+                                        <dd> <span class="time meetingTime">13:30~16:30</span> <span
+                                                class="infoName">의원회관 제8간담회의실(211호)</span> </dd>
+                                    </dl>
+                                </a></li>
+                            <li data-id="NAEVT"> <a href="javascript:void(0);" style="cursor:pointer;"
+                                    title="새창열림. 2023 연명의료 공개토론회 : 연명의료결정제도 5년, 사전연명의료의향서 상담사의 역할과 나아가야 할 방향">
+                                    <dl>
+                                        <dt><span class="calenter_category_i_naevt"></span>2023 연명의료 공개토론회 : 연명의료결정제도
+                                            5년, 사전연명의료의향서 상담사의 역할과 나아가야 할 방향</dt>
+                                        <dd> <span class="time meetingTime">14:00~16:30</span> <span
+                                                class="infoName">의원회관 신관 제3세미나실</span> </dd>
+                                    </dl>
+                                </a></li>
+                            <li data-id="PRESS"> <a href="javascript:void(0);" style="cursor:default;"
+                                    title="링크 없음. 10.29 이태원 참사 1주기, 김선영 용산구의원 국민의힘 탈당 기자회견">
+                                    <dl>
+                                        <dt><span class="calenter_category_i_press"></span>10.29 이태원 참사 1주기, 김선영 용산구의원
+                                            국민의힘 탈당 기자회견</dt>
+                                        <dd> <span class="time meetingTime">10:00</span> <span class="infoName">김영호
+                                                의원</span> </dd>
+                                    </dl>
+                                </a></li>
+                            <li data-id="PRESS"> <a href="javascript:void(0);" style="cursor:default;"
+                                    title="링크 없음. 오송지하차도 참사 국정조사 촉구 기자회견">
+                                    <dl>
+                                        <dt><span class="calenter_category_i_press"></span>오송지하차도 참사 국정조사 촉구 기자회견</dt>
+                                        <dd> <span class="time meetingTime">10:40</span> <span class="infoName">도종환
+                                                의원</span> </dd>
+                                    </dl>
+                                </a></li>
+                        </ul>
+                    </div>
+
+                    <div class="calenter_category">
+
+                        <p><span class="calenter_category_i_assem_alcmt"></span> 본회의/전원위</p>
+                        <p><span class="calenter_category_i_cmmit_phcmt"></span> 위원회/공청회</p>
+                        <p><span class="calenter_category_i_speak_sbspk"></span> 국회의장단</p>
+                        <p><span class="calenter_category_i_press"></span> 기자회견</p>
+                        <p><span class="calenter_category_i_naevt"></span> 국회행사</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

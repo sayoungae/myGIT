@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="./js/calendar2.js"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
+
+    body { background-color : skyblue; } 
+    *{margin:0; padding:0;}
+    li{list-style:none;}
+    #wrap {
+        background-color : white;
+        height: auto;
+        width: 400px;
+        margin: 0px;
+        padding: 20px;
+        margin: 0 auto;
+        border-radius:5px;
+        box-shadow:0px 40px 30px -20px rgba(0,0,0,0.3);
+        position: relative;
+    }
+
+    td {
+        width: 50px;
+        height: 50px;
+    }
+
+    .Calendar {
+        text-align: center;
+    }
+
+    .Calendar>thead>tr:first-child>td {
+        font-family: 'Questrial', sans-serif;
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+
+    .Calendar>thead>tr:last-child>td {
+        font-family: 'Questrial', sans-serif;
+        font-weight: 600;     
+    }
+
+    .Calendar>tbody>tr>td>p {
+        font-family: 'Montserrat', sans-serif;
+        height: 45px;
+        width: 45px;
+        border-radius: 45px;
+        transition-duration: .2s;
+        line-height: 45px;
+        margin: 2.5px;
+        display: block;
+        text-align: center;
+    }        
+
+    .pastDay {
+        color: lightgray;
+    }
+
+    .today {
+        background-color: #F5D042;            
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .futureDay {
+        background-color: #FFFFFF;
+        cursor: pointer;
+    }
+    .futureDay:hover{
+        background:#eee;
+    }
+
+    .futureDay.choiceDay,
+    .today.choiceDay {
+        background: #0A174E;
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    #event_list_box{
+        position: absolute;
+        bottom:-200px;
+        left:0;
+        width: 100%;
+        height:200px;
+        outline:1px solid red;
+        background-color:#fff;
+    }
+</style>
+<body>
+    <div id="wrap">
+        <table class="Calendar">
+            <thead>
+                <tr>
+                    <td onClick="prevCalendar();" style="cursor:pointer;">&#60;</td>
+                    <td colspan="5">
+                        <span id="calYear"></span>년
+                        <span id="calMonth"></span>월
+                    </td>
+                    <td onClick="nextCalendar();" style="cursor:pointer;">&#62;</td>
+                </tr>
+                <tr>
+                    <td>일</td>
+                    <td>월</td>
+                    <td>화</td>
+                    <td>수</td>
+                    <td>목</td>
+                    <td>금</td>
+                    <td>토</td>
+                </tr>
+            </thead>
+
+            <tbody>
+            </tbody>
+        </table>
+        <div id="event_list_box">
+            <div class="event_input">
+                <!-- <form action="calendar2.html" method="post"> -->
+                    <input type="text" name="events" title="events" id="events">
+                    <button type="submit" id="addEvent">등록</button>
+                <!-- </form> -->
+            </div>
+            <div>
+                <ul id="event_list">
+                </ul>
+                <button type="button" id="allClear">모두삭제</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

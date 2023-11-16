@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>custm_cale</title>
+</head>
+<style>
+    *{margin:0; padding:0;}
+    li{list-style-type: none;}
+    a:visited,a:link{text-decoration: none; color:#333;}
+    a{display: inline-block; cursor: pointer;}
+    i,span, b, strong{display: inline-block;}
+    input[type="text"]{border:0; padding:8px 10px; border-radius: 3px; background-color: transparent; color:#333;}
+    .clearfix{clear: both;}
+    body{font-size:11px;}
+    #wrap{width: 100%;}
+    #content{width: 100%; height: 100vh; background-color: #EEEDE9; position: relative;}
+    #calendar{
+        width: 800px;
+        height: 400px;
+        background-color: bisque;
+        position: absolute;
+        left:50%;
+        top:50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    .col{padding:40px;}
+    .leftCol{width: 35%; background-color:#F48989; color:#fff;}
+    .rightCol{width: 65%; background-color:#fff; color:#333;}
+
+    .nav{text-align: center; padding-bottom:10px; display: flex; justify-content: center; gap: 20px;}
+    .nav .nav-btn{background-color: transparent; color:#fff; font-weight: 700; border:0; font-size:1.8em; cursor: pointer;}
+
+    h1{font-size:2.5em; font-weight: normal; padding-bottom: 40px;}
+    .notes > p{
+        padding:0 5px 5px;
+        border-bottom: 1px solid #fff;
+        font-size:2em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .noteList{
+        padding:10px 5px;
+    }
+    .noteList >li{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size:1.5em;
+    }
+    .noteList >li >button{border:0; background-color: transparent; font-size:0.9em;}
+
+    #year{font-size: 1.6em; color:#a3a3a3; text-align: right; padding-bottom:30px; font-weight: normal;}
+    #weekday{padding-bottom: 25px;}
+    #weekday > li{width: calc(100% / 7); text-align: center; float:left; font-size:1.2em; text-transform: uppercase;}
+    #dates >li{
+        width: calc(100% / 7);
+        height: 40px;
+        float:left;
+        font-size:1.2em;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    #dates >li >a{width: 30px; height: 30px; line-height: 30px; border-radius: 8px;}
+    #dates >li >a:hover,
+    #dates >li >a:focus{background-color: #eaeaea; color:#333;}
+    #dates >li > .today{background-color: #F5A1A3; color:#fff;}
+    #dates >li > .other{opacity: 0.3; pointer-events: none;}
+
+    #weekday >li:nth-child(7n + 1),
+    #dates >li:nth-child(7n + 1) >a{color: #D13E3E;}
+
+    #weekday >li:nth-child(7n),
+    #dates >li:nth-child(7n) >a{color: #396EE2;}
+</style>
+<body>
+    <div id="wrap">
+        <div id="content">
+            <form action="" method="">
+                <div id="calendar">
+                    <div class="col leftCol">
+                        <div class="inner">
+                            <div class="nav">
+                                <button class="nav-btn go-prev" onclick="prevMonth()">&lt;</button>
+                                <button class="nav-btn go-today" onclick="goToday()">Today</button>
+                                <button class="nav-btn go-next" onclick="nextMonth()">&gt;</button>
+                            </div>
+                            <h1 class="dateTit">
+                                <span class="yearTit">2023</span>
+                                <span class="monthTit">11</span>
+                                <span class="dayTit">12</span>
+                            </h1>
+                            <div class="notes">
+                                <p>
+                                    <input type="text" value="" placeholder="new note" id="inputField"/>
+                                    <a href="#" title="Add note" class="addNote animate" id="addToDo">+</a>
+                                </p>
+                                <ul class="noteList" id="toDoList">
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col rightCol">
+                        <div class="inner">
+                            <h2 id="year">2023</h2>
+                            <ul id="weekday" class="clearfix">
+                                <li>일</li>
+                                <li>월</li>
+                                <li>화</li>
+                                <li>수</li>
+                                <li>목</li>
+                                <li>금</li>
+                                <li>토</li>
+                            </ul>
+                            <ul id="dates" class="clearfix"></ul>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        // https://bigtop.tistory.com/64 참고
+        let date = new Date();
+
+        const renderCalendar = () => {
+            const viewYear = date.getFullYear();
+            const viewMonth = date.getMonth();
+
+            let titMonth = date.getMonth()
+            document.querySelector("#year").textContent = `${viewYear}년 ${viewMonth+1}월`;
+
+            const prevLast = new Date(viewYear, viewMonth, 0);
+            const thisLast = new Date(viewYear, viewMonth + 1, 0);
+
+            const PLDate = prevLast.getDate();
+            const PLDay = prevLast.getDay();
+
+            const TLDate = thisLast.getDate();
+            const TLDay = thisLast.getDay();
+
+            const prevDates = [];
+            const thisDates = [...Array(TLDate + 1).keys()].slice(1);
+            /*
+                1. Array(n)으로 배열을 만들면 길이가 n인 배열이 생성됩니다. (이때 모든 요소들은 undefined)
+
+                2. 그런데 모든 요소들이 empty 값이기 때문에 keys() 메서드를 활용하면 0부터 n - 1까지의 Array Iterator가 생성되는데,
+
+                3. 전개 구문을 통해서 이 Array Iterator를 배열로 만들어 내면 0부터 n-1까지의 배열을 얻어낼 수가 있습니다.
+
+                4. 그래서 이번 달 마지막 날짜 + 1을 n에 전달해주고
+
+                5. 제일 앞에 있는 0을 없애기 위해서 slice 메서드를 활용한 것이죠.
+            */
+            const nextDates = [];
+
+            if (PLDay !== 6) {
+                for (let i = 0; i < PLDay + 1; i++) {
+                    prevDates.unshift(PLDate - i);
+                }
+            }
+
+            for (let i = 1; i < 7 - TLDay; i++) {
+                nextDates.push(i);
+            }
+
+            const dates = prevDates.concat(thisDates, nextDates);
+            const firstDateIndex = dates.indexOf(1);
+            const lastDateIndex = dates.lastIndexOf(TLDate);
+
+            dates.forEach((date, i) => {
+                const condition = i >= firstDateIndex && i < lastDateIndex + 1
+                            ? 'this'
+                            : 'other';
+
+                dates[i] = `<li class="date"><a href="#none" title="${date}" class="${condition}">${date}</a></li>`;
+            });
+
+            document.querySelector('#dates').innerHTML = dates.join('');
+
+            // 오늘 날짜 그리기
+            const today = new Date();
+            const year = date.getFullYear();
+            const month = ('0' + (date.getMonth() + 1)).slice(-2);
+            const day = ('0' + date.getDate()).slice(-2);
+            const dateStr = `${year}-${month}-${day}`;
+            if (viewMonth === today.getMonth() && viewYear === today.getFullYear()) {
+                for (let date of document.querySelectorAll('.this')) {
+                    if (+date.innerText === today.getDate()) {
+                        date.classList.add('today');
+                        break;
+                    }
+                }
+            };
+
+            const dateElements = document.querySelectorAll('.date a');
+            const yearTit = document.querySelector('.yearTit');
+            const monthTit = document.querySelector('.monthTit');
+            const dayTit = document.querySelector('.dayTit');
+
+            yearTit.textContent = `${year}년`;
+            monthTit.textContent = `${month}월`;
+            dayTit.textContent = `${day}일`;
+
+            dateElements.forEach((dateElement) => {
+                dateElement.addEventListener('click', () => {
+                    const clickedDate = dateElement.getAttribute('title');
+                    yearTit.textContent = `${year}년`;
+                    monthTit.textContent = `${month}월`;
+                    dayTit.textContent = `${clickedDate}일`;
+                });
+            });
+
+            
+        }
+
+        renderCalendar();
+
+        const prevMonth = () => {
+            date.setDate(1);
+            date.setMonth(date.getMonth() - 1);
+            renderCalendar();
+        };
+
+        const nextMonth = () => {
+            date.setDate(1);
+            date.setMonth(date.getMonth() + 1);
+            renderCalendar();
+        };
+
+        const goToday = () => {
+            date = new Date();
+            renderCalendar();
+        };
+
+        const renderTodoList = () => {
+            var inputBox = document.getElementById("inputField");
+            var addToDo = document.getElementById('addToDo');
+            var toDoList = document.getElementById('toDoList');
+
+            addToDo.addEventListener('click', function(){
+                var list = document.createElement('li');
+                if(!inputBox.value){
+                    alert('내용을 입력해 주세요!');
+                }else{
+                    list.innerHTML = `${inputBox.value}<button class="removeNote">X</button>`;
+                    toDoList.appendChild(list);
+                    inputBox.value="";
+
+                    var removeNoteButton = list.querySelector('.removeNote');
+                    removeNoteButton.addEventListener('click', function(){
+                        toDoList.removeChild(list);
+                    });
+                }
+            });
+        }
+
+        renderTodoList();
+
+    </script>
+</body>
+</html>
