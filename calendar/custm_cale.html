@@ -248,12 +248,12 @@
         };
 
         const renderTodoList = () => {
-            var inputBox = document.getElementById("inputField");
-            var addToDo = document.getElementById('addToDo');
-            var toDoList = document.getElementById('toDoList');
+            let inputBox = document.getElementById("inputField");
+            let addToDo = document.getElementById('addToDo');
+            let toDoList = document.getElementById('toDoList');
 
             addToDo.addEventListener('click', function(){
-                var list = document.createElement('li');
+                let list = document.createElement('li');
                 if(!inputBox.value){
                     alert('내용을 입력해 주세요!');
                 }else{
@@ -261,7 +261,7 @@
                     toDoList.appendChild(list);
                     inputBox.value="";
 
-                    var removeNoteButton = list.querySelector('.removeNote');
+                    let removeNoteButton = list.querySelector('.removeNote');
                     removeNoteButton.addEventListener('click', function(){
                         toDoList.removeChild(list);
                     });
