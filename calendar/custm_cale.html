@@ -35,7 +35,7 @@
     .nav{text-align: center; padding-bottom:10px; display: flex; justify-content: center; gap: 20px;}
     .nav .nav-btn{background-color: transparent; color:#fff; font-weight: 700; border:0; font-size:1.8em; cursor: pointer;}
 
-    h1{font-size:2.5em; font-weight: normal; padding-bottom: 40px;}
+    h1{font-size:2.5em; font-weight: normal; padding-bottom: 40px; text-align: center;}
     .notes > p{
         padding:0 5px 5px;
         border-bottom: 1px solid #fff;
@@ -213,9 +213,15 @@
             dateElements.forEach((dateElement) => {
                 dateElement.addEventListener('click', () => {
                     const clickedDate = dateElement.getAttribute('title');
+                    const numericCount = clickedDate.replace(/\D/g, '').length;
+
                     yearTit.textContent = `${year}년`;
                     monthTit.textContent = `${month}월`;
-                    dayTit.textContent = `${clickedDate}일`;
+                    if(numericCount === 1){
+                        dayTit.textContent = `0${clickedDate}일`;
+                    }else{
+                        dayTit.textContent = `${clickedDate}일`;
+                    }
                 });
             });
 
