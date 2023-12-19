@@ -1,0 +1,7 @@
+*{margin:0; padding:0;}
+header,nav,footer,div,p,ul,li{display:block;}
+li{list-style-type: none;}
+a,span,i,b,strong{display: inline-block; font-style: normal;}
+a:link,a:visited{text-decoration: none; color:#333;}
+input{background-color: #fff;}
+img{width: 100%; height: 100%;}

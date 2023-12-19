@@ -1,0 +1,25 @@
+section{padding-bottom:160px}
+section h2{font-size:3em; text-transform: uppercase;}
+.visual .content{width: 100%; height: 800px; background:url("https://img.vogue.co.kr/vogue/2023/12/style_65780d9143188-1920x1080.webp?x=1600&y=900") center no-repeat; position: relative; object-fit: cover; background-size: 100%;}
+.visual .content .txt{width: 100%; position: absolute; left:0; bottom:3.75vw; text-align: center; color:#fff; font-weight: 700;}
+.visual .content .txt p >span:nth-child(2){color:#BBAE9A;}
+.visual .content .txt >p >span:nth-child(2)::before{
+    content:'';
+    display: inline-block;
+    width: 2px;
+    height: 12px;
+    background-color: #fff;
+    margin:0 13px
+}
+.visual .content .txt > h3{font-size: 2.8em; padding:20px 0;}
+.todays > .content { padding:50px 0; position: relative;}
+.todays > .content >div{width: 50%; padding:50px; position: absolute; box-sizing: border-box; max-height: 1360px;}
+.todays > .content > .lft_box{ border-right: 1px solid #333; left:0;}
+
+.todays .lft_box .txt{border-top:1px solid #333; margin-top:80px;}
+.todays .lft_box .txt >.cate_data{display: flex; justify-content: space-between; padding-top:5px; font-size: 0.9em;}
+.todays .lft_box .txt > h3{font-size:1.8em; padding-top:60px; text-align: center;}
+
+.todays .rig_box{display: flex; gap: 30px; right:0; }
+.todays .rig_box ul >li{padding-top:200px}
+.todays .rig_box > .right_list{padding-top:200px}

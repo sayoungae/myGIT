@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'vogue';
+    src: url("../fonts/Vogue.ttf");
+    font-style: normal;
+}
+
+.blind{position: absolute;top: 0px;left: 0px;overflow: hidden;display: inline-block !important;width: 1px !important;height: 1px !important;margin: 0 !important;font-size: 0 !important;line-height: 0 !important;opacity: 0 !important;}
+.FL{float: left;}
+.FR{float: right;}
+.TL{text-align: left !important;}
+.TC{text-align: center !important;}
+.TR{text-align: right !important;}
+.VT{vertical-align: top !important;}
+.VM{vertical-align: middle !important;}
+.VB{vertical-align: bottom !important;}
+
+.m-auto{margin: auto !important;}
+.mt0{margin-top: 0 !important;}
+.mt2{margin-top: 2px !important;}
+.mt3{margin-top: 3px !important;}
+.mt5{margin-top: 5px !important;}
+.mt6{margin-top: 6px !important;}
+.mt10{margin-top: 10px !important;}
+.mt15{margin-top: 15px !important;}
+.mt20{margin-top: 20px !important;}
+.mt25{margin-top: 25px !important;}
+.mt30{margin-top: 30px !important;}
+.mt40{margin-top: 40px !important;}
+.mb0{margin-bottom: 0 !important;}
+.mb5{margin-bottom: 5px !important;}
+.mb10{margin-bottom: 10px !important;}
+.mb15{margin-bottom: 15px !important;}
+.mb20{margin-bottom: 20px !important;}
+.ml-auto{margin-left: auto !important;}
+.ml5{margin-left: 5px !important;}
+.ml10{margin-left: 10px !important;}
+.mr5{margin-right: 5px !important;}
+.mr10{margin-right: 10px !important;}
+.mr15{margin-right: 15px !important;}
+
+body{width: 100%;height: 100%;font-size: 16px; font-family: 'Noto Sans KR', sans-serif;}
+
+#wrap,#header,#container,#footer{width: 100%;}
+.inner{max-width: 1600px; margin:0 auto; position: relative;}
+
+#header{padding-top:50px; background-color: tomato;}
+h1{text-align: center;}
+h1 >a{width: 270px; height: 70px; background: url('../images/logo.svg') no-repeat; background-size: auto; }
+
+nav > ul{display: flex; gap: 55px; align-items: center; justify-content: center; padding:25px 0;}
+nav > ul >li >a{font-size:1.1em; font-weight: 700; text-transform: uppercase;}
+
+.side_nav{display: flex; align-items: center; gap: 20px; position: absolute; top:18px; right:0;}
+.side_nav .lang_sel > span{text-transform: uppercase; font-weight: 700; position: relative;
+padding-right:20px; font-size:1.1em;}
+.side_nav .lang_sel > span::after{
+    content:'';
+    display: inline-block;
+    width: 10px;
+    height: 8px;
+    background: url('../images/select_arrow.svg') no-repeat;
+    position: absolute;
+    right:0;
+    top:10px;
+}
+.side_nav .lang_sel > span.on::after{
+    transform: rotate(180deg);
+    transition: transform 0.2 ease;
+}
+
+.side_nav .lang_sel >ul{display: none;}
+.side_nav .lang_sel >ul >li{padding:5px;}
+.side_nav .lang_sel >ul >li >a{font-weight: 700; color:#99999C;}
+.side_nav .lang_sel >ul >li >a:hover,
+.side_nav .lang_sel >ul >li >a:focus{color:#333;}
+
+.side_nav .subscribe{padding:5px 8px; background-color:#99999C; font-weight: 700; color:#fff;}
+.side_nav .subscribe:hover,
+.side_nav .subscribe:focus{background-color: #000;}
+
+.side_nav .nav-icon{width: 25px; height: 30px; position: relative}
+.side_nav .nav-icon >a{
+   width: 100%;
+   height: 3px;
+   background-color:#000;
+   position: absolute;
+   left:0;
+   top:50%;
+   transform: translateY(-50%);
+}
+.side_nav .nav-icon >a::before,.side_nav .nav-icon >a::after{
+    content:'';
+    display: inline-block;
+    width: 100%;
+    height: 3px;
+    background-color:#000;
+    position: absolute;
+    left:0;
+}
+.side_nav .nav-icon >a::before{top:-8px}
+.side_nav .nav-icon >a::after{bottom:-8px;}
