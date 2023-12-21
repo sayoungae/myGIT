@@ -20,7 +20,7 @@ function TodayScrollTrigger(){
 
     let r_list = gsap.timeline({
         scrollTrigger:{
-            trigger:".rig_box",
+            trigger:".section-list .rig_box",
             start:"10px top",
             end: "1200px top",
             scrub:1,
@@ -38,7 +38,7 @@ function TodayScrollTrigger(){
 
     let l_list = gsap.timeline({
         scrollTrigger:{
-            trigger:".lft_box",
+            trigger:".section-list .lft_box",
             start:"top top",
             end: "80% top",
             scrub:3,
@@ -51,11 +51,105 @@ function TodayScrollTrigger(){
         }
     })
     l_list
-    .to('.lft_box',{
+    .to('.section-list .lft_box',{
         y: "-40%"
+    })
+
+    gsap.to('.must', {
+        scrollTrigger: {
+            trigger: '.must',
+            start: 'top 70%',
+            end: 'bottom 50%',
+            toggleClass: 'landed',
+            endTrigger: 'body',
+            endStart: 'top 50%',
+            // markers:true,
+        }
+    });
+    
+    let mustUl = gsap.timeline({
+        scrollTrigger:{
+            trigger:".must",
+            start: 'top 80%',
+            end: 'bottom 50%',
+            endTrigger: 'body',
+            endStart: 'top 50%',
+            // markers:true,
+        }
+    })
+    mustUl.from('.must ul',{ y: "400px", opacity:0,  duration: 1})
+
+    // keyword
+    let keyword = gsap.timeline({
+        scrollTrigger:{
+            trigger:".keyword",
+            start:"100% 100%",
+            end: "200% 0%",
+            scrub:2.2,
+            pin:".keyword",
+            // markers: {
+            //     startColor: 'red',
+            //     endColor: 'black',
+            //     fontSize: '1.1rem',
+            //     indent: 200
+            // }
+        }
+    })
+    keyword
+    .from('.keyword .tit_box h2', {
+        opacity: 0, x: "-22%",
+    })
+    .from('.keyword .tit_box span', {
+        opacity: 0, y: "22%",
+    })
+    .from('.keyword ul', {
+        opacity: 0, y: "22%",
+    })
+
+    // LATEST STORIES
+    gsap.utils.toArray(".latest .lft_box > a").forEach(el => {
+        let items = el.querySelectorAll(".latest .lft_box > a > .txt_box");
+        let ani = gsap.fromTo(items, { opacity:0, y:20 },{
+            opacity: 1,
+            display: "block",
+            y: 0,
+            stagger: 0.08,
+            paused: true
+        });
+        el.addEventListener("mouseover", () => ani.play());
+        el.addEventListener("focusin", () => ani.play());
+        el.addEventListener("mouseout", () => ani.reverse());
+        el.addEventListener("focusout", () => ani.reverse());
+
+    });
+
+    ScrollTrigger.create({
+        trigger: ".latest .rig_box",
+        start: "top top",
+        endTrigger: 'body', // 끝 위치의 트리거를 body로 설정
+        endStart: 'top -10px', // 끝 위치의 트리거 시작 위치
+        toggleClass: {targets: '.latest .rig_box', className: 'stk'},
+        // markers:true,
+    });
+
+
+    // footer
+    let footer = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#footer",
+            toggleActions: "restart restart restart restart",
+            start: "top 100%",
+            end: "100% 0%",
+            // markers: "true",
+        }
+    })
+    footer
+    .from('#footer a, .copyright', {
+        opacity: 0, y: "130%", duration: 2.2, ease: "sine",
     })
 }
 
+// best stories slide
 function setupSlider() {
     const slide1Prev = document.querySelector('.slide_prev');
     const slide1Next = document.querySelector('.slide_next');
@@ -73,8 +167,7 @@ function setupSlider() {
         // 첫 번째 슬라이드에 도달하면 prev 버튼 비활성화
         slide1Prev.disabled = index === 0;
 
-        // 디버깅을 위해 로그 추가
-        console.log(`Index: ${index}, slide1Next.disabled: ${slide1Next.disabled}`);
+        // console.log(`Index: ${index}, slide1Next.disabled: ${slide1Next.disabled}`);
     }
 
     // 다음 슬라이드로 이동
