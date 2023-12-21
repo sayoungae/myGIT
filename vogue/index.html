@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="./css/index.css" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
 
-    <script type="text/javascript" src=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
 </head>
 <body>
     <div id="wrap">
@@ -79,94 +81,191 @@
                 <section class="todays">
                     <h2>TODAY'S STORIES</h2>
                     <div class="content">
-                        <div class="lft_box">
-                            <a href="#none">
-                                <div class="thum">
-                                    <img src="https://img.vogue.co.kr/vogue/2023/12/style_657289637a16d-960x1440.jpg?x=2312&amp;y=3465" alt=""/>
-                                </div>
-                                <div class="txt">
-                                    <p class="cate_data"><span class="category">셀러브리티 스타일</span> <span class="data">2023.12.08</span></p>
-                                    <h3 class="s_tit">2024년을 휩쓸 스니커즈의 다재다능한 매력</h3>
-                                </div>
-                            </a>
+                        <div class="section-list">
+                            <div class="lft_box">
+                                <a href="#none">
+                                    <div class="thum">
+                                        <img src="https://img.vogue.co.kr/vogue/2023/12/style_657289637a16d-960x1440.jpg?x=2312&amp;y=3465" alt=""/>
+                                    </div>
+                                    <div class="txt">
+                                        <p class="cate_data"><span class="category">셀러브리티 스타일</span> <span class="data">2023.12.08</span></p>
+                                        <h3 class="s_tit">2024년을 휩쓸 스니커즈의 다재다능한 매력</h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="rig_box">
+                                <ul class="left_list">
+                                    <li>
+                                        <a href="#none">
+                                            <div class="thum">
+                                                <img src="https://img.vogue.co.kr/vogue/2023/12/style_65792cab9e522-933x1400.jpg" alt=""/>
+                                            </div>
+                                            <div class="txt">
+                                                <p class="category">셀러브리티 스타일</p>
+                                                <h3 class="s_tit">케이티 홈즈가 올겨울을 통째로 맡긴 애착 코트는?</h3>
+                                                <p class="date">2023.12.13<span>by 윤승현</span></p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <div class="thum">
+                                                <img src="https://img.vogue.co.kr/vogue/2023/12/style_6579274641970-759x500.jpeg?x=3079&y=2319" alt=""/>
+                                            </div>
+                                            <div class="txt">
+                                                <p class="category">셀러브리티 스타일</p>
+                                                <h3 class="s_tit">진주로 완성한 믹스 매치, 리하나의 스트리트 룩</h3>
+                                                <p class="date">2023.12.13<span>by 오기쁨</span></p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <div class="thum">
+                                                <img src="https://img.vogue.co.kr/vogue/2023/11/style_655172fe42a7b-933x1400.jpg" alt=""/>
+                                            </div>
+                                            <div class="txt">
+                                                <p class="category">셀러브리티 스타일</p>
+                                                <h3 class="s_tit">우리가 꿈꾸던 겨울 청바지 룩</h3>
+                                                <p class="date">2023.11.13<span>by 이소미</span></p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="right_list">
+                                    <li>
+                                        <a href="#none">
+                                            <div class="thum">
+                                                <img src="https://img.vogue.co.kr/vogue/2023/12/style_65826947721b6-930x930.jpg" alt=""/>
+                                            </div>
+                                            <div class="txt">
+                                                <p class="category">아트</p>
+                                                <h3 class="s_tit">예술의전당 공연을 영상으로, ‘디지털 스테이지’</h3>
+                                                <p class="date">2023.12.13<span>by 오기쁨</span></p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <div class="thum">
+                                                <img src="https://img.vogue.co.kr/vogue/2023/12/style_65792b777275e-759x500.webp?x=1600&y=1054" alt=""/>
+                                            </div>
+                                            <div class="txt">
+                                                <p class="category">패션 트렌드</p>
+                                                <h3 class="s_tit">지금 디자이너들이 푹 빠진 벨트</h3>
+                                                <p class="date">2023.12.13<span>by 윤승현</span></p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <div class="thum">
+                                                <img src="https://img.vogue.co.kr/vogue/2023/11/style_6552c2d128651-933x1400.webp" alt=""/>
+                                            </div>
+                                            <div class="txt">
+                                                <p class="category">패션 트렌드</p>
+                                                <h3 class="s_tit">밋밋한 겨울 색이 지겹다면, 미리 알아두어야 할 매치 5</h3>
+                                                <p class="date">2023.12.13 <span>by 이소미</span></p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none">
+                                            <div class="thum">
+                                                <img src="https://img.vogue.co.kr/vogue/2023/12/style_657913fb6e835-759x500.jpg?x=1290&y=1360" alt=""/>
+                                            </div>
+                                            <div class="txt">
+                                                <p class="category">셀러브리티 스타일</p>
+                                                <h3 class="s_tit">켄달 제너가 활짝 연, '거대한' 스카프의 시대</h3>
+                                                <p class="date">2023.12.13 <span>by 이소미</span></p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="rig_box">
-                            <ul class="left_list">
-                                <li>
-                                    <a href="#none">
-                                        <div class="thum">
-                                            <img src="https://img.vogue.co.kr/vogue/2023/12/style_65792cab9e522-933x1400.jpg" alt=""/>
-                                        </div>
-                                        <div class="txt">
-                                            <p class="category">셀러브리티 스타일</p>
-                                            <h3 class="s_tit">케이티 홈즈가 올겨울을 통째로 맡긴 애착 코트는?</h3>
-                                            <p class="date">2023.12.13<span>by 윤승현</span></p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>3
-                                    <a href="#none">
-                                        <div class="thum">
-                                            <img src="https://img.vogue.co.kr/vogue/2023/12/style_6579274641970-759x500.jpeg?x=3079&y=2319" alt=""/>
-                                        </div>
-                                        <div class="txt">
-                                            <p class="category">셀러브리티 스타일</p>
-                                            <h3 class="s_tit">진주로 완성한 믹스 매치, 리하나의 스트리트 룩</h3>
-                                            <p class="date">2023.12.13<span>by 오기쁨</span></p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#none">
-                                        <div class="thum">
-                                            <img src="https://img.vogue.co.kr/vogue/2023/11/style_655172fe42a7b-933x1400.jpg" alt=""/>
-                                        </div>
-                                        <div class="txt">
-                                            <p class="category">셀러브리티 스타일</p>
-                                            <h3 class="s_tit">우리가 꿈꾸던 겨울 청바지 룩</h3>
-                                            <p class="date">2023.11.13<span>by 이소미</span></p>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul class="right_list">
-                                <li>
-                                    <a href="#none">
-                                        <div class="thum">
-                                            <img src="https://img.vogue.co.kr/vogue/2023/12/style_65792b777275e-759x500.webp?x=1600&y=1054" alt=""/>
-                                        </div>
-                                        <div class="txt">
-                                            <p class="category">패션 트렌드</p>
-                                            <h3 class="s_tit">지금 디자이너들이 푹 빠진 벨트</h3>
-                                            <p class="date">2023.12.13<span>by 윤승현</span></p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#none">
-                                        <div class="thum">
-                                            <img src="https://img.vogue.co.kr/vogue/2023/11/style_6552c2d128651-933x1400.webp" alt=""/>
-                                        </div>
-                                        <div class="txt">
-                                            <p class="category">패션 트렌드</p>
-                                            <h3 class="s_tit">밋밋한 겨울 색이 지겹다면, 미리 알아두어야 할 매치 5</h3>
-                                            <p class="date">2023.12.13 <span>by 이소미</span></p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#none">
-                                        <div class="thum">
-                                            <img src="https://img.vogue.co.kr/vogue/2023/12/style_657913fb6e835-759x500.jpg?x=1290&y=1360" alt=""/>
-                                        </div>
-                                        <div class="txt">
-                                            <p class="category">셀러브리티 스타일</p>
-                                            <h3 class="s_tit">켄달 제너가 활짝 연, '거대한' 스카프의 시대</h3>
-                                            <p class="date">2023.12.13 <span>by 이소미</span></p>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
+                    </div>
+                </section>
+                <section class="banner">
+                    <h2 class="blind">banner</h2>
+                    <div class="img_box">
+                        <img src="https://assets.vogue.com/photos/653abe3be4837c5a27cdaeb1/original/pass/VOG_DT_Footer_940x140.gif?format=original" />
+                    </div>
+                </section>
+                <section class="best_stories">
+                    <h2>best stories</h2>
+                    <div class="content">
+                        <div class="slide_wrap">
+                            <div class="slider1">
+                                <a href="#none" class="slide-content">
+                                    <div class="img_box">
+                                        <img src="https://img.vogue.co.kr/vogue/2023/12/style_6580fad018ec3-759x500.jpg?x=895&y=1066"/>
+                                    </div>
+                                    <span class="category">패션 아이템</span>
+                                    <h3 class="s_tit">스타들이 가장 사랑하는 아디다스 스니커즈</h3>
+                                    <p class="date">2023.12.19<span>by 황혜원</span></p>
+                                </a>
+                                <a href="#none" class="slide-content">
+                                    <div class="img_box">
+                                        <img src="https://img.vogue.co.kr/vogue/2023/12/style_658120b260853-759x500.jpg?x=2003&y=1319"/>
+                                    </div>
+                                    <span class="category">셀러브리티 스타일</span>
+                                    <h3 class="s_tit">앤 해서웨이가 선택한 통 큰 겨울 청바지</h3>
+                                    <p class="date">2023.12.19<span>by 황혜원</span></p>
+                                </a>
+                                <a href="#none" class="slide-content">
+                                    <div class="img_box">
+                                        <img src="https://img.vogue.co.kr/vogue/2023/12/style_658120b260853-759x500.jpg?x=2003&y=1319"/>
+                                    </div>
+                                    <span class="category">셀러브리티 스타일</span>
+                                    <h3 class="s_tit">앤 해서웨이가 선택한 통 큰 겨울 청바지</h3>
+                                    <p class="date">2023.12.19<span>by 황혜원</span></p>
+                                </a>
+                                <a href="#none" class="slide-content">
+                                    <div class="img_box">
+                                        <img src="https://img.vogue.co.kr/vogue/2023/12/style_658120b260853-759x500.jpg?x=2003&y=1319"/>
+                                    </div>
+                                    <span class="category">셀러브리티 스타일</span>
+                                    <h3 class="s_tit">앤 해서웨이가 선택한 통 큰 겨울 청바지</h3>
+                                    <p class="date">2023.12.19<span>by 황혜원</span></p>
+                                </a>
+                                <a href="#none" class="slide-content">
+                                    <div class="img_box">
+                                        <img src="https://img.vogue.co.kr/vogue/2023/12/style_658120b260853-759x500.jpg?x=2003&y=1319"/>
+                                    </div>
+                                    <span class="category">셀러브리티 스타일</span>
+                                    <h3 class="s_tit">앤 해서웨이가 선택한 통 큰 겨울 청바지</h3>
+                                    <p class="date">2023.12.19<span>by 황혜원</span></p>
+                                </a>
+                                <a class="slide-content">
+                                    <div class="img_box">
+                                        <img src="https://img.vogue.co.kr/vogue/2023/12/style_658120b260853-759x500.jpg?x=2003&y=1319"/>
+                                    </div>
+                                    <span class="category">셀러브리티 스타일</span>
+                                    <h3 class="s_tit">앤 해서웨이가 선택한 통 큰 겨울 청바지</h3>
+                                    <p class="date">2023.12.19<span>by 황혜원</span></p>
+                                </a>
+                                <a href="#none" class="slide-content">
+                                    <div class="img_box">
+                                        <img src="https://img.vogue.co.kr/vogue/2023/12/style_658120b260853-759x500.jpg?x=2003&y=1319"/>
+                                    </div>
+                                    <span class="category">셀러브리티 스타일</span>
+                                    <h3 class="s_tit">앤 해서웨이가 선택한 통 큰 겨울 청바지</h3>
+                                    <p class="date">2023.12.19<span>by 황혜원</span></p>
+                                </a>
+                                <a href="#none" class="slide-content">
+                                    <div class="img_box">
+                                        <img src="https://img.vogue.co.kr/vogue/2023/12/style_658120b260853-759x500.jpg?x=2003&y=1319"/>
+                                    </div>
+                                    <span class="category">셀러브리티 스타일</span>
+                                    <h3 class="s_tit">앤 해서웨이가 선택한 통 큰 겨울 청바지</h3>
+                                    <p class="date">2023.12.19<span>by 황혜원</span></p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="btn_box">
+                            <input type="button" class="slide_prev" disabled/>
+                            <input type="button" class="slide_next"/>
                         </div>
                     </div>
                 </section>
