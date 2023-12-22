@@ -1,0 +1,148 @@
+section{padding-bottom:160px}
+section h2{font-size:3em; text-transform: uppercase; padding-bottom: 80px;}
+.category{font-size:0.9em; padding-top: 15px;}
+.s_tit{font-size:1.3em; padding-bottom:30px;}
+.date{font-size:0.8em; color:#999999;}
+.date > span{padding-left:10px;}
+.date > span::before{
+    content:'';
+    display: inline-block;
+    height: 8px;
+    width: 1px;
+    background-color:#ccc;
+    margin-right:10px;
+}
+
+.visual .content{width: 100%; height: 800px; background:url("https://img.vogue.co.kr/vogue/2023/12/style_65780d9143188-1920x1080.webp?x=1600&y=900") center no-repeat; position: relative; object-fit: cover; background-size: 100%;}
+.visual .content .txt{width: 100%; position: absolute; left:0; bottom:3.75vw; text-align: center; color:#fff; font-weight: 700;}
+.visual .content .txt p >span:nth-child(2){color:#BBAE9A;}
+.visual .content .txt >p >span:nth-child(2)::before{
+    content:'';
+    display: inline-block;
+    width: 2px;
+    height: 12px;
+    background-color: #fff;
+    margin:0 13px
+}
+.visual .content .txt > h3{font-size: 2.8em; padding:20px 0;}
+
+.todays .content{height: 2400px; overflow: hidden;}
+.todays .lft_box{width: 50%; border-right: 1px solid #333; padding:50px 80px 0px; left:0;  position: relative; box-sizing: border-box;}
+
+.todays .lft_box .txt{border-top:1px solid #333; margin-top:100px;}
+.todays .lft_box .txt >.cate_data{display: flex; justify-content: space-between; padding-top:5px; font-size: 0.9em;}
+.todays .lft_box .txt > h3{font-size:1.9em; padding:80px 0 160px; text-align: center;}
+
+.todays .rig_box{height: 100%; width:calc(50% - 50px); display: flex; gap: 30px; position: absolute; right:0; top:0; padding-top:50px;}
+.todays .rig_box ul >li:not(:first-child){padding-top:140px}
+
+
+/* banner */
+.banner .img_box{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* best_stories */
+.best_stories{position: relative;}
+.best_stories > .content{padding-top:50px; position: relative;}
+.best_stories .slide_wrap{max-width:1600px; height: 386px; overflow: hidden; position: relative;}
+.best_stories .slider1{width: 3200px; height: 100%; position:absolute; left:0; top:0; transition: all 1.5s ease-in-out;}
+.best_stories .slider1 >a{width: 378px; float:left; margin-right:25px; padding-top:30px; padding:1px; box-sizing: border-box;}
+.best_stories .slider1 >a:last-child{margin:0;}
+
+.best_stories .btn_box{position: absolute; right:0; top:0;}
+.best_stories .btn_box > input{
+    background-color:transparent;
+    border:0;
+    width: 49px;
+    height: 13px;
+    background:url('https://www.vogue.co.kr/wp-content/themes/vogue/assets/images/sl_arrow.svg') center no-repeat;
+    padding:10px 5px;
+    box-sizing: content-box;
+    cursor: pointer;
+}
+.best_stories .btn_box > input[type="button"]:disabled{filter: brightness(0) saturate(100%) invert(72%) sepia(0%) saturate(0%) hue-rotate(132deg) brightness(87%) contrast(83%);}
+.best_stories .btn_box > .slide_prev{transform: rotate(-180deg); margin-right:20px;}
+.best_stories::before{
+    content:'';
+    display: inline-block;
+    width: 100%;
+    height: 380px;
+    background-color: #F5F5F5;
+    position: absolute;
+    left:0;
+    bottom:50px;
+    z-index: -1;
+}
+
+/* must read */
+
+.must ul{display: flex; gap:30px;}
+.must ul li{position: relative;}
+.must ul li >a{display: block; padding:30px; position: relative;}
+.must ul li >a .s_tit{height: 66px;}
+
+.must ul li a::before,.must ul li a::after{
+    content:'';
+    display: inline-block;
+    width: 1px;
+    height: 0%;
+    position: absolute;
+    background-color: #ccc;
+    transition:height 0.3s;
+    opacity: 0.5;
+}
+.must ul li a::before{left:0; top:0;}
+.must ul li a::after{right:0; top:0;}
+.must ul li::before,.must ul li::after{
+    content:'';
+    display: inline-block;
+    width: 0%;
+    height: 1px;
+    position: absolute;
+    background-color: #ccc;
+    transition:width 0.3s;
+    opacity: 0.5;
+
+}
+.must ul li::before{left:50%; top:0; transform: translateX(-50%);}
+.must ul li::after{left:50%; bottom:0; transform: translateX(-50%);}
+
+.must.landed ul li{box-shadow: 2px 2px 5px #93939336; transition:box-shadow 0.3s; transition-delay: 1300ms;}
+.must.landed ul li::before{width: 100%; transition-delay: 300ms;}
+.must.landed ul li a::after,.must.landed ul li a::before{height: 100%; transition-delay: 900ms;}
+.must.landed ul li::after{width: 100%; transition-delay: 1200ms;}
+
+.keyword{position: relative; padding-top:80px;}
+.keyword .tit_content{display: flex; gap: 50px;}
+.keyword .tit_box > span{color:#888E8E; font-size:1.5em; font-weight: 700; padding-bottom:30px;}
+.keyword .tit_box > h2{text-decoration: underline; text-underline-offset: 12px; text-decoration-thickness: 4px;}
+.keyword .tit_content .tit_box{min-width:380px;}
+.keyword .tit_content ul{display: flex; gap: 30px;}
+.keyword .tit_content ul .s_tit{font-size:1.2em;}
+.keyword::before{
+    content:'';
+    display: inline-block;
+    width: 100%;
+    height: 380px;
+    background-color: #F5F5F5;
+    position: absolute;
+    left:0;
+    top:0px;
+    z-index: -1;
+}
+
+/* latest */
+.latest .content{display: flex;}
+.latest .lft_box{width: 75%; display: flex; flex-wrap: wrap; gap: 15px;}
+.latest .lft_box >a{display: block; width: calc(100% / 3 - 10px); height: 354px; position: relative; overflow: hidden; cursor: pointer;}
+.latest .lft_box >a >div{position: absolute; left:0;}
+.latest .lft_box >a >.txt_box{width: 100%; bottom:0; padding:10px 15px; background-color:rgba(0,0,0,0.8); color:#fff; box-sizing: border-box;}
+.latest .lft_box >a >.txt_box >.date{color:#fff;}
+
+
+.latest .rig_box{width: 20%; margin-left:40px;}
+.latest .rig_box.stk >div{position: sticky; right:0; top:0;}
+

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gsap_prac1</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+    *{margin:0; padding:0;}
+    li{list-style: none;}
+    a{text-decoration: none;}
+
+    :root{
+        font-family: 'Lato', sans-serif;
+        --FontD: 375.89px;
+        --FontH1: 250.59px;
+        --FontH2: 167.06px;
+        --FontH3: 111.38px;
+        --FontH4: 74.25px;
+        --FontH5: 49.50px;
+        --FontParagraph: 33px;
+        --FontSubtitle: 22px;
+        /*-------------GoldenRatio (1.618) (Viewport Width 1920px)------------- */
+        --GoldenRatio1: 1920px;
+        --GoldenRatio2: 1186.65px;
+        --GoldenRatio3: 733.41px;
+        --GoldenRatio4: 453.28px;
+        --GoldenRatio5: 280.15px;
+        --GoldenRatio6: 173.15px;
+        --GoldenRatio7: 107.01px;
+        --GoldenRatio8: 66.14px;
+        --GoldenRatio9: 40.88px;
+        --GoldenRatio10: 25.27px;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+
+    #wrapper{width: 100%; height: 100vh; }
+    .landingPage{background-color:rgba(145,145,145,0.2)}
+    .bg-video{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+    }
+    .bg-video__content {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        
+    }
+    #logo{
+        position: absolute;
+        left: var(--GoldenRatio7);
+        top: var(--GoldenRatio7);
+    }
+
+    #logo h1{
+        font-size: var(--FontH5);
+        font-weight: 900;
+        color:rgba(255,255,255,0.3);
+        -webkit-text-stroke: 1px #fff;
+        transition: all 0.31s ease;
+        transform-origin: left;
+    }
+    #logo h1:hover{
+        transform: scale(1.13);
+
+    }
+
+    nav {
+        position: absolute;
+        right: var(--GoldenRatio7);
+        top: var(--GoldenRatio7);
+        width: var(--GoldenRatio4);
+        display: flex;
+        justify-content: space-between;
+    }
+    nav a {
+        font-size: var(--FontSubtitle);
+        font-weight: 900;
+        color: #fff;
+        transition: transform 0.31s ease;
+        transform-origin: center;
+    }
+    nav a span{display: block;}
+    #wrapper section {
+        position: absolute;
+        height: 100vh;
+        top: 0;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        text-align: right;
+        right: 50%;
+        cursor: default;
+        color:#fff;
+    }
+    #wrapper section h2 {
+        font-size: var(--FontH3);
+        font-weight: 700;
+        color: var(--ColorDarkA);
+        transition: transform 0.31s ease;
+        transform-origin: right bottom;
+    }
+
+    #wrapper section h2:hover {
+        transform: scale(1.13);
+    }
+
+    #wrapper section h2 span {
+        display: block;
+    }
+    #wrapper section p {
+        font-size: var(--FontParagraph);
+        font-weight: 400;
+        color: var(--ColorDarkA);
+        transition: transform 0.31s ease;
+        transform-origin: right center;
+    }
+
+    #wrapper section p:hover {
+        transform: scale(1.13);
+    }
+
+    #wrapper section p span {
+        display: block;
+    }
+
+    #wrapper section p:nth-child(3) {
+        transform-origin: right top;
+    }
+
+    #d {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        cursor: default;
+    }
+    #d p {
+        font-size: var(--FontD);
+        font-weight: 900;
+        transition: all 0.31s ease;
+        transform-origin: left;
+        color:rgba(255,255,255,0.3);
+        -webkit-text-stroke: 1px #fff;
+    }
+    #d p:hover{
+        transform: scale(1.13);
+    }
+    #wrapper #ImageContainer {
+    position: absolute;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    left: 50%;
+    }
+
+    #wrapper #ImageContainer img {
+    width: var(--GoldenRatio4);
+    margin-left: var(--GoldenRatio7);
+    }
+
+    #wrapper #slide {
+    position: absolute;
+    right: 50%;
+    height: 100vh;
+    margin-right: var(--GoldenRatio9);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-flow: column;
+    cursor: default;
+    }
+
+    #wrapper #slide h1 {
+    font-size: var(--FontH5);
+    font-weight: 700;
+    color: var(--ColorDarkA);
+    }
+
+    #wrapper #slide p {
+    margin-top: var(--GoldenRatio9);
+    width: var(--GoldenRatio3);
+    font-weight: 400;
+    font-size: var(--FontSubtitle);
+    color: var(--ColorDarkA);
+    text-align: right;
+    }
+
+    #codeby {
+    height: var(--GoldenRatio4);
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #E6E6E6;
+    }
+
+    #codeby a {
+    text-decoration: none;
+    font-size: var(--FontSubtitle);
+    font-weight: 400;
+    color: var(--ColorDarkB);
+    }
+
+    #codeby a span {
+    font-weight: 700;
+    display: inline-block;
+    color: var(--ColorDarkB);
+    }
+
+    /*-------------@media (max-width: 1920px)------------- */
+
+    @media (max-width: 1920px) {
+    :root {
+        --FontD: 19.578vw;
+        --FontH1: 13.052vw;
+        --FontH2: 8.701vw;
+        --FontH3: 5.801vw;
+        --FontH4: 3.867vw;
+        --FontH5: 2.578vw;
+        --FontParagraph: 1.719vw;
+        --FontSubtitle: 1.146vw;
+        /*-------------GoldenRatio (1.618) (Viewport Width 1920px)------------- */
+        --GoldenRatio1: 100vw;
+        --GoldenRatio2: 61.805vw;
+        --GoldenRatio3: 38.198vw;
+        --GoldenRatio4: 23.608vw;
+        --GoldenRatio5: 14.591vw;
+        --GoldenRatio6: 9.018vw;
+        --GoldenRatio7: 5.573vw;
+        --GoldenRatio8: 3.445vw;
+        --GoldenRatio9: 2.129vw;
+        --GoldenRatio10: 1.316vw;
+    }
+    }
+
+    /*-------------/@media (max-width: 1920px)------------- */
+
+    /*-------------@media (max-width: 400px)------------- */
+
+    @media (max-width: 400px) {
+    :root {
+        /*-------------Perfect Fifth (1.500) (Viewport Width 400px) Base Size 10px------------- */
+        --FontD: 42.715vw;
+        --FontH1: 28.477vw;
+        --FontH2: 18.985vw;
+        --FontH3: 12.658vw;
+        --FontH4: 8.438vw;
+        --FontH5: 5.625vw;
+        --FontParagraph: 3.750vw;
+        --FontSubtitle: 2.500vw;
+        /*-------------GoldenRatio (1.618) (Viewport Width 400px)------------- */
+        --GoldenRatio1: 100vw;
+        --GoldenRatio2: 61.805vw;
+        --GoldenRatio3: 38.197vw;
+        --GoldenRatio4: 23.608vw;
+        --GoldenRatio5: 14.590vw;
+        --GoldenRatio6: 9.018vw;
+        --GoldenRatio7: 5.572vw;
+        --GoldenRatio8: 3.445vw;
+        --GoldenRatio9: 2.130vw;
+        --GoldenRatio10: 1.317vw;
+    }
+
+    #wrapper #Navbar {
+        display: block;
+        position: absolute;
+        right: var(--GoldenRatio7);
+        top: var(--GoldenRatio6);
+        z-index: 3;
+        font-size: var(--FontSubtitle);
+        font-weight: 700;
+        color: var(--ColorDarkA);
+        text-decoration: none;
+        cursor: pointer;
+    }
+    #wrapper nav {
+        top: var(--GoldenRatio5);
+        flex-flow: column;
+        z-index: 3;
+        border-radius: 6.18%;
+        background: var(--ColorWhiteB);
+    }
+    #wrapper nav.DisplayNone {
+        pointer-events: none;
+    }
+    #wrapper nav a {
+        height: var(--GoldenRatio7);
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-self: center;
+    }
+    #wrapper #ImageContainer {
+        position: unset;
+        height: auto;
+        width: 100vw;
+        padding-top: var(--GoldenRatio5);
+    }
+    #wrapper #ImageContainer img {
+        width: var(--GoldenRatio2);
+        margin: auto;
+    }
+    #wrapper #slide {
+        position: unset;
+        height: auto;
+        margin: var(--GoldenRatio5) auto;
+        align-items: flex-start;
+        width: var(--GoldenRatio2);
+    }
+    #wrapper #slide p {
+        margin-top: var(--GoldenRatio9);
+        width: var(--GoldenRatio2);
+        text-align: left;
+    }
+    #codeby {
+        height: var(--GoldenRatio2);
+    }
+}
+
+</style>
+
+<body>
+    <div id="wrapper" class="landingPage">
+        <div class="bg-video">
+            <video autoplay="" playsinline="" loop="" muted="" id="video-bg" style="    transform: rotate(180deg);">
+                <source src="https://tactusmarketing.com/wp-content/uploads/tactus-waves-hero.mp4" type="video/mp4">
+                <source src="https://tactusmarketing.com/wp-content/uploads/tactus-waves-hero.mp4" type="video/mp4">
+            </video>
+            <!-- https://codepen.io/sayoungae/pen/VwgoJvb 가져옴 -->
+        </div>
+        <a href="#none" id="logo">
+            <h1>Dora</h1>
+        </a>
+        <!-- <a href="#none" id="Navbar">Menu</a> -->
+        <nav class="DisplayNone">
+            <a href="#Studio"><span>Studio</span></a>
+            <a href="#About"><span>About</span></a>
+            <a href="#Works"><span>Works</span></a>
+            <a href="#codeby"><span>Contact</span></a>
+        </nav>
+        <section>
+            <h2><span>Dora</span></h2>
+            <p><span>Better living, Unique design</span></p>
+            <p><span>Since 1992</span></p>
+        </section>
+        <div id="d">
+            <p>D</p>
+        </div>
+    </div>
+    <div id="wrapper" class="slide1">
+        <div id="ImageContainer">
+            <img src="https://icodeayush.github.io/Dora/img/ModernLiving.jpg" alt="ModernLiving">
+        </div>
+        <div id="slide">
+            <h1>Modern Living</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur enim in, perspiciatis sunt expedita
+                consectetur! Repellat delectus fugit, laboriosam qui deleniti iure.</p>
+        </div>
+    </div>
+    <!----------------/Slide1------------------------>
+
+    <!--------------------Slide2-------------------------->
+    <div id="wrapper" class="slide2">
+        <div id="ImageContainer">
+            <img src="https://icodeayush.github.io/Dora/img/CoffeeTable.jpg" alt="CoffeeTable">
+        </div>
+        <div id="slide">
+            <h1>Coffee Table</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum perspiciatis veritatis reprehenderit,
+                officiis
+                incidunt itaque facilis placeat sint dignissimos accusantium tenetur repellendus.</p>
+        </div>
+    </div>
+    <!--------------------/Slide2------------------------->
+
+    <!----------------------Slide3-------------------------->
+    <div id="wrapper" class="slide3">
+        <div id="ImageContainer">
+            <img src="https://icodeayush.github.io/Dora/img/BedroomInterior.jpg" alt="BedroomInterior">
+        </div>
+        <div id="slide">
+            <h1>Bedroom Interior</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores deleniti quo odit dolorum laudantium aut
+                magnam impedit. Placeat magni at culpa ex.</p>
+        </div>
+    </div>
+    <!--------------------------/Slide3-------------------------->
+
+    <!-----------------------CodeBy---------------------->
+    <div id="codeby">
+        <a target="_blank" href="https://icodeayush.github.io/">Code By <span>iCodeAyush</span></a>
+    </div>
+    <!-------------------------/CodeBy------------------------>
+
+    <!-- gsap-latest-beta.min.js -->
+    <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js?r=5426'></script>
+    <!-- ScrollTrigger.min.js -->
+    <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js'></script>
+    <script src="./js/prac1.js"></script>
+</body>
+
+</html>
