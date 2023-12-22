@@ -101,6 +101,35 @@ padding-right:20px; font-size:1.1em;}
 .side_nav .nav-icon >a::after{bottom:-8px;}
 
 #footer{background-color: #000;}
+.btn_top.on {
+    border:0;
+    position: fixed;
+    right: 80px;
+    bottom: 40px;
+    z-index: 100;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding:15px 22px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.5);
+}
+.btn_top.lock{
+    position: absolute;
+    right:0;
+    top:-100px;
+    background-color: red;
+}
+.btn_top:before {
+    display: block;
+    width: 8px;
+    height: 18px;
+    margin: 0 auto 10px;
+    background: url("https://www.vogue.co.kr/wp-content/themes/vogue/assets/images/ic_top.svg")no-repeat;
+    content: '';
+}
 #footer .content{display: flex;flex-direction: column; align-items: center; gap: 30px; padding:80px 0;}
 #footer .content a{color:#fff;}
 #footer .link_list{display: flex; align-items: center; font-size:0.9em;}

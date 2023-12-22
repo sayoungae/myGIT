@@ -189,8 +189,25 @@ function setupSlider() {
     // 초기화 시에 버튼 상태 확인
     goToSlide(i);
 }
+function goToTop(){
+    let Top = document.querySelector('.btn_top');
+    // Footer 높이값
+    window.addEventListener('scroll', function(){
+        if(this.scrollY > 100){
+            Top.classList.add('on');
+        }
+        else{
+            Top.classList.remove('on','lock');
+        }
+    });
+    Top.addEventListener('click', function(e){
+        e.preventDefault();
+        window.scrollTo({top:0, behavior:'smooth'})
+    })
+}
 
 window.onload = () => {
     TodayScrollTrigger();
     setupSlider();
+    goToTop();
 };
