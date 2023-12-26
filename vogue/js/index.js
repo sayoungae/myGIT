@@ -2,6 +2,7 @@
 gsap.registerPlugin(ScrollTrigger);
 
 function TodayScrollTrigger(){
+    
     let todays = gsap.timeline({
         scrollTrigger:{
             trigger:".section-list",
@@ -16,7 +17,6 @@ function TodayScrollTrigger(){
     .to('.todays .rig_box',{
         y: "-100%"
     })
-    
 
     let r_list = gsap.timeline({
         scrollTrigger:{
@@ -146,7 +146,30 @@ function TodayScrollTrigger(){
     footer
     .from('#footer a, .copyright', {
         opacity: 0, y: "130%", duration: 2.2, ease: "sine",
-    })
+    });
+
+    gsap.to('body', {
+        scrollTrigger: {
+            trigger: 'body',
+            start: '80px 0%',
+            end: '100%-=200px 100%',
+            // toggleClass: {targets: '.btn_top', className: 'active',toggleActions: 'play none none none'},
+            markers: "true",
+        },
+        onEnter : function(){
+            gsap.to('#btn_top', {
+                className: 'active',
+            });
+        },
+        // onLeave : function() {
+        //     // 스크롤 트리거가 끝나면 실행될 추가 작업을 할 수 있습니다.
+        //     // console.log('Scroll Trigger Completed');
+        //     gsap.to('.btn_top', {
+        //         className: 'lock',
+        //     });
+        // }
+    });
+    
 }
 
 // best stories slide
