@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>drink_insert</title>
+</head>
+<body>
+  <form action="./drink_control.php" method="get">
+        <fieldset>
+            <legend>음료입력받기</legend>
+            <div>
+                <label for="name">제품명: </label><input id="name" type="text" name="name" required/>
+            </div>
+            <div>
+				<label for="price">가격: </label><input id="price" type="text" name="price" required/>
+            </div>
+			<div>
+				<label for="num">수량: </label><input id="num" type="text" name="num" required/>
+            </div>
+			<div>
+				<input type="submit" value="전송" title="전송"/>
+            </div>
+
+        </fieldset>
+  </form>
+</body>
+</html>
