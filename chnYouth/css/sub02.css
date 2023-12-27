@@ -1,0 +1,709 @@
+/* 수정 20231226 */
+
+/* 청년생활 고민소 */
+.cif_col_box .cont_box .tab_in_tit{display: flex; gap: 13px; align-items: baseline;}
+.cif_col_box .cont_box .tab_in_tit >p >span{color: var(--colr--org); font-size: 14px;}
+
+.cif_col_box .wrtg_box_in::after{
+    content:'';
+    display: inline-block;
+    width: 161px;
+    height: 111px;
+    background:url('../images/wrtg_box_icon02.png') center center no-repeat;
+    position: absolute;
+    left:0;
+    top:50%;
+    transform: translateY(-50%);
+}
+
+/* 청년생활고민소 -상세페이지 */
+.cif_cod_box > .sub_tit{display: flex; align-items: flex-start; justify-content: center; gap: 15px;}
+.cif_cod_box > .sub_tit > div{font-size:30px; font-weight: 700; padding-top: 10px;}
+.sub_emp_box{padding:30px 0 40px;display: flex; justify-content: center; gap: 4px;}
+.sub_emp_box >a{display: block; width: 214px; padding:17px 25px 14px; border:1px solid #DEDFE3; border-radius: 10px; display: flex; align-items:center; justify-content: space-between;  gap: 15px;}
+.sub_emp_box .emp_btn .emp_icon{
+    display: inline-block;
+    width: 34px;
+    height: 30px;
+    background:url('../images/emp_icon01.png') center center no-repeat;
+}
+.sub_emp_box .emp_btn.on .emp_icon{background-image: url('../images/emp_icon02.png');}
+
+.cif_cod_box .bd_lst_view li{flex: 1 1 40%; border-left:0; border-right:0;}
+.cif_cod_box .bd_lst_view li >div >a{display: block; width: 100%; font-size:16px; padding:2px 0 0px 25px;}
+.cif_cod_box .bd_lst_view li >div >a.dwFile::before{
+    content:'';
+    display: inline-block;
+    width: 18px;
+    height: 20px;
+    background:url('../images/file_icon01.png') center center no-repeat;
+    background-size: auto;
+    position: absolute;
+    left:0;
+    top:3px;
+}
+.cif_cod_box .cont_view{border-top: 1px solid #DADCE0;  }
+.cif_cod_box .cont_view > .txt{padding:90px 0 160px;}
+.cif_cod_box .cont_view >div >span{display: block; padding-bottom:20px;}
+.cif_cod_box .cont_view > .btn_area{padding:60px 0; border-top:1px solid #ccc;}
+
+.cif_cod_box .cmnt_regi{padding:45px 35px; background-color: #F9F9F9; border-top: 2px solid #ADADAD;}
+.cif_cod_box .cmnt_regi .addB4Cir::before{z-index: 0;}
+.cif_cod_box .cmnt_regi .addB4Cir >span{position: relative;}
+.cif_cod_box .cmnt_regi ul >li{ display: flex;  align-items: center; margin-bottom:15px;}
+.cif_cod_box .cmnt_regi ul >li >div{margin-right:35px; display: flex; align-items: center;}
+.cif_cod_box .cmnt_regi ul >li label{display: inline-block; position: relative; width: 90px; padding-left:16px;}
+.cif_cod_box .cmnt_regi ul >li label::before{
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background-color:#333;
+    border-radius: 50%;
+    position: absolute;
+    left:0;
+    top:6px;
+}
+.cif_cod_box .cmnt_regi ul >li input{border:1px solid #DADCE0; padding:12px 13px 8px;}
+.cif_cod_box .cmnt_regi ul >li textarea{width: calc(100% - 90px); padding:12px 13px;}
+.cif_cod_box .cmnt_regi ul >li textarea::placeholder{color: #808080; line-height:30px;}
+.cif_cod_box .cmnt_regi .btn_box{text-align: right;}
+.cif_cod_box .cmnt_regi .btn_box .rgstr_btn{width: 70px; padding:10px 0 8px; color:#fff; font-size: 14px; text-align: center; background-color: #1A5CA9; border-radius: 5px;}
+
+.cif_cod_box .cmnt_lst > ul >li{padding:30px 0; border-bottom: 1px solid #E8E9EC;}
+.cif_cod_box .cmnt_lst .cmnt_regi_info{display: flex; align-items: center; gap: 15px; padding-bottom:15px;}
+.cif_cod_box .cmnt_lst .cmnt_regi_info > p:not(:first-child){color:#808080; font-size:15px;}
+
+/* 청년생활고민소 - 글쓰기 */
+.cif_wrtg_box{padding-top:60px;}
+.cif_wrtg_box input[type="text"]{width: 100%; border:1px solid #DADCE0; padding:12px 13px 8px;}
+.cif_wrtg_box select{width: 30%; min-width:115px; border:1px solid #DADCE0; padding:12px 13px 8px; border-radius: 3px;}
+
+/* 첨부파일 */
+
+.cif_wrtg_box .btn_area{text-align: center; padding-top:70px;}
+/******************************************************************************************/
+/* 청년생활 꿀팁 */
+.cif_yte_box{padding-bottom:60px;}
+.cif_yte_box .conBox > ul{display: flex; gap: 23px; flex-wrap: wrap; align-items: stretch;}
+.cif_yte_box .conBox > ul >li{width: calc(100% / 3 - 16px);}
+.cif_yte_box .conBox > ul a{display: block; border-radius: 30px; box-shadow: 3px 3px 8px rgba(133, 133, 133,  0.2); overflow: hidden;}
+.cif_yte_box .conBox .img_box{height: 190px; border-radius: 30px; overflow: hidden;}
+.cif_yte_box .conBox .img_box >img{width: 100%; height: 100%; object-fit: cover;}
+.cif_yte_box .conBox .txt_box{padding:20px 10px; text-align: center;}
+.cif_yte_box .conBox .txt_box .m_tit{
+    min-height: 80px;
+    height: auto;
+    font-size:20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+.cif_yte_box .conBox .txt_box .sub_tit{width: 100%; padding-top:20px; font-size:15px; color:#808080; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.cif_yte_box .conBox .txt_box .sub_tit::before{
+    content: '-';
+    display: inline-block;
+    padding-right:5px;
+}
+.cif_yte_box .conBox .txt_box .sub_tit::after{
+    content: '-';
+    display: inline-block;
+    padding-left:5px;
+}
+
+.cif_yte_box .conBox > ul a:hover .img_box >img,
+.cif_yte_box .conBox > ul a:focus .img_box >img{transform: scale( 1.1 ); transition: transform 0.5s ease-in;}
+/******************************************************************************************/
+/* 청년공간정보 공통*/
+.spc_cont .thumbnail_in .img_box{height: 210px;}
+.spc_cont .spc_tag{padding-bottom: 10px;}
+.spc_cont .spc_tag .area{font-size:13px; color:#FF9C00; padding-right: 5px;}
+.spc_cont .spc_tag .oprtn{width: 60px; padding:6px 0 2px; font-size:13px; text-align: center; color:#fff; background-color: #BD5415; border-radius: 3px;}
+.spc_cont .spc_tag .oprtn.off{background-color: #5D5D5D;}
+.spc_cont .serv_tm{font-size:15px;}
+.spc_cont .serv_tm > span:first-child{display: block;color:#333;}
+/* 상세보기 */
+.cif_spc_box .link_btn{margin-left:0}
+.cif_spc_box .view_box {padding-bottom: 20px;}
+.cif_spc_box .view_box >p{padding-bottom: 40px;}
+.cif_spc_box .view_box >ul:not(.spc_imgs) >li{padding-bottom:30px; padding-left:10px; }
+.cif_spc_box .view_box >ul >li >p{padding-bottom:15px; font-size: 17px;}
+.cif_spc_box .view_box >ul >li >div{color:#7A7B7A;}
+/* 공간별 사진 */
+.cif_spc_box .view_box .spc_imgs{max-width:1020px; margin:0 auto 20px; display: flex; gap: 10px; flex-wrap: wrap;}
+.cif_spc_box .view_box .spc_imgs >li{
+    width: 500px;
+    height: 350px;
+    background-color:#ccc;
+}
+.cif_spc_box .view_box .spc_imgs >li>img{width: 100%; height: 100%; object-fit: fill;}
+/* 청년공간홍보 */
+.spc_cont .wrtg_box.sub2 .wrtg_box_in::after{
+    content: '';
+    display: inline-block;
+    width: 250px;
+    height: 225px;
+    background: url(../images/wrtg_box_icon03.png) center center no-repeat;
+    position: absolute;
+    right: -150px;
+    bottom:0;
+}
+
+.spc_cont .wrtg_box .wrtg_box_in .btn_box .wrtg_btn >p{font-size: 22px;}
+
+/* 공간등록신청*/
+.cif_prm_box .wrtg_bg{position: relative; border-radius: 20px;}
+.cif_prm_box .wrtg_bg::before{
+    content:'';
+    display: block;
+    width: 100%;
+    height: 40px;
+    border-bottom:2px solid #000;
+    background-color: var(--sub2--bg);
+    border-radius: 20px 20px 0 0;
+    position: absolute;
+    left:0;
+    top:0;
+}
+.cif_prm_box .wrtg_box .wrtg_box_in{padding: 90px 0 90px;}
+.cif_prm_box .wrtg_box.sub2 .wrtg_box_in::before{    
+    background-image: url(../images/wrtg_sub0.png);
+}
+.cif_prm_box .wrtg_box.sub2 .wrtg_box_in::after {
+    content: '';
+    display: inline-block;
+    width: 260px;
+    height: 178px;
+    background: url(../images/wrtg_box_icon04.png) center center no-repeat;
+    background-size: auto;
+    position: absolute;
+    right: -150px;
+    bottom: 0;
+}
+
+.cif_prm_box .detail_src_box input[type="text"]{max-width: 100%;}
+.cif_prm_box .detail_src_box{padding:40px 100px;}
+.cif_prm_box .detail_src_in >ul > li{align-items: center;}
+.cif_prm_box .detail_src_in >ul > li p{width: 160px;}
+.cif_prm_box .detail_src_in >ul > li .input_slct{width: calc(100% - 160px);}
+.cif_prm_box .detail_src_in .btn_box { display: flex; gap: 20px;}
+.cif_prm_box .detail_src_in .btn_box > button{width: 200px; padding:15px 10px 12px; border:1px solid #E5E5E5; border-radius: 3px;}
+.cif_prm_box .detail_src_in .btn_box > button.on{border-color: #F55D13; background-color: #F55D13; color:#fff;}
+.cif_prm_box .detail_src_in .addrSlct{display: flex; gap: 20px;}
+.cif_prm_box .detail_src_in .addrSlct >p:first-child{width: calc(100% - 220px); font-size: inherit;}
+.cif_prm_box .detail_src_in .addrSlct >p:last-child{width: 200px;}
+.cif_prm_box .detail_src_in .addrSlct >p > button{width: 100%; padding:15px 10px 12px; border-radius: 3px; color:#fff; background-color:#1A5CA9;}
+
+.cif_prm_box .detail_src_in .add_file{display: flex; gap: 20px; flex-direction: column;}
+.cif_prm_box .detail_src_in .file_in_box{padding: 13px 20px 10px; border: 1px solid #DFE0E4; border-radius: 4px;}
+.cif_prm_box .detail_src_in .file_in_box >span{color: #828282;}
+
+.cif_prm_box .input_slct >ul{display: flex; gap: 20px; flex-direction: column;}
+.cif_prm_box .input_slct >ul >li{display: flex; align-items: center; }
+.cif_prm_box .detail_src_in li.aifs{align-items: flex-start}
+.cif_prm_box .detail_src_in li.aifs >p{padding-top:7px;}
+.cif_prm_box .input_slct >ul >li >p{width: 110px; font-size: 1.2em;}
+.cif_prm_box .input_slct >ul >li >div{width: calc(100% - 110px);}
+
+/********* 일자리 금융 ***********/
+/* 청년재무상담 */
+.cpl_fnc_box{max-width: 800px; margin:0 auto;}
+.cpl_fnc_box > .step{display: flex; align-items: center; justify-content: space-between; align-items: stretch; gap: 30px; padding:25px 0 60px;}
+.cpl_fnc_box > .step > li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 174px;
+    min-height: 70px;
+    height: 100%;
+    border:1px solid  rgb(229, 229, 229);
+    border-radius: 24px;
+    background-color: #fff;
+    padding:5px 6px 0;
+    text-align: center;
+    font-size: 17px;
+    position: relative;
+
+}
+.cpl_fnc_box > .step > li.on{
+    background-color:var(--sub3--bg);
+    border-color: var(--sub3--bg);
+    color:#fff;
+    font-weight: 600;
+    box-shadow: 0px 6px 21px 0px rgba(5, 5, 5, 0.1);
+}
+.cpl_fnc_box > .step > li .tbl8{display: none;}
+.cpl_fnc_box > .step > li:not(:first-child):before{
+    content:'';
+    display: inline-block;
+    width: 9px;
+    height: 16px;
+    background: url('../images/arrow_gr.png') center no-repeat;
+    position: absolute;
+    left:-23px;
+}
+
+.fnc_in_cont .fnc_box{
+    width: 100%;
+    padding:34px 26px 30px;
+    border-radius: 16px;
+    background-color: #fff;
+    border:1px solid #EAEAEA;
+    margin-bottom:15px;
+}
+.fnc_in_cont .fnc_box >a{display: block; width: 100%; cursor: pointer;}
+.fnc_in_cont .fnc_box .tit{display: flex; align-items: center; justify-content: space-between; }
+.fnc_in_cont .fnc_box h4{font-size: 22px; }
+.fnc_in_cont .fnc_box h4 >img{margin-right: 5px;}
+.fnc_in_cont .fnc_box h4 > span{vertical-align: sub; vertical-align: -webkit-baseline-middle; }
+.fnc_in_cont .fnc_box .tit img{vertical-align: middle;}
+
+.fnc_in_cont .fnc_box .tit >span{padding-top:10px; transform: rotate(-90deg); transition: transform 0.5s;}
+
+.fnc_in_cont .fnc_box .under{font-size: 17px; padding-top:30px; display: none;}
+
+.fnc_in_cont .fnc_box .desc{padding:25px;  border:1px solid #EAEAEA; border-radius: 16px;}
+.fnc_in_cont .fnc_box .desc .quest{padding:20px 0 30px; font-size: 1em;}
+.fnc_in_cont .fnc_box .desc .input_box{display: flex; align-items: center; justify-content: center; gap: 20px;}
+.fnc_in_cont .fnc_box .notice{padding-top:30px; font-size:0.9em;}
+.fnc_in_cont .fnc_box .hgh{/*color:#B5335B;*/color:#FA316E; font-weight: 600;}
+
+.fnc_in_cont .fnc_box .btn_box{display: flex; align-items: center; justify-content: center; gap: 10px; padding:40px 0 20px;}
+.fnc_in_cont .fnc_box .btn_box > button{width: 160px; text-align: center; padding: 17px 0 13px; border-radius: 10px; font-size: 0.9em;}
+
+.fnc_in_cont .fnc_box.on{
+    border-color: transparent;
+    box-shadow: 4.243px 4.243px 27px 0px rgba(5, 5, 5, 0.03);
+}
+.fnc_in_cont .fnc_box.on .tit >span{transform: rotate(0deg);}
+
+.fnc_in_cont .tit > .addCir{position: relative; z-index: 1;}
+.fnc_in_cont .tit > .addCir::before{
+    content:'';
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background-color: #FFFAA8;
+    position: absolute;
+    left:-8px;
+    top:-8px;
+    z-index: -1;
+}
+
+/* 개인정보활용동의 */
+#fnc_step2 .under .all_box label{font-size:1.1em;}
+#fnc_step2 .under .all_box > span{display: inline-block; padding-left:50px; font-size:15px; padding:10px 0 25px 50px;position: relative; font-size:0.88em;}
+#fnc_step2 .under .all_box > span::before{
+    content:'※';
+    display: inline-block;
+    position: absolute;
+    left:33px;
+}
+#fnc_step2 .cnsnt >li{margin-bottom:20px; padding:25px 25px 20px; border:1px solid #EAEAEA; border-radius: 14px;}
+#fnc_step2 .cnsnt >li .tit a{ display: block; width: 10px !important;}
+#fnc_step2 .cnsnt >li .tit a img{transform: rotate(0deg); vertical-align: middle;}
+
+#fnc_step2 .cnsnt >li .tit a.on img{transform: rotate(90deg);}
+
+#fnc_step2 .cnsnt .terms_desc{
+    display: none;
+    background-color: #F2FAF7;
+    padding:30px 12px 30px 40px;
+    border-radius: 14px;
+    margin-top:20px;
+}
+#fnc_step2 .cnsnt .terms_desc > .scroll_box{height: 265px;  overflow-y: auto;}
+#fnc_step2 .cnsnt .terms_desc p{font-size:0.9em; position: relative;}
+#fnc_step2 .cnsnt .terms_desc p::before{
+    content:'';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #3BB487;
+    position: absolute;
+    left:-10px;
+    top:6px;
+}
+#fnc_step2 .cnsnt .terms_desc span{display: block; font-size:0.8em; padding:3px 0 20px; color:#555555;}
+#fnc_step2 .cnsnt .terms_desc i{ font-size:0.75em; color:#636363; padding-bottom: 20px;}
+
+/* scrollbar */
+#fnc_step2 .cnsnt .scroll_box::-webkit-scrollbar {
+    width: 8px;
+}
+#fnc_step2 .cnsnt .scroll_box::-webkit-scrollbar-thumb,
+#fnc_step2 .cnsnt .scroll_box::-webkit-scrollbar-thumb{
+    background-color: #3AB486;
+    border-radius: 20px;
+}
+#fnc_step2 .cnsnt .scroll_box::-webkit-scrollbar-track,
+#fnc_step2 .cnsnt .scroll_box::-webkit-scrollbar-track{ background-color:#fff; border-radius: 20px;}
+
+#fnc_step3 .under > div{max-width: 660px; margin:30px auto 0;}
+#fnc_step3 .info_id > .tit{font-size: 1.28em; font-weight: 700; padding-bottom: 10px; border-bottom: 1px solid #333;}
+#fnc_step3 .info_id ul{padding-top:30px;}
+#fnc_step3 .info_id li{ padding-bottom:14px; box-sizing: content-box; display: flex; }
+#fnc_step3 .info_id li > div{min-height: 44px; }
+#fnc_step3 .info_id li > div:nth-child(1){width: 152px; font-size: 1em;  padding-top:10px;}
+#fnc_step3 .info_id li > div:nth-child(1) > i{font-size:0.9em;}
+#fnc_step3 .info_id li > div:nth-child(2){width: calc(100% - 152px); font-size: 0.85em;}
+#fnc_step3 .info_id li > div:nth-child(2) .n3{display: flex; gap: 20px;}
+#fnc_step3 .info_id li > div:nth-child(2) .n2{display: flex; gap: 20px;}
+#fnc_step3 .info_id li > div:nth-child(2) .n2 >p{width: calc(50% - 10px);}
+
+/* 휴대폰번호 */
+#fnc_step3 .info_id .phonenum > div:nth-child(2) .n3 >p{position: relative;}
+#fnc_step3 .info_id .phonenum > div:nth-child(2) .n3 >p:not(:first-child)::before{
+    content:'-';
+    display: inline-block;
+    position: absolute;
+    left:-14px;
+    top:14px;
+
+}
+/* 생년월일 */
+#fnc_step3 .info_id .birth > div:nth-child(2) >p{font-size: 0.8em; color:#626262;}
+
+/* 성별 */
+#fnc_step3 .info_id .gender >div:nth-child(2) >.n2 >p{width: calc(50% - 8px); height: 44px; border-radius: 3px; position: relative;}
+#fnc_step3 .info_id .gender >div:nth-child(2) >.n2 >p  input[type="radio"]{height: 100%; border:1px solid #bcbcbc; border-radius: 3px;}
+#fnc_step3 .info_id .gender input[type="radio"]{
+    position: absolute; left:0; top:0;
+    width: 100%;
+    height: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+#fnc_step3 .gender label{position: absolute; left:50%; top:50%; transform: translate(-50%, -50%); color:#BCBCBC;
+}
+#fnc_step3 .gender >div:nth-child(2) >.n2 >p  input[type="radio"]:checked{border-color: var(--sub3--bg); }
+#fnc_step3 .gender input[type="radio"]:checked~label{color:var(--sub3--bg);}
+/* 이메일 */
+/* 휴대폰번호 */
+#fnc_step3 .info_id .mail_box > div:nth-child(2) .n3 >p{position: relative;}
+#fnc_step3 .info_id .mail_box > div:nth-child(2) .n3 >p:first-child::after{
+    content:"@";
+    display: inline-block;
+    position: absolute;
+    right:-16px;
+    top:14px;
+}
+
+/* 주소 */
+#fnc_step3 .address .addrSlct{display: flex; gap: 20px;}
+#fnc_step3 .address .addrSlct >p:nth-child(1){width: calc(100% - 176px)}
+#fnc_step3 .address .addrSlct >p:nth-child(2){width:156px;}
+#fnc_step3 .address .addrSlct >p:nth-child(2) button{width: 100%; height: 100%; background-color: #EDEDED; border-radius: 3px;}
+
+/* 첨부파일 업로드 */
+#fnc_step3 .fileUp >div:nth-child(1) >span{display: inline-block; position: relative;}
+#fnc_step3 .fileUp >div:nth-child(2){padding-top:10px; width: 100%;}
+
+#fnc_step3 .filebox{display: flex; gap: 20px;}
+#fnc_step3 .filebox .upload-name {
+    display: inline-block;
+    height: 40px;
+    padding: 0 10px;
+    vertical-align: middle;
+    border: 1px solid #eaeaea;
+    width: calc(100% - 176px);
+    color: #999999;
+    border-radius: 3px;
+    font-size:0.8em;
+}
+#fnc_step3 .filebox >p{position: relative; width: 156px; }
+#fnc_step3 .filebox label {
+    width: 100%;
+    display: inline-block;
+    padding: 10px ;
+    line-height: 25px;
+    text-align: center;
+    color: #333;
+    vertical-align: middle;
+    background-color: #fff;
+    cursor: pointer;
+    height: 40px;
+    position: absolute;
+    left:0;
+    top:0;
+    z-index: 1;
+    border:1px solid #333;
+    border-radius: 3px;
+    font-size:0.9em;
+}
+#fnc_step3 .filebox label::before{
+    content:'';
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background: url('../images/search_icon05.png') center bottom no-repeat;
+    background-size: 100%;
+    margin-right:5px;
+    vertical-align: text-top;
+}
+#fnc_step3 .filebox input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    width: 100%;
+    padding: 10px 20px;
+    height: 40px;
+    left:0;
+    top:0;
+    z-index: 0;
+}
+#fnc_step3 .fileUp .hgh{line-height: 17px; padding-top:15px; font-size:0.7em; font-weight: 400;}
+
+#fnc_step3 .info_id input[type="text"]{border:1px solid #eaeaea; width: 100%; height: 100%; padding: 13px 14px 10px; font-size:1em;}
+
+/* 상담정보 */
+#fnc_step3 .chk_box > ul{padding-top:0;}
+#fnc_step3 .chk_box li{padding:10px 0; border-bottom:1px solid #eaeaea;}
+#fnc_step3 .chk_box li:last-child{border:0;}
+#fnc_step3 .chk_box .chk_list{display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; column-gap: 35px; row-gap: 15px;}
+#fnc_step3 .chk_box .chk_list label{vertical-align: bottom;}
+
+
+/* 완료 */
+#fnc_step4 .under >div{max-width: 660px; margin:30px auto 0; }
+#fnc_step4 .under .tit{font-size: 1.28em; font-weight: 700; padding-bottom:20px; }
+#fnc_step4 .under .fnc_step4_in{background-color:#F2FAF7 ;  border-radius: 14px; text-align: center; padding:40px 20px;}
+
+#fnc_step4 .under .fnc_step4_in .tits{padding:20px 0; font-size:1.2em;}
+#fnc_step4 .under .fnc_step4_in .tits > span{color:var(--sub3--bg); font-weight: 700;}
+/* input checkbox, radio */
+.fnc_in_cont .fnc_chk{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border:1px solid var(--sub3--bg);
+}
+.fnc_in_cont .fnc_chk:checked{
+    background-image: url('../images/fnc_chk.png');
+    background-position: center center;
+    border:0;
+}
+.fnc_in_cont .fnc_chk1{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border:1px solid var(--sub3--bg);
+    position: relative;
+}
+.fnc_in_cont .fnc_chk1:checked:before{
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--sub3--bg);
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50% );
+}
+
+.fnc_in_cont .fnc_box .fnc_chk2{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border:1px solid rgb(229, 229, 229);
+    border-radius: 5px;
+}
+.fnc_in_cont .fnc_box .fnc_chk2:checked{
+    background-image: url('../images/fnc_chk02.png');
+    background-position: center center;
+    border:0;
+
+}
+.fnc_in_cont .fnc_chk3{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    border:1px solid var(--sub3--bg);
+}
+.fnc_in_cont .fnc_chk3:checked{
+    background-image: url('../images/fnc_chk03.png');
+    background-position: center center;
+    border:0;
+}
+.fnc_in_cont .fnc_box label{padding-left:5px;}
+
+
+@media screen and (max-width : 1200px){
+    /* 청년공간홍보 */
+    .spc_cont .wrtg_box.sub2 .wrtg_box_in::after{display: none;}
+    /* 공간등록신청*/
+    .cif_prm_box .wrtg_box .wrtg_box_in{padding: 90px 20px 60px;}
+
+    .cif_prm_box .wrtg_box.sub2 .wrtg_box_in::after{display: none;}
+}
+@media screen and (max-width : 960px){
+    /* 공간등록신청 */
+    .cif_prm_box .detail_src_in .btn_box{ flex-direction: column; gap: 10px;}    
+    .cif_prm_box .input_slct >ul >li{flex-direction: column; gap: 10px;}
+    .cif_prm_box .input_slct >ul >li >p {width: 100%;}
+    .cif_prm_box .input_slct >ul >li >div{width: 100%;}
+}
+@media screen and (max-width : 840px){
+    /* 청년생활 고민소 */
+    .cif_col_box .wrtg_box_in::after{display: none;}
+
+    /* 청년생활 고민소 - 상세보기 */
+    .cif_cod_box .cmnt_regi ul >li{align-items: flex-start;}
+    .cif_cod_box .cmnt_regi ul >li:first-child{flex-direction: column; }
+    .cif_cod_box .cmnt_regi ul >li >div{width: 100%; padding-bottom:15px;}
+    .cif_cod_box .cmnt_regi ul >li input{width: calc(100% - 90px);}
+
+    /* 청년생활 꿀팁 */
+    .cif_yte_box .conBox > ul >li{width: calc(100% / 2 - 12px);}
+
+    /************** 청년재무상담 **************/
+    .cpl_fnc_box > .step > li{
+        height: 93px;
+        border-radius: 20px;
+        font-size: 15px;
+    }
+    .cpl_fnc_box > .step > li .tbl8{display: block;}
+
+    /* 기본정보 및 상담신청 */
+    #fnc_step3 .info_id li > div:nth-child(2) .n3{flex-direction: column;}
+    #fnc_step3 .info_id .phonenum > div:nth-child(2) .n3 >p:not(:first-child)::before{
+        top:-18px;
+        left:50%;
+        transform: translateX(-50%);
+    }
+    #fnc_step3 .info_id .mail_box > div:nth-child(2) .n3 >p:first-child::after{
+        top:45px;
+        right: 50%;
+        transform: translateX(-50%);
+    }
+    #fnc_step3 .info_id .mail_box #email_selector{width: 100%;}
+}
+
+@media screen and (max-width : 760px){
+    /* 청년생활 고민소 */
+    .cif_col_box .bd_lst_tbl col:nth-child(1){width: 80px!important;}
+    .cif_col_box .bd_lst_tbl col:nth-child(3){width: 80px!important;}
+    .cif_col_box .bd_lst_tbl col:nth-child(4){width: 100px!important;}
+
+    /* 청년생활 고민소 - 상세보기 */
+    .cif_cod_box > .sub_tit{flex-direction: column;}
+
+     /* 청년생활 꿀팁 */
+    .cif_yte_box .conBox .txt_box {padding:20px;}
+
+    /* 공간등록신청 */
+    .cif_prm_box .detail_src_box{padding:40px;}
+    .cif_prm_box .detail_src_in .addrSlct{flex-direction: column;}
+    .cif_prm_box .detail_src_in .addrSlct >p:first-child{width: 100%;}
+    .cif_prm_box .detail_src_in .addrSlct >p:last-child{width: 100%;}
+    .cif_prm_box .detail_src_in .file_in_box >span{font-size: 0.9em;}
+
+    /************** 청년재무상담 **************/
+    #fnc_step3 .info_id li{flex-direction: column; padding-bottom: 30px; gap: 10px;}
+    #fnc_step3 .info_id li > div{min-height: auto;}
+    #fnc_step3 .info_id li > div:nth-child(2){width: 100%; padding-left:15px;}
+
+}
+@media screen and (max-width : 680px){
+    .file_btn_box >div >p{flex-direction:column; align-items: flex-start;}
+    /* 청년생활 꿀팁 */
+    .cif_yte_box .conBox .txt_box .m_tit {min-height: 67px; font-size: 17px;}
+    .cif_yte_box .conBox .txt_box .sub_tit {font-size: 14px;}
+
+    /************** 청년재무상담 **************/
+    #fnc_step3 .under > div{max-width: 95%;}
+    
+}
+@media screen and (max-width : 500px){
+
+    /* 청년생활 고민소 - 상세보기 */
+    .sub_emp_box{flex-direction: column; align-items: center;}
+    .cif_cod_box .cmnt_regi ul >li{flex-direction: column;}
+    .cif_cod_box .cmnt_regi ul >li:last-child > label{margin-bottom:10px;}
+    .cif_cod_box .cmnt_regi ul >li textarea{width: 100%;}
+    .cif_cod_box .cmnt_lst .cmnt_regi_info > p:not(:first-child) {font-size:12px;}
+
+    /************** 청년재무상담 **************/
+    .cpl_fnc_box > .step {gap: 20px;}
+    .cpl_fnc_box > .step > li{font-size: 14px;}
+    .cpl_fnc_box > .step > li:not(:first-child):before {left:-16px;}
+    
+    .fnc_in_cont .fnc_box h4 > span{font-size:20px;}
+    .fnc_in_cont .fnc_box .under{ font-size: 15px;}
+}
+@media screen and (max-width : 480px){
+    /* 청년생활 고민소 */
+    .cif_col_box .bd_lst_tbl col:nth-child(3){display: none;}
+    .cif_col_box .bd_lst_tbl thead > tr >th:nth-child(3){display: none;}
+    .cif_col_box .bd_lst_tbl tbody > tr > td:nth-child(3){display: none;}
+
+    /* 청년생활고민소 -상세페이지 */
+    .cif_cod_box > .sub_tit > div{font-size:25px;}
+
+
+    /* 청년생활 꿀팁 */
+    .cif_yte_box .conBox > ul >li{width: 100%;}
+
+    /* 청년공간정보 공통 */
+    .spc_cont .thumbnail_in .img_box {height: 160px;}
+
+    .cif_spc_box .thumbnail_lst > .thum_desc .link_btn{margin-left:20px;}
+    .thumbnail_lst > .thum_desc >.sub_tit h4{font-size: 25px;}
+    
+    /* 공간별 사진 */
+    .cif_spc_box .view_box .spc_imgs >li{
+        width: 350px;
+        height: 250px;
+        background-color:#ccc;
+    }
+    /* 공간등록신청 */
+    .cif_prm_box .detail_src_in >ul > li p{width: 100%;}
+    .cif_prm_box .detail_src_in >ul > li .input_slct{width: 100%;}
+    .cif_prm_box .input_slct >ul{ gap: 30px; padding-left:10px;}
+    .cif_prm_box .input_slct >ul >li >p{font-size: 1.1em}
+    .cif_prm_box .detail_src_in .btn_box{width: 100%;}
+    .cif_prm_box .detail_src_in .btn_box > button {width: 100%;}
+    .cif_prm_box .caut{font-size: 13px;}
+
+
+    /************** 청년재무상담 **************/
+    #fnc_step2 .cnsnt >li {padding:25px 18px 20px;}
+
+}
+@media screen and (max-width : 380px){
+    /* 청년생활 꿀팁 */
+    .cif_yte_box .conBox .txt_box .m_tit {min-height: 64px; font-size: 16px;}
+    .cif_yte_box .conBox .txt_box .sub_tit {font-size: 12px;}
+
+    /************** 청년재무상담 **************/
+
+    .fnc_in_cont .fnc_box .under{font-size: 13px;}
+    .fnc_in_cont .fnc_box h4 > span{font-size:18px;}
+
+    #fnc_step2 .cnsnt .terms_desc{padding: 30px 12px 30px 30px;}
+}

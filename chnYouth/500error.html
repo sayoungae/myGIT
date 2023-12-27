@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500Error</title>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/respon.css"/>
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/slick.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div class="error_content">
+            <div class="inner tac">
+                <p class="img"><img src="./images/500er_icon.png" alt="충남청년포털"/></p>
+                <h2>잘못된 요청입니다.<br/>서비스 이용에 불편을 드려 죄송합니다</h2>
+                <ul class="desc_box">
+                    <li>
+                        <p>방문하시려는 페이지의 연결이 지연되고 있습니다</p>
+                        <p>페이지를 새로고침 ( F5 ) 하시거나 잠시 후 다시 접속해주시기 바랍니다.</p>
+                        <p>오류가 지속되는 경우에는 고객센터로 문의 주시면 친절하게 안내해 드리겠습니다</p>
+                        <p>감사합니다</p>
+                    </li>
+                    <li>
+                        <p>기타 문의는 고객센터로 문의하시기 바랍니다</p>
+                        <p>문의 전화 : 0000 - 0000</p>
+                    </li>
+                </ul>
+                <div class="btn_box">
+                    <a href="index.html" title="메인으로">메인으로</a>
+                    <a href="javascript:void(0)" class="back" title="이전페이지">이전페이지</a>
+                </div>
+            </div>
+        </div>
+        <style>
+            @font-face {
+                font-family: "ONEMobileTitle";
+                src: url("./fonts/ONEMobileTitle.ttf") format("truetype");
+                font-weight: normal;
+            }
+            #container {
+                padding-top: 120px;
+            }
+            .error_content {padding: 100px 0 180px; font-family: 'ONEMobileTitle', sans-serif;}
+            .error_content > .inner{max-width: 90%; margin:0 auto;}
+            .error_content .img{padding-bottom:45px;}
+            .error_content h2{font-weight: 400; font-size: 35px; padding-bottom: 50px;}
+            .error_content .desc_box >li{padding-bottom:30px;}
+            .error_content .desc_box >li >p{padding-bottom:5px; font-size: 20px;}
+            .error_content .btn_box{padding-top: 25px; font-size: 1.2em; display: flex; justify-content: center; gap: 25px;}
+            .error_content .btn_box >a{display: inline-block;  width: 170px; height: 60px; text-align: center; line-height:65px; border-radius:10px;  color:#fff; background-color: #1273BD;}
+            .error_content .btn_box .back{color:#000; background-color: #B3B3B3; }
+            @media screen and (max-width : 760px){
+                .error_content h2{font-size: 23px;}
+                .error_content .desc_box >li >p{font-size: 16px;}
+                .error_content .btn_box{gap: 15px; font-size: 0.9em;}
+                .error_content .btn_box >a{width: 132px; height: 47px; line-height:47px;}
+            }
+        </style>
+        <script>
+            document.querySelector('.back').onclick = function() {
+                history.back();
+            }
+        </script>
+    </div>
+</body>
+</html>

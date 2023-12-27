@@ -1,0 +1,189 @@
+<!-- 수정 20231120 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다이나믹충남청년 &lt; 통합검색 &lt; 전체</title>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/respon.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/search.css"/>
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/slick.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <!-- container -->
+        <div id="container">
+            <div class="srh_banner">
+                <div class="srh_inner">
+                    <div class="content_in">
+                        <div class="icons"><img src="./images/sub_icon08.png" alt=""></div>
+                        <div class="txt_box">
+                            <h2>통합검색</h2>
+                            <div class="sub_txt">충남청년포털 통합검색 페이지입니다.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="srh_content">
+                <div class="srh_inner">
+                    <div class="srh_form_box">
+                        <div class="search_form">
+                            <form action="#" method="post">
+                                <div>
+                                    <input type="text" id="fKeyword" placeholder="검색어를 입력보세요." title="검색어 입력창">
+                                    <button class="btn_totalSearch" type="submit">검색</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <script>
+                        $.ajax({
+                            type: 'GET',
+                            url: "search1.html",
+                            dataType: "html",
+                            error: function (request, status, error) {
+                                alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+                            },
+                            success: function (data) {
+                                $('#tabcontent').html(data);
+                            }
+                        });
+                    </script>
+                    <div class="totalSrh_box">
+                        <div class="top_cont">
+                            <ul class="tabs">
+                                <li data-tab="search1" class="tabmenu on" id="default"><a href="#none" title="전체">전체</a></li>
+                                <li data-tab="search2" class="tabmenu"><a href="#none" title="충남시정책">충남시정책</a></li>
+                                <li data-tab="search3" class="tabmenu"><a href="#none" title="청년지원정보">청년지원정보</a></li>
+                                <li data-tab="search4" class="tabmenu"><a href="#none" title="메뉴">메뉴</a></li>
+                                <li data-tab="search5" class="tabmenu"><a href="#none" title="웹페이지">웹페이지</a></li>
+                                <li data-tab="search6" class="tabmenu"><a href="#none" title="게시판">게시판</a></li>
+                            </ul>
+                        </div>
+                        <div class="bott_cont" >
+                            <div id="tabcontent">
+                                
+                            </div>
+                            <div class="ctsright">
+                                <div class="sch_box">
+                                    <div class="tit">
+                                        <p>인기 검색어</p>
+                                    </div>
+                                    <ul class="tap_tit">
+                                        <li class="on">
+                                            <a href="#none" title="주간" class="rank_tab weekly" rel="weekly"><span>주간</span></a>
+                                        </li>
+                                        <li>
+                                            <a href="#none" title="월간" class="rank_tab daily" rel="daily"><span>월간</span></a>
+                                        </li>
+                                    </ul>
+                                    <div class="con">
+                                        <div class="cont_box">
+                                            <ul class="rank" id="weekly">
+                                                <li>
+                                                    <span class="no">1</span>
+                                                    <a href="#none" title="학자금대출 이자지원">학자금대출 이자지원</a>
+                                                </li>
+                                                <li>
+                                                    <span class="no">2</span>
+                                                    <a href="#none" title="학자금대출 이자">학자금대출 이자</a>
+                                                </li>
+                                                <li>
+                                                    <span class="no">3</span>
+                                                    <a href="#none" title="학자금대출 이자">이자 지원</a>
+                                                </li>
+                                                <li>
+                                                    <span class="no">4</span>
+                                                    <a href="#none" title="학자금 이자">학자금 이자</a>
+                                                </li>
+                                                <li>
+                                                    <span class="no">5</span>
+                                                    <a href="#none" title="교통비">교통비</a>
+                                                </li>
+                                                <li>
+                                                    <span class="no">6</span>
+                                                    <a href="#none" title="학자금 이자지원">학자금 이자지원</a>
+                                                </li>
+                                                <li>
+                                                    <span class="no">7</span>
+                                                    <a href="#none" title="청년 문화패스">청년 문화패스</a>
+                                                </li>
+                                                <li>
+                                                    <span class="no">8</span>
+                                                    <a href="#none" title="학자금 이자지원">학자금 이자지원</a>
+                                                </li>
+                                                <li>
+                                                    <span class="no">9</span>
+                                                    <a href="#none" title="학자금대출 이자">학자금 이자</a>
+                                                </li>
+                                                <li>
+                                                    <span class="no">10</span>
+                                                    <a href="#none" title="문화패스">문화패스</a>
+                                                </li>
+                                            </ul>
+                                            <ul class="rank" id="daily">
+                                                <li>
+                                                    <span class="no t1">1</span>
+                                                    <a href="#none" title="학자금대출 이자지원">학자금대출 이자지원2</a>
+                                                </li>
+                                                <li>
+                                                    <span class="no t1">2</span>
+                                                    <a href="#none" title="학자금대출 이자">학자금대출 이자2</a>
+                                                </li>
+                                                <li>
+                                                    <span class="no t1">3</span>
+                                                    <a href="#none" title="학자금대출 이자">이자 지원2</a>
+                                                </li>
+                                                <li>
+                                                    <span class="no t1">4</span>
+                                                    <a href="#none" title="학자금 이자">학자금 이자2</a>
+                                                </li>
+                                                <li>
+                                                    <span class="no t1">5</span>
+                                                    <a href="#none" title="교통비">교통비2</a>
+                                                </li>
+                                                <li>
+                                                    <span class="no t1">6</span>
+                                                    <a href="#none" title="학자금 이자지원">학자금 이자지원2</a>
+                                                </li>
+                                                <li>
+                                                    <span class="no t1">7</span>
+                                                    <a href="#none" title="청년 문화패스">청년 문화패스2</a>
+                                                </li>
+                                                <li>
+                                                    <span class="no t1">8</span>
+                                                    <a href="#none" title="학자금 이자지원">학자금 이자지원2</a>
+                                                </li>
+                                                <li>
+                                                    <span class="no t1">9</span>
+                                                    <a href="#none" title="학자금대출 이자">학자금 이자2</a>
+                                                </li>
+                                                <li>
+                                                    <span class="no t1">10</span>
+                                                    <a href="#none" title="문화패스">문화패스2</a>
+                                                </li>
+                                            </ul>
+                                                                                </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

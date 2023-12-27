@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 3단계 정보입력</title>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/respon.css" />
+    <link rel="stylesheet" type="text/css" href="../css/login.css" />
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/slick.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <script type="text/javascript" src="../js/user.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <div class="user_banner">
+            <div class="inner">
+                <div class="content_in">
+                    <div class="icons"><img src="../images/sub_icon08.png" alt=""></div>
+                    <div class="txt_box">
+                        <h2>회원가입</h2>
+                        <div class="sub_txt">충남청년포털 회원관리 페이지입니다.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="user_content" >
+            <h2>회원가입</h2>
+            <div class="inner">
+                <ul class="step">
+                    <li class="on">본인인증</li>
+                    <li class="on">약관동의</li>
+                    <li class="on">정보입력</li>
+                    <li class="">가입완료</li>
+                </ul>
+                <div class="step_cont">
+                    <div>
+                        <h3>필수항목 추가입력</h3>
+                        <div class="step3 cont_box">
+                            <p>회원정보는 정책신청 및 청년제안, 이벤트 참여에 따른 정보 제공에 활용되므로 정확하게 입력해 주십시오.</p>
+                            <span class="colR">(*)항목은 필수 입력 항목입니다.</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="fRegisterform">
+                            <form name="registerform" method="post">
+                                <div class="info_id">
+                                    <h3>아이디 정보</h3>
+                                    <ul>
+                                        <li>
+                                            <div class="mh">아이디</div>
+                                            <div>
+                                                <div class="dpf">
+                                                    <input type="text" class="enum" name="reg_mb_id" id="reg_mb_id"
+                                                        title="아이디">
+                                                    <button type="button" class="ed_btn">중복 확인</button>
+                                                </div>
+                                                <span>영문으로 시작하는 최소 4자리 이상</span>
+                                                <span class="colR">* 사용 가능한 ID입니다.</span>
+                                                <span class="colR">* 사용 불가능한 ID입니다.</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="mh">비밀번호</div>
+                                            <div>
+                                                <input type="password" class="ed" name="reg_mb_pwd" id="reg_mb_pwd"
+                                                    title="비밀번호" minlength="4">
+                                                <span>영문으로 시작하는 최소 4자리 이상</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="mh">비밀번호 확인</div>
+                                            <div>
+                                                <input type="password" class="ed" name="reg_mb_repwd" id="reg_mb_repwd"
+                                                    title="비밀번호확인" minlength="4">
+                                                <span class="repwd_match">* 비밀번호가 일치합니다.</span>
+                                                <span class="repwd_mismatch">* 비밀번호가 일치하지 않습니다.</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="info_user">
+                                    <h3>회원 정보</h3>
+                                    <ul>
+                                        <li>
+                                            <div class="mh">이름</div>
+                                            <div>
+                                                <input type="text" class="ed" name="mb_name" id="mb_name"
+                                                    title="이름">
+                                            </div>
+                                        </li>
+                                        <li class="phonenum">
+                                            <div class="mh">연락처</div>
+                                            <div>
+                                                <input type="text" class="numOny" name="mb_phonenum1" id="mb_phonenum1"
+                                                    title="연락처1" minlength="3" maxlength="3">
+                                                <i>-</i>
+                                                <input type="text" class="numOny" name="mb_phonenum2" id="mb_phonenum2"
+                                                title="연락처2" minlength="4" maxlength="4">
+                                                <i>-</i>
+                                                <input type="text" class="numOny" name="mb_phonenum3" id="mb_phonenum3"
+                                                title="연락처3" minlength="4" maxlength="4">
+                                            </div>
+                                        </li>
+                                        <li class="gender">
+                                            <div class="mh">성별</div>
+                                            <div>
+                                                <p>
+                                                    <input type="radio" class="ed" name="mb_gender" id="mb_male">
+                                                    <label for="mb_male">남성</label>
+                                                </p>
+                                                <p>
+                                                    <input type="radio" class="ed" name="mb_gender" id="mb_female">
+                                                    <label for="mb_female">여성</label>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="birth">
+                                            <div class="mh">생년월일</div>
+                                            <div>
+                                                <input type="text" class="numOny" name="mb_birth_year" id="mb_birth_year"
+                                                    title="년도" minlength="3" maxlength="3">
+                                                <input type="text" class="numOny" name="mb_birth_month" id="mb_birth_month"
+                                                title="월" minlength="4" maxlength="4">
+                                                <input type="text" class="numOny" name="mb_birth_day" id="mb_birth_day"
+                                                title="일" minlength="4 numOny" maxlength="4">
+                                                <span>4자리 2자리 2자리 형식으로 표시, ex&#41;2023 08 29</span>
+                                            </div>
+                                        </li>
+                                        <li class="mail_box">
+                                            <div>이메일</div>
+                                            <div>
+                                                <input type="text" class="enum" name="mb_email" id="mb_email"
+                                                    title="이메일 아이디">
+                                                <span>@</span>
+                                                <input type="text" class="ed" name="mb_email_addr" id="mb_email_addr"
+                                                    title="이메일 주소">
+                                                <select id="email_selector">
+                                                    <option value="direct">직접입력</option>
+                                                    <option value="naver.com">naver.com</option>
+                                                    <option value="gmail.com">gmail.com</option>
+                                                    <option value="daum.net">daum.net</option>
+                                                    <option value="hanmail.net">hanmail.net</option>
+                                                    <option value="nate.com">nate.com</option>
+                                                </select>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="btn_box">
+                        <button type="button" title="취소" class="cancle">취소</button>
+                        <button type="button" title="다음" class="confirm">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

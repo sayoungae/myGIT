@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비밀번호찾기 3단계 비밀번호재설정</title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/common.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/respon.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/login.css"/>
+    
+        <!-- JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/slick.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <script type="text/javascript" src="../js/common.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div class="user_banner">
+            <div class="inner">
+                <div class="content_in">
+                    <div class="icons"><img src="../images/sub_icon08.png" alt=""></div>
+                    <div class="txt_box">
+                        <h2>비밀번호찾기</h2>
+                        <div class="sub_txt">충남청년포털 회원관리 페이지입니다.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="user_content findPwd" >
+            <h2>비밀번호 찾기</h2>
+            <div class="inner">
+                <ul class="step">
+                    <li class="on">회원정보입력</li>
+                    <li class="on">본인인증</li>
+                    <li class="on">비밀번호재설정</li>
+                </ul>
+                <div class="step_cont">
+                    <div>
+                        <h3>비밀번호 재설정</h3>
+                        <div class="step3 cont_box">
+                            <form>
+                                <div>
+                                    <label for="nw_pwd">새로운 비밀번호</label>
+                                    <input type="password" class="ed" name="nw_pwd" id="nw_pwd" minlength="4">
+                                </div>
+                                <div>
+                                    <label for="re_nw_pwd">비밀번호 확인</label>
+                                    <input type="password" class="ed" name="re_nw_pwd" id="re_nw_pwd" minlength="4">
+                                </div>
+                                <span class="repwd_match">* 비밀번호가 일치합니다.</span>
+                                <span class="repwd_mismatch">* 비밀번호가 일치하지 않습니다.</span>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="btn_box fdcol">
+                        <a href="index.html" title="메인으로" class="main_btn">메인으로</a>
+                        <a href="./log_main.html" title="로그인" class="login_btn">로그인</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

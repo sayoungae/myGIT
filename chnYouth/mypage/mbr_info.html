@@ -1,0 +1,737 @@
+<!-- 
+    수정 20231108
+    팝업 추가
+    sns / 탈퇴
+ -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page 충남청년</title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/common.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/respon.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/sub.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/sub01.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/sub02.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/sub07.css"/>
+
+        <!-- JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/slick.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <script type="text/javascript" src="../js/common.js"></script>
+        <script type="text/javascript" src="../js/sub.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="container">
+            <div class="content_top">
+                <div class="top_banner mypage mph">
+                    <div class="sInner">
+                        <div class="content_in">
+                            <div class="icons"><img src="../images/sub_icon10.png" alt=""/></div>
+                            <div class="txt_box">
+                                <h2>나의정보관리</h2>
+                                <div class="sub_txt">충남청년포털 회원정보 관리를 위한 마이페이지입니다.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub_nav_wrap">
+                    <div class="sInner">
+                        <h2 class="blind">네비게이션바</h2>
+                        <ul class="sub_nav">
+                            <li class="home"><a href="/index.html" title="메인으로">HOME</a></li>
+                            <li class="deapth1">
+                                <a href="#none" class="deapth_tit" title="메뉴선택">
+                                    <p>마이페이지</p>
+                                </a>
+                                <ul class="deapth_inner">
+                                    <li>
+                                        <a href="#none" title="충남청년정책">
+                                            <span>충남청년정책</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" title="청년 생활정보">
+                                            <span>청년 생활정보</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" title="일자리·금융">
+                                            <span>일자리·금융</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" title="주거·복지">
+                                            <span>주거·복지</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" title="영농·정착">
+                                            <span>영농·정착</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" title="문화·활동">
+                                            <span>문화·활동</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" title="소통과 공감">
+                                            <span>소통과 공감</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="deapth2">
+                                <a href="#none" class="deapth_tit" title="메뉴선택">
+                                    <p>나의정보관리</p>
+                                    <span>+</span>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="#none" title="일자리지원">
+                                            <span>일자리지원</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" title="취업지원">
+                                            <span>취업지원</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" title="창업지원">
+                                            <span>창업지원</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" title="금융지원">
+                                            <span>금융지원</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="deapth3">
+                                <a href="#none" class="deapth_tit" title="메뉴선택">
+                                    <p>회원정보수정</p>
+                                    <span>+</span>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="#none" title="청년 공간정보">
+                                            <span>청년 공간정보</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#none" title="청년 공간홍보">
+                                            <span>청년 공간홍보</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="share_link_box">
+                            <a href="#none" title="링크공유">
+                                <img src="../images/share_icon01.png" alt=""/>
+                            </a>
+                            <div>
+                                <div>
+                                    <a href="#" titl="트위터">
+                                        <img src="../images/shar_twitter.png" title="트위터">
+                                    </a>
+                                    <a href="#" titl="페이스북">
+                                        <img src="../images/shar_facebook.png" title="페이스북">
+                                    </a>
+                                    <a href="#" titl="카카오톡">
+                                        <img src="../images/shar_kakao.png" title="카카오톡">
+                                    </a>
+                                    <a href="#" titl="네이버블로그">
+                                        <img src="../images/shar_blog.png" title="네이버블로그">
+                                    </a>
+                                    <a href="#" titl="카카오스토리">
+                                        <img src="../images/shar_kastory.png" title="카카오스토리">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content_in_wrap">
+                <div class="sInner">
+                    <div class="mbr_info">
+                        <h3>회원정보수정</h3>
+                        <div class="info_tab_box">
+                            <div class="mbrInner">
+                                <ul class="tap_tit brd_b">
+                                    <li class="on"><a href="#none" rel="mbrInfo1" title="회원정보수정">회원정보<br class="mbr"/>수정</a></li>
+                                    <li><a href="#none" rel="mbrInfo2" title="비밀번호변경">비밀번호<br class="mbr"/>변경
+                                    </a></li>
+                                    <li><a href="#none" rel="mbrInfo3" title="SNS연동">SNS<br class="mbr"/>연동</a></li>
+                                    <li><a href="#none" rel="mbrInfo4" title="회원탈퇴">회원<br class="mbr"/>탈퇴</a></li>
+                                </ul>
+                                <!-- 본인인증 -->
+                                <div class="mbr_confirm" style="display: block;">
+                                    <h4>본인인증</h4>
+                                    <p class="txt">
+                                        * 휴대폰 본인인증을 통해 인증완료 후, 회원정보 수정 및 비밀번호 수정이 가능합니다.<br/>
+                                        아래 버튼을 눌러 본인인증을 진행해 주세요.
+                                    </p>
+                                    <div class="tac">
+                                        <p class="imgs"><img src="../images/joinStep1_1.png" alt=""></p>
+                                        <div class="btn_area">
+                                            <a href="#none" title="마이페이지 홈으로" class="lst_btn">마이페이지 홈으로</a>
+                                            <button type="button" class="sbmt_btn" title="휴대폰 본인인증" id="">휴대폰 본인인증</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- //본인인증 -->
+                                <div class="cont_box">
+                                    <!-- 회원정보수정 -->
+                                    <div id="mbrInfo1" class="conBox">
+                                        <div>
+                                            <div class="fRegisterform">
+                                                <form name="registerform" method="post">
+                                                    <div class="info_id">
+                                                        <div class="title dpf">
+                                                            <h4>회원정보</h4>
+                                                            <span class="caut">* 필수 입력항목 입니다.</span>
+                                                        </div>
+                                                        <ul>
+                                                            <li>
+                                                                <div class="mh">이름</div>
+                                                                <div>
+                                                                    <input type="text" class="ed" name="mb_name" id="mb_name" title="이름" readonly="readonly" value="서은영">
+                                                                </div>
+                                                            </li>
+
+                                                            <li>
+                                                                <div class="mh">아이디</div>
+                                                                <div>
+                                                                    <div class="dpf">
+                                                                        <input type="text" class="enum" name="reg_mb_id" id="reg_mb_id" title="아이디" value="syy11jkl" readonly="readonly">
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="mh">암호 및 보안</div>
+                                                                <div class="btn_box">
+                                                                    <button type="button" class="bl_btn chngPwd">비밀번호 변경</button>
+                                                                </div>
+                                                            </li>
+                                                            <li class="birth">
+                                                                <div class="mh">생년월일</div>
+                                                                <div>
+                                                                    <input type="text" name="mb_birth" id="mb_birth" title="생년월일" value="20231018" readonly="readonly">
+                                                                </div>
+                                                            </li>
+                                                            <li class="phonenum">
+                                                                <div class="mh">휴대폰번호</div>
+                                                                <div class="dpf">
+                                                                    <input type="text" class="numOny" name="mb_phonenum1" id="mb_phonenum1" title="연락처1" minlength="3" maxlength="3" value="010" readonly="readonly">
+                                                                    <i>-</i>
+                                                                    <input type="text" class="numOny" name="mb_phonenum2" id="mb_phonenum2" title="연락처2" minlength="4" maxlength="4" value="1234" readonly="readonly">
+                                                                    <i>-</i>
+                                                                    <input type="text" class="numOny" name="mb_phonenum3" id="mb_phonenum3" title="연락처3" minlength="4" maxlength="4" value="5678" readonly="readonly">
+                                                                    <div class="btn_box">
+                                                                        <button type="button" title="연락처변경" class="bl_btn chngPhn">휴대폰번호 변경</button>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="gender">
+                                                                <div class="mh">성별</div>
+                                                                <div>
+                                                                    <p>
+                                                                        <input type="radio" class="ed" name="mb_gender" id="mb_male">
+                                                                        <label for="mb_male">남성</label>
+                                                                    </p>
+                                                                    <p>
+                                                                        <input type="radio" class="ed" name="mb_gender" id="mb_female" checked>
+                                                                        <label for="mb_female" >여성</label>
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+                                                            <li class="mail_box">
+                                                                <div>이메일</div>
+                                                                <div class="dpf">
+                                                                    <input type="text" class="enum" name="mb_email" id="mb_email" title="이메일 아이디" value="syy11jkl">
+                                                                    <span>@</span>
+                                                                    <input type="text" class="ed" name="mb_email_addr" id="mb_email_addr" title="이메일 주소" value="naver.com">
+                                                                    <select id="email_selector" disabled>
+                                                                        <option value="direct">직접입력</option>
+                                                                        <option value="naver.com">naver.com</option>
+                                                                        <option value="gmail.com">gmail.com</option>
+                                                                        <option value="daum.net">daum.net</option>
+                                                                        <option value="hanmail.net">hanmail.net</option>
+                                                                        <option value="nate.com">nate.com</option>
+                                                                    </select>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div>
+                                                        <div class="title">
+                                                            <h4>관심분야</h4>
+                                                            <p class="pb20">
+                                                                * 충남시의 다양한 청년정책정보와 활동지원 사업에 대한 관심 정보를 설정하시면 e-mail 또는 휴대폰을 통해 다양한 정보를 받아볼 수 있습니다.
+                                                            </p>
+    
+                                                        </div>
+                                                        <div class="info_chk">
+                                                            <ul class="db_li_lst">
+                                                                <li>
+                                                                    <p>수신여부</p>
+                                                                    <div>
+                                                                        <div>
+                                                                            <p class="op-tit">E-mail</p>
+                                                                            <p class="input_set">
+                                                                                <input id="myUserMailing1" name="myUserMailing" class="chk_t1 chkN" type="radio" value="true">
+                                                                                <label for="myUserMailing1">수신</label>
+                                                                            </p>
+                                                                            <p class="input_set">												
+                                                                                <input id="myUserMailing0" name="myUserMailing" class="chk_t1 chkN" type="radio" value="false">
+                                                                                <label for="myUserMailing0" class="f16 nsq">수신거부</label>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div>
+                                                                            <p class="op-tit">카카오/SMS</p>
+                                                                            <p class="input_set">
+                                                                                <input id="myUserSms1" name="myUserSms" class="chk_t1 chkN" type="radio" value="true">
+                                                                                <label for="myUserSms1" class="f16 nsq">수신</label>
+                                                                            </p>
+                                                                            <p class="input_set">												
+                                                                                <input id="myUserSms0" name="myUserSms" class="chk_t1 chkN" type="radio" value="false">
+                                                                                <label for="myUserSms0" class="f16 nsq">수신거부</label>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <p>정책유형</p>
+                                                                    <div class="myPol">
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDivAll1_0" name="myPolDiv1" class="chk_t1 chkAll" type="checkbox" value="">
+                                                                            <label for="myPolDivAll1_0">전체</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv1_01" name="myPolDiv1" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv1_01">일자리</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv1_02" name="myPolDiv1" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv1_02">취업</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv1_03" name="myPolDiv1" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv1_03">창업</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv1_04" name="myPolDiv1" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv1_04">금융</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv1_05" name="myPolDiv1" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv1_05">주거</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv1_06" name="myPolDiv1" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv1_06">복지</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv1_07" name="myPolDiv1" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv1_07">영농교육</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv1_08" name="myPolDiv1" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv1_08">영농역량</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv1_09" name="myPolDiv1" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv1_09">청년정착</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv1_10" name="myPolDiv1" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv1_10">문화</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv1_11" name="myPolDiv1" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv1_11">활동</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv1_12" name="myPolDiv1" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv1_12">행사</label>
+                                                                        </p>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <p>대상</p>
+                                                                    <div class="myPol">
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDivAll2_0" name="myPolDiv2" class="chk_t1 chkAll" type="checkbox" value="">
+                                                                            <label for="myPolDivAll2_0">전체</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv2_02" name="myPolDiv2" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv2_02">제한없음</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv2_03" name="myPolDiv2" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv2_03">대학생</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv2_04" name="myPolDiv2" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv2_04">구직</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv2_05" name="myPolDiv2" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv2_05">재직</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv2_06" name="myPolDiv2" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv2_06">이직준비</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv2_07" name="myPolDiv2" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv2_07">시험준비</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv2_08" name="myPolDiv2" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv2_08">프리랜서</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv2_09" name="myPolDiv2" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv2_09">기타</label>
+                                                                        </p>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <p>지역</p>
+                                                                    <div class="myPol">
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDivAll3_0" name="myPolDiv3" class="chk_t1 chkAll" type="checkbox" value="">
+                                                                            <label for="myPolDivAll3_0">전체</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv3_01" name="myPolDiv3" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv3_01">태안군</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv3_02" name="myPolDiv3" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv3_02">서산시</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv3_03" name="myPolDiv3" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv3_03">당진시</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv3_04" name="myPolDiv3" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv3_04">홍성군</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv3_05" name="myPolDiv3" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv3_05">예산군</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv3_06" name="myPolDiv3" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv3_06">아산시</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv3_07" name="myPolDiv3" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv3_07">천안시</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv3_08" name="myPolDiv3" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv3_08">보령시</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv3_09" name="myPolDiv3" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv3_09">천안군</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv3_10" name="myPolDiv3" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv3_10">공주시</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv3_11" name="myPolDiv3" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv3_11">서천군</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv3_12" name="myPolDiv3" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv3_12">부여군</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv3_13" name="myPolDiv3" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv3_13">논산시</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv3_14" name="myPolDiv3" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv3_14">계룡시</label>
+                                                                        </p>
+                                                                        <p class="input_set">
+                                                                            <input id="myPolDiv3_15" name="myPolDiv3" class="chk_t1 chkN" type="checkbox" value="">
+                                                                            <label for="myPolDiv3_15">금산군</label>
+                                                                        </p>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                            <div class="btn_area">
+                                                                <button type="button" title="취소" class="lst_btn">취소</button>
+                                                                <button type="button" title="변경완료" class="sbmt_btn">변경완료</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- //회원정보수정 -->
+                                    <!-- 비밀번호변경 -->
+                                    <div id="mbrInfo2" class="conBox">
+                                        <div class="title">
+                                            <p>
+                                                회원님의 정보를 안전하게 보호하기 위하여 비밀번호를 정기적으로 변경해주시는 것이 안전합니다.
+                                            </p>
+                                        </div>
+                                        <div class="fRegisterform">
+                                            <form name="registerform" method="post">
+                                                <div>
+                                                    <ul>
+                                                        <li>
+                                                            <div><label for="nw_pwd">새로운 비밀번호</label></div>
+                                                            <div>
+                                                                <input type="password" class="ed" name="nw_pwd" id="nw_pwd" minlength="4">
+                                                                <div class="commen">
+                                                                    <span class="repwd_match">
+                                                                        * 입력하신 새 비밀번호를 사용할 수 있습니다.
+                                                                    </span>
+                                                                    <span class="repwd_mismatch">
+                                                                        * 비밀번호는 대문자, 특수문자 포함 8자리 이상이어야 합니다. 확인하여 다시 입력해주세요.
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div><label for="re_nw_pwd">비밀번호 확인</label></div>
+                                                            <div>
+                                                                <input type="password" class="ed" name="re_nw_pwd" id="re_nw_pwd" minlength="4">
+                                                                <div class="commen">
+                                                                    <span class="repwd_match">
+                                                                        * 비밀번호가 일치합니다.새 비밀번호를 사용할 수 있습니다.
+                                                                    </span>
+                                                                    <span class="repwd_mismatch">
+                                                                        * 비밀번호가 일치하지 않습니다. 확인하여 다시 입력해주세요.
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- //비밀번호변경 -->
+                                    <!-- sns 연동 -->
+                                    <div id="mbrInfo3" class="conBox">
+                                        <div class="title pb30">
+                                            <h4>계정관리</h4>
+                                            <span class="pb10">소셜 계정 연동을 원하실 경우, 아래 소셜 아이콘을 눌러 연동을 진행해 주세요.</span>
+                                            <span class="pb20">계정연동 완료 이후, SNS 로그인이 가능합니다.</span>
+                                        </div>
+                                        <ul class="sns_intrl">
+                                            <li>
+                                                <a href="#none" title="네이버 연동하기">
+                                                    <div class="imgs">
+                                                        <img src="../images/sns_icon01.png" alt=""/>
+                                                    </div>
+                                                    <div class="txt">네이버 연동하기</div>
+                                                    <div class="bar"><span>off</span></div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#none" title="카카오톡 연동하기">
+                                                    <div class="imgs">
+                                                        <img src="../images/sns_icon02.png" alt=""/>
+                                                    </div>
+                                                    <div class="txt">카카오톡 연동하기</div>
+                                                    <div class="bar"><span>off</span></div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#none" title="디지털원패스 연동하기" class="active">
+                                                    <div class="imgs">
+                                                        <img src="../images/sns_icon03.png" alt=""/>
+                                                    </div>
+                                                    <div class="txt">디지털원패스 연동하기</div>
+                                                    <div class="bar"><span>off</span></div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div id="popup_content">
+                                            <!-- sns연동 완료 -->
+                                            <div class="popup">
+                                                <div class="inner">
+                                                    <div class="top_cont">
+                                                        <div class="icon_box">
+                                                            <img src="../images/pop_icon04.png" alt="">
+                                                        </div>
+                                                        <div class="pop_desc">
+                                                            <div>SNS 연동 완료되었습니다.</div>
+                                                            <span>연동된 소셜 계정을 통해<br/> 로그인 가능합니다.</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bott_btn">
+                                                        <button type="button" title="확인" class="bl_btn">확인</button>
+                                                    </div>
+                                                    <button type="button" title="팝업닫기" class="pop_close">
+                                                        <img src="../images/close_icon01.png" alt="팝업닫기">
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <!-- //sns연동 완료 -->
+                                            <!-- sns연동 해지 -->
+                                            <div class="popup">
+                                                <div class="inner">
+                                                    <div class="top_cont">
+                                                        <div class="icon_box">
+                                                            <img src="../images/pop_icon05.png" alt="">
+                                                        </div>
+                                                        <div class="pop_desc">
+                                                            <div>SNS 연동해지 되었습니다.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bott_btn">
+                                                        <button type="button" title="확인" class="bl_btn">확인</button>
+                                                    </div>
+                                                    <button type="button" title="팝업닫기" class="pop_close">
+                                                        <img src="../images/close_icon01.png" alt="팝업닫기">
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <!-- //sns연동 해지 -->
+                                            <!-- sns연동 실패 -->
+                                            <div class="popup">
+                                                <div class="inner">
+                                                    <div class="top_cont">
+                                                        <div class="icon_box">
+                                                            <img src="../images/pop_icon06.png" alt="">
+                                                        </div>
+                                                        <div class="pop_desc">
+                                                            <div>SNS 연동 실패했습니다.</div>
+                                                            <span>로그인 하신 계정정보를<br/>확인해주세요.</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bott_btn">
+                                                        <button type="button" title="확인" class="bl_btn">확인</button>
+                                                    </div>
+                                                    <button type="button" title="팝업닫기" class="pop_close">
+                                                        <img src="../images/close_icon01.png" alt="팝업닫기">
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <!-- //sns연동 실패 -->
+                                        </div>
+                                    </div>
+                                    <!-- // sns 연동 -->
+                                    <!-- 회원탈퇴 -->
+                                    <div id="mbrInfo4" class="conBox">
+                                        <div class="title">
+                                            <h4>회원정보 입력</h4>
+                                        </div>
+                                        <div class="fRegisterform">
+                                            <form name="registerform" method="post">
+                                                <div class="chk_pwd">
+                                                    <div class="fm_box">
+                                                        <div>
+                                                            <input type="password" class="ed" name="mb_pwd" id="mb_pwd" minlength="4" title="비밀번호" placeholder="비밀번호" >
+                                                        </div>
+                                                        <div>
+                                                            <input type="password" class="ed" name="mb_repwd" id="mb_repwd" minlength="4" title="비밀번호 확인" placeholder="비밀번호 확인">
+                                                        </div>
+                                                    </div>
+                                                    <div class="commen">
+                                                        <span class="repwd_match">
+                                                            * 비밀번호가 일치합니다. 새 비밀번호를 사용할 수 있습니다.
+                                                        </span>
+                                                        <span class="repwd_mismatch">
+                                                            * 비밀번호가 일치하지 않습니다. 확인하여 다시 입력해주세요.
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="rsn_wthdr">
+                                                    <p>탈퇴사유가 있으신가요?</p>
+                                                    <textarea title="탈퇴사유" placeholder="작성해주신 내용을 바탕으로 더 나운 서비스를 제공하기 위해 노력하겠습니다."></textarea>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="title">
+                                            <h4>회원탈퇴 안내</h4>
+                                        </div>
+                                        <div class="info_wthdr">
+                                            <span class="caut">아래의 유의사항을 반드시 읽고 진행해주세요.</span>
+                                            <ul>
+                                                <li>
+                                                    <p>사용하고 계시는 아이디는 재사용 및 복구가 불가능합니다. 탈퇴 시 해당 아이디는 즉시 탈퇴 처리되며,</p>
+                                                    <p>탈퇴한 아이디는 본인과 타인 모두 재사용 및 복구가 불가 하오니 신중하게 선택하시기 바랍니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>탈퇴 후 회원정보는 모두 삭제되며, 삭제된 데이터는 복구되지 않습니다.</p>
+                                                </li>
+                                                <li>
+                                                    <p>
+                                                        탈퇴후에도 게시판형 서비스에 등록한 게시물은 그대로 남아 있습니다. 삭제를 원하시는 게시글이 있다면
+                                                    </p>
+                                                    <p>반드시 탈퇴 전 삭제하시기 바랍니다.</p>
+                                                </li>
+                                            </ul>
+                                            <div class="pt10">
+                                                <input type="checkbox" name="agrChk" id="agrChk" class="chk_t1 chkN">
+                                                <label for="agrChk">위 내용을 정확히 확인하였으며 탈퇴 내용에 동의하겠습니다.</label>
+                                            </div>
+                                        </div>
+                                        <div class="btn_area">
+                                            <button type="button" title="탈퇴하기" class="lst_btn" id="wdrlBtn">탈퇴하기</button>
+                                        </div>
+                                        <!-- 탈퇴 팝업 -->
+                                        <div id="popup_content" class="wdrlPop">
+                                            <div class="popup">
+                                                <div class="inner">
+                                                    <div class="top_cont">
+                                                        <div class="icon_box">
+                                                            <img src="../images/pop_icon07.png" alt="">
+                                                        </div>
+                                                        <div class="pop_desc">
+                                                            <div>정말 탈퇴 하시겠습니까?</div>
+                                                            <span>회원정보 및 아이디정보는<br/>모두 삭제됩니다.</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="bott_btn">
+                                                        <button type="button" title="취소" class="gr_btn cancel">취소</button>
+                                                        <button type="button" title="확인" class="bl_btn">확인</button>
+
+                                                    </div>
+                                                    <button type="button" title="팝업닫기" class="pop_close wdrl_close">
+                                                        <img src="../images/close_icon01.png" alt="팝업닫기">
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--// 회원탈퇴 -->
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<script>
+    $(function(){
+        $('.boardView').on('click keydown', function(e) {
+            if (e.type === 'click' || (e.type === 'keyup' && e.key === 'Enter')) {
+                $.ajax({
+                    type: 'GET',
+                    url: "cycTab4_1.html",
+                    dataType: "html",
+                    error: function (request, status, error) {
+                        alert("통신오류");
+                    },
+                    success: function (data) {
+                        $('#cycTabBox').html(data);
+                    }
+                });
+            }
+        });
+    })
+</script>
+
+<div id="cycTab4">
+    <div class="tab_in_tit">
+        <h4 class="addB4Cir">공지사항</h4>
+    </div>
+    <div class="srch_box">
+        <form id="srchForm" name="srchForm" action="#" method="post">
+            <fieldset class="bd_search">
+                <legend>게시판검색</legend>
+                <div class="sear_word">
+                    <input type="text" id="searchKeyword" name="searchKeyword" title="검색어를 입력해주세요" placeholder="검색어를 입력해주세요" value="">
+                    <button type="submit" class="sc_submit"><i>검색</i></button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="bd_lst_tbl">
+        <table>
+            <caption>충남청년센터 공지사항 목록으로 번호, 제목, 첨부파일, 작성자, 조회수, 작성일 정보가 확인됩니다.</caption>
+            <colgroup>
+                <col style="width:95px;">
+                <col>
+                <col style="width:80px;">
+                <col style="width:100px;">
+                <col style="width:90px;">
+                <col style="width:120px;">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col">번호</th>
+                    <th scope="col">제목</th>
+                    <th scope="col">첨부파일</th>
+                    <th scope="col">작성자</th>
+                    <th scope="col">조회수</th>
+                    <th scope="col">작성일</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span>26</span></td>
+                    <td>
+                        <a href="#none" title="" class="nw_tg boardView">
+                            [공지](상세페이지 이동 class="boardView")
+                        </a>
+                    </td>
+                    <td><span class="atch_file"></span></td>
+                    <td><span>관리자</span></td>
+                    <td><span>1359</span></td>
+                    <td><span>2023-08-21</span></td>
+                </tr>
+                <tr>
+                    <td><span>25</span></td>
+                    <td>
+                        <a href="#none" title="">
+                            충청권역 청년을 대상으로 한 &lt;2023 찾아가는 인문나눔 교실&gt; 홍보
+                        </a>
+                    </td>
+                    <td><span class="atch_file"></span></td>
+                    <td><span>관리자</span></td>
+                    <td><span>1359</span></td>
+                    <td><span>2023-08-21</span></td>
+                </tr>
+                <tr>
+                    <td><span>24</span></td>
+                    <td>
+                        <a href="#none" title="" class="nw_tg">
+                            제3기 충청남도 청년네트워크 위원을 모집합니다!
+                        </a>
+                    </td>
+                    <td><span></span></td>
+                    <td><span>민관협동팀</span></td>
+                    <td><span>1005</span></td>
+                    <td><span>2023-08-21</span></td>
+                </tr>
+                <tr>
+                    <td><span>23</span></td>
+                    <td>
+                        <a href="#none" title="" class="nw_tg">
+                            국가균형발전 위원회 지방청년특별위원회 위원 공모 안내
+                        </a>
+                    </td>
+                    <td><span class="atch_file"></span></td>
+                    <td><span>정책TF팀</span></td>
+                    <td><span>182</span></td>
+                    <td><span>2023-08-21</span></td>
+                </tr>
+                <tr>
+                    <td><span>22</span></td>
+                    <td>
+                        <a href="#none" title="">
+                            국가균형발전 위원회 지방청년특별위원회 위원 공모 안내
+                        </a>
+                    </td>
+                    <td><span></span></td>
+                    <td><span>정책TF팀</span></td>
+                    <td><span>182</span></td>
+                    <td><span>2023-08-21</span></td>
+                </tr>
+                <tr>
+                    <td><span>21</span></td>
+                    <td>
+                        <a href="#none" title="">
+                            국가균형발전 위원회 지방청년특별위원회 위원 공모 안내
+                        </a>
+                    </td>
+                    <td><span class="atch_file"></span></td>
+                    <td><span>정책TF팀</span></td>
+                    <td><span>182</span></td>
+                    <td><span>2023-08-21</span></td>
+                </tr>
+                <tr>
+                    <td><span>20</span></td>
+                    <td>
+                        <a href="#none" title="">
+                            국가균형발전 위원회 지방청년특별위원회 위원 공모 안내
+                        </a>
+                    </td>
+                    <td><span class="atch_file"></span></td>
+                    <td><span>정책TF팀</span></td>
+                    <td><span>182</span></td>
+                    <td><span>2023-08-21</span></td>
+                </tr>
+                <tr>
+                    <td><span>19</span></td>
+                    <td>
+                        <a href="#none" title="">
+                            국가균형발전 위원회 지방청년특별위원회 위원 공모 안내
+                        </a>
+                    </td>
+                    <td><span class="atch_file"></span></td>
+                    <td><span>정책TF팀</span></td>
+                    <td><span>182</span></td>
+                    <td><span>2023-08-21</span></td>
+                </tr>
+                <tr>
+                    <td><span>18</span></td>
+                    <td>
+                        <a href="#none" title="">
+                            국가균형발전 위원회 지방청년특별위원회 위원 공모 안내
+                        </a>
+                    </td>
+                    <td><span class="atch_file"></span></td>
+                    <td><span>정책TF팀</span></td>
+                    <td><span>182</span></td>
+                    <td><span>2023-08-21</span></td>
+                </tr>
+                <tr>
+                    <td><span>17</span></td>
+                    <td>
+                        <a href="#none" title="">
+                            국가균형발전 위원회 지방청년특별위원회 위원 공모 안내
+                        </a>
+                    </td>
+                    <td><span class="atch_file"></span></td>
+                    <td><span>정책TF팀</span></td>
+                    <td><span>182</span></td>
+                    <td><span>2023-08-21</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="paging">
+        <ul>
+            <li class="first">
+                <a href="#none" title="첫 페이지"><span class="blind">첫 페이지</span></a>
+            </li>
+            <li class="prev">
+                <a href="#none" title="이전 페이지"><span class="blind">이전 페이지</span></a>
+            </li>
+            <li>
+                <a href="#none" title="현재 페이지" class="active">1</a>
+            </li>
+            <li>
+                <a href="#none" title="2">2</a>
+            </li>
+            <li>
+                <a href="#none" title="3">3</a>
+            </li>
+            <li>
+                <a href="#none" title="4">4</a>
+            </li>
+            <li>
+                <a href="#none" title="5">5</a>
+            </li>
+            <li class="next">
+                <a href="#none" title="다음 페이지"><span class="blind">다음 페이지</span></a>
+            </li>
+            <li class="last">
+                <a href="#none" title="마지막 페이지"><span class="blind">마지막 페이지</span></a>
+            </li>
+        </ul>
+    </div>
+</div>

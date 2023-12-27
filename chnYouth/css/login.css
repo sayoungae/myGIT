@@ -1,0 +1,385 @@
+/* 공통 */
+#container{padding-top:0; font-family: 'Gmarket Sans', sans-serif;}
+/* #container > div{padding:90px 0;} */
+.user_banner{padding-top: 120px; overflow: hidden;}
+.user_banner > .inner{max-width: 1200px; margin:0 auto;}
+.user_banner .content_in{
+    padding: 48px 0;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    color: #fff;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: right 8px;
+    background-image: url(../images/sub_ban08.png);
+}
+.user_banner .txt_box {
+    padding-top: 10px;
+}
+.user_banner h2 {
+    font-family: "Jalnan", sans-serif;
+    font-size: clamp(35px, calc(1.12vw + 27.63px), 50px);
+    text-align: left;
+    padding-bottom: 0;
+}
+.user_banner .txt_box .sub_txt {
+    font-size: 22px;
+    font-weight: 400;
+    padding-top: 3px;
+}
+#container > .user_banner::after{
+    content:'';
+    display: inline-block;
+    width: 100%;
+    height: 318px;
+    background-color: #CCB1AC;
+    position: absolute;
+    left:0;
+    top:0;
+    z-index: -1;
+}
+
+.user_content{padding:90px 0;}
+/* animation */
+
+h2{font-family: 'Jalnan', sans-serif; font-size: 40px; text-align: center; padding-bottom:55px;}
+h3{font-size: 22px; padding-bottom: 30px;}
+input[type="text"],input[type="password"],input[type="radio"]{border:1px solid #DADCE0; background-color: #fff; border-radius: 3px;}
+/* 로그인 */
+.log_content{padding:90px 0 160px;}
+.log_content > .inner{max-width: 804px; margin:0 auto; display: flex; align-items: stretch; gap:24px;}
+.log_content > .inner >div label{width:100px; position: relative; padding-right:30px; padding-top:2px;}
+.log_content > .inner >div label::after{content:''; display: inline-block; width:2px; height:17px; background-color: #F4F4F4; position: absolute; right:15px; top:0;}
+.log_content > .inner >div input{width:calc(100% - 100px); border:0;}
+.log_content > .inner >div input::placeholder{font-size: 14px; color:#BCBCBC;}
+.memberSet{border:4px solid #ddd; border-radius: 20px; width: calc(50% - 12px);  padding:45px 30px;}
+.memberSet .input_box > div {
+    display: flex;
+    align-items: center;
+    border:1px solid #DDDFE2;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    padding:10px 10px 8px;
+}
+.memberSet .btn-lg{width: 100%; font-size: 22px; color:#fff; background-color: #1A5CA9; padding:13px 0 9px; border-radius: 10px; margin:29px 0 26px;}
+.memberSet .loginForm >div >a{ position: relative; padding:0 10px;}
+.memberSet .loginForm >div >a:nth-child(3){padding-right:0;}
+
+.memberSet .loginForm >div >a::after{
+    content:'';
+    display: inline-block; 
+    width:2px;
+    height:17px;
+    background-color: #F4F4F4;
+    position: absolute;
+    right:0;
+    top:0;
+}
+
+.socialSet{width: calc(50% - 12px); display: flex; flex-direction: column; gap: 15px;}
+.socialSet h3{padding-bottom:20px;}
+.socialSet > div{border:4px solid #ddd; border-radius: 20px; padding:25px 30px;}
+.socialSet .social_login >ul{padding-bottom:25px;}
+.socialSet .social_login li{padding-bottom:10px;}
+.socialSet .social_login li >a{display: block; border:1px solid; width: 100%; height:50px; border-radius: 10px; overflow: hidden;}
+.socialSet .social_login li:nth-child(1) >a{border-color:#00C13A; background-color: #00C13A;}
+.socialSet .social_login li:nth-child(2) >a{border-color:#FEDE00; background-color: #FEDE00;}
+.socialSet .social_login li >a >p{width:50px; height:50px; float: left; display: flex;justify-content: center; align-items: center;}
+.socialSet .social_login li >a >span{display:block; float: left; width:calc(100% - 50px); height: 100%; line-height: 51px; background-color: #fff; padding-left:20px;}
+.socialSet .social_login  > p{font-weight: 400; font-size: 18px; color: #626262; text-align: center;}
+
+.onePassSet button{width: 100%; background-color: #1C2674; color:#fff; display: flex; align-items: center; padding:8px 18px; border-radius: 10px; gap: 33px; font-size: 16px;}
+.onePassSet button >span{width: 34px;}
+/* 회원가입 */
+/* 공통 */
+.colR{color: #ea3030 !important; display: block;}
+.user_content > .inner{max-width: 772px; margin:0 auto;}
+.step{display: flex; align-items: center; justify-content: center; padding-bottom: 55px; gap:42px;}
+.step > li{
+    width: calc(100% / 4);
+    padding:24px 10px 20px;
+    text-align: center;
+    border:1px solid #DBDDE1;
+    position: relative;
+    border-radius: 50px;
+    font-size: 1.1em;
+    box-shadow: inset 3px 3px 5px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+}
+.step >li.on{/*background-color: #53A5E5;*/background-color:#3195e3; border:0; color:#fff;}
+.step > li::after{
+    content:'';
+    display: block;
+    width: 13px;
+    height: 23px;
+    background-image: url('../images/join_arrowgr.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    right:-30px;
+    top:50%;
+    transform: translateY(-50%);
+}
+.step > li.on::after{
+    background-image: url('../images/join_arrowbk.png');
+}
+.step > li:last-child::after{display: none;}
+.step_cont > div{border-top:1px solid #e8e6e6; padding:40px 0; padding-left:8px}
+.step_cont div h3{font-size:25px; position: relative; color:#4a4949; }
+.step_cont div h3::before{
+    content:'';
+    display: inline-block;
+    width:23px;
+    height: 23px;
+    border-radius: 50%;
+    background-color: #FFFAA8;
+    position: absolute;
+    left:-8px;
+    top:-8px;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+/* button 공통 */
+.btn_box{padding-top:30px ; display: flex; justify-content: center; gap:13px; border-top: 0 !important;}
+.btn_box button,
+.btn_box >a{width:215px; padding:17px 0 13px; font-size:22px; text-align: center; font-weight: 600; border-radius: 10px;}
+
+/* 취소 다음 확인 */
+.btn_box .cancle{background-color: #fff; border:1px solid #A4A4A4;}
+.btn_box .next,
+.btn_box .confirm{background-color:#1A5CA9; color:#fff;}
+/* 중복확인 */
+.ed_btn{background-color: #F2F2F2;padding: 8px 5px 5px; border: 1px solid #DADCE0;}
+/* 회원가입완료 */
+.step_cont.final .top_cont .icon_box{
+    padding:30px 0 40px;
+}
+.step_cont.final .desc_box{padding:15px 0 40px;}
+.step_cont.final .desc_box .tit{font-size:23px; font-weight: 700; padding-bottom:18px;}
+.step_cont.final .desc_box >p{font-size: 17px; color:#6d6d6d;}
+.step_cont.final .login_btn{
+    min-width: 396px;
+    padding: 20px 10px 16px;
+    font-size: 22px;
+    color: #fff;
+    background-color: #1a5ca9;
+    border-radius: 10px;
+}
+/* 로그인 비밀번호찾기 메인으로 */
+.btn_box .login_btn,
+.btn_box .join_btn{background-color: #1A5CA9; color:#fff;}
+.btn_box .findPwd_btn,
+.btn_box .main_btn{background-color: #fff; color: #1A5CA9; border:1px solid #1a5ca9}
+
+.step_cont h3{padding-bottom:20px;}
+
+/* step1 */
+.step_cont .step1 .fRegister{padding-top:40px;}
+.fRegister .input_box{position: relative;}
+.fRegister label{ position: absolute; left:0; top:0;  cursor: pointer; font-size: 0;}
+.fRegister input[type="checkbox"]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.fRegister input:checked + label{background: url('../images/chk01.png') center center no-repeat;}
+
+.fRegister .chk_all{font-size: 18px;  display: flex; align-items: center; padding-bottom:13px; border-bottom: 1px solid #333;}
+.fRegister .chk_all .input_box{padding-right:15px;}
+.fRegister .chk_all input{width: 28px;height: 28px;}
+.fRegister .chk_all label{width:28px; height:28px; border-radius: 3px; border:1px solid #E1E3E6; }
+.fRegister .chk_all >p{line-height:28px;}
+.fRegister ul li{width: 100%; display: flex; align-items: center; padding-top:20px;}
+.fRegister ul li .input_box{padding-right:18px;}
+.fRegister ul li p{width: calc(100% - 105px); color:#666666;}
+.fRegister ul li span{color: #ea3030;}
+
+.fRegister ul li button{font-weight: 400; color:#666666; text-decoration: underline; text-underline-offset: 5px;}
+.fRegister ul li input{width: 17px; height: 22px;}
+.fRegister ul li label{width: 17px; height: 22px; background:url('../images/chk02.png') center center no-repeat; }
+
+/* 약관동의 pop */
+
+/* step2 */
+.step_cont .step2.cont_box .imgs{padding:30px 0 50px; max-width:450px; margin:0 auto;}
+.step_cont .step2.cont_box p{font-size: 19px; font-weight: 400; padding-bottom: 30px; color: #626262;}
+.step_cont .step2.cont_box button{min-width: 396px; padding:20px 10px 16px; font-size: 22px; color:#fff; background-color: #1a5ca9; border-radius: 10px; }
+
+/* step3 */
+.step_cont .step3 >p{font-weight: 400; color: #626262; padding-bottom:15px;}
+.step_cont .step3 > span{font-weight: 400;}
+.fRegisterform .info_id{padding-bottom:40px;}
+.fRegisterform .info_id .dpf{display: flex; gap: 15px;}
+.fRegisterform .info_id .dpf >input{width: 80%;}
+.fRegisterform .info_user{border-top:1px solid #333; padding-top:40px;}
+
+.fRegisterform ul li{display: flex; padding-bottom:30px;}
+.fRegisterform ul li >div:nth-child(1){width:162px; line-height: 40px; font-size:1.2em;}
+.fRegisterform ul li >div:nth-child(2){width:calc(100% - 162px);}
+.fRegisterform ul li input,
+.fRegisterform ul li button{height: 40px; /*border:1px solid #DADCE0; background-color: #fff; border-radius: 3px;*/}
+.fRegisterform ul li span{display: block; font-size: 14px; font-weight: 400; color:#626262; padding-top:12px;}
+.fRegisterform input{width: 100%; text-indent: 16px;}
+
+/* 비밀번호확인 */
+.repwd_match{color:#5AB645 !important;}
+.repwd_mismatch{color:#EA3030 !important;}
+
+/* 연락처 */
+.fRegisterform .phonenum >div:nth-child(2){display: flex; gap:20px; align-items: center;}
+.fRegisterform .phonenum >div:nth-child(2) >input{width: calc(100% / 3);}
+.fRegisterform .phonenum >div:nth-child(2) > span{font-style: normal;}
+
+/* 성별 */
+.fRegisterform .gender >div:nth-child(2){display: flex; gap:8px;}
+.fRegisterform .gender p{position: relative; width: 100%; height:40px; text-align: center; }
+.fRegisterform .gender input[type="radio"]{
+    position: absolute; left:0; top:0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.fRegisterform .gender label{position: absolute; left:50%; top:50%; transform: translate(-50%, -50%); color:#BCBCBC;
+}
+
+.fRegisterform .gender input[type="radio"]:checked{border-color: #53a5e5; }
+.fRegisterform .gender input[type="radio"]:checked~label{color:#333;}
+
+/* 생년월일 */
+.fRegisterform .birth >div:nth-child(2){display: flex; column-gap: 20px; flex-wrap: wrap}
+.fRegisterform .birth >div:nth-child(2) >input{width: calc(100% / 3); flex: 1 1 30%}
+.fRegisterform .birth >div:nth-child(2) > span{width: 100%; display: block; flex: 1 1 40%}
+
+/* 이메일 */
+.fRegisterform .mail_box >div:nth-child(2){display: flex; gap: 20px; }
+.fRegisterform .mail_box >div:nth-child(2) >input{width:calc(100% / 3)}
+.fRegisterform .mail_box >div:nth-child(2) >select{width:calc(100% / 3); border:1px solid #DADCE0; color:#DADCE0;}
+
+.fRegisterform .mh::after{
+    content:'*';
+    display: inline-block;
+    color:#EA3030;
+    padding-left:5px;
+}
+
+/* 아이디찾기 */
+.user_content > .inner{ max-width: 772px; margin: 0 auto;}
+.user_content .step.findId >li{width: calc(100% / 4); min-width:140px;}
+.user_content .step2 >div{font-size:18px; font-weight: 400;}
+.user_content .step2 .userId{font-size:25px; font-weight: 700; color:#000;}
+
+/* 비밀번호찾기 */
+.findPwd .cont_box{padding-top: 30px;}
+.findPwd .cont_box label{display: inline-block; width: 100px; padding-right:10px; line-height: 40px; font-size:1.2em;}
+.findPwd .cont_box input{width: 50%; height: 40px;}
+.findPwd .cont_box span{display: block; padding-top:12px;}
+.findPwd .step2.cont_box .imgs >img{max-width:458px;}
+
+.findPwd .step3 > form> div{padding-bottom:12px;}
+.findPwd .step3 > form> div >label{width:160px; padding-right:0;}
+.findPwd .step3 > form > span{padding-left:165px;}
+@media screen and (max-width : 1650px){
+    .user_banner { padding-top: 140px;}
+    #container > .user_banner::after{height: 338px;}
+}
+@media screen and (max-width : 1200px){
+    .user_banner > .inner{max-width: 95%;}
+}
+@media screen and (max-width : 1024px){
+    .user_banner{height: 400px;padding-top: 96px;}
+    .user_banner .content_in{
+        background-image: none;
+        background-size: 0;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .user_banner h2 {text-align: center;}
+    .user_banner .txt_box .sub_txt{padding-top: 8px;}
+}
+@media screen and (max-width : 960px){
+    #container > .user_banner::after{height: 400px;}
+}
+@media screen and (max-width : 760px){
+    .user_banner .txt_box .sub_txt{font-size: 20px;}
+    /* 공통 */
+    h2{font-size:38px}
+    .user_content > .inner,.findId_content > .inner{max-width:90%;}
+    .step{gap:22px;}
+    .step > li{width: calc(100% / 4 - 15px);}
+    .step > li::after {width:10px; right: -16px;}
+    .btn_box button, .btn_box a {font-size: 17px}
+
+    /* 회원가입완료 */
+    .step_cont.final .login_btn{min-width: 230px;}
+    /* 아이디찾기 step li*2*/
+    .findId .step > li{width:calc(100% / 3 - 15px); padding: 24px 5px 20px;}
+    
+    /* 비밀번호찾기 step li*3 */
+    .findPwd > .inner > .step > li{width:calc(100% / 3 - 15px); padding: 24px 5px 20px;}
+
+    /* step1 */
+    .log_content > .inner{flex-direction: column;align-items: center;}
+    .log_content > .inner >div{width: 70%;}
+    /* step3 */
+    .fRegisterform .phonenum >div:nth-child(2){gap:5px;}
+    .fRegisterform .mail_box >div:nth-child(2) {gap: 5px;}
+    .fRegisterform .birth >div:nth-child(2){column-gap:5px;}
+    .fRegisterform .birth >div:nth-child(2) >input{flex: 1 1 10%;}
+    .fRegisterform .birth >div:nth-child(2) > span{flex: 1 1 100%;}
+}
+@media screen and (max-width : 480px){
+    .user_banner .txt_box .sub_txt{font-size: 18px;}
+    /* 공통 */
+    h2{font-size:35px;}
+    .step{align-items: stretch}
+    .step > li{font-size: 1em;}
+
+    /* 로그인 */
+    .log_content > .inner >div { width: 90%;}
+    /* 회원가입 */
+    .fRegisterform ul li{flex-direction: column;}
+    .fRegisterform ul li >div:nth-child(1){width: 100%;}
+    .fRegisterform ul li >div:nth-child(2){width: 100%;}
+    .fRegisterform .info_id #reg_mb_id{width: 100%; margin-bottom:10px;}
+    .step_cont .step3 >p{font-size:15px;}
+    .step_cont .step3 > span{font-size: 14px;}
+    /* 아이디찾기 */
+    /* 아이디찾기 step li*2*/
+    .findId .step > li{width:calc(100% / 2 - 15px);}
+    .user_content.findId .step2 .btn_box >a{width:260px;}
+
+
+    /* 비밀번호찾기*/
+    .findPwd .cont_box{padding:0;}
+    .findPwd > .inner > .step > li{
+        padding: 24px 26px 20px;
+        min-height: 88px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .findPwd .cont_box label{font-size: 1em;}
+    .findPwd .cont_box input{width: 100%;}
+    .findPwd .step2.cont_box .imgs >img{width: 100%;}
+
+    .step_cont .step2.cont_box p{font-size:17px;}
+    .findPwd .step3 > form> div >label {width:100%;}
+    .findPwd .step3 > form > span{padding-left: 0;}
+    .findPwd .cont_box span{font-size:14px; }
+    
+
+    /* 버튼 */
+    .btn_box >a,.btn_box >button {width: calc(100% / 2 - 10px);}
+    
+    .step_cont .step2.cont_box button{min-width: 230px; font-size: 18px;}
+}
+
+@media screen and (max-width : 380px){
+    /* 로그인 */
+    .memberSet .loginForm >div >a{font-size: 15px;}
+    .memberSet .loginForm >div >a:first-child{padding-left:0;}
+    .socialSet .social_login > p{font-size: 16px;}
+    .onePassSet button{gap: 15px;}
+}

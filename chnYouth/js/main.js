@@ -8,21 +8,20 @@ $(document).ready(function(){
         dots: false,
         arrows: false,
         vertical: true,
-        verticalSwiping: true,  
+        verticalSwiping: true,
+        loop : true,
+        speed: 1000,
+        autoplay: true,
     });
 
     //지원가능한사업
     new Swiper('.swiper-container', {
-        slidesPerView: 6,
-        loop : true,
-        loopAdditionalSlides : 6,
-        paginationClickable: true,
+        slidesPerView: 5,
+        loop : false,
+        slidesOffsetBefore: 0,
+        // loopAdditionalSlides : 1,
         spaceBetween: 30,
-        observer: true,
-        observeParents: true,
-        parallax:true,
-
-        // 스크롤바 설정하기
+        // 스크롤바 loop 
         scrollbar : {
             el : '.swiper-scrollbar',
             draggable: false,
@@ -32,21 +31,33 @@ $(document).ready(function(){
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
+        breakpoints: {
+            1704: {
+              slidesPerView: 6,
+              spaceBetween: 30,
+            },
+            1400: {
+              slidesPerView: 5,
+              spaceBetween: 30,
+            },
+            1110: {
+                slidesPerView: 4,
+                spaceBetween: 30,
+            },
+            840: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            },
+            550: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            200: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+            },
+       },
     });
-
-    // 청년생활꿀팁/ 청년생활고민소 탭박스
-    $(".conBox").hide();
-    $(".conBox:first-child").show();
-    $(".tap_tit > li >a").on('click', function(){
-        $(".tap_tit li").removeClass("on");
-        $(this).parent().addClass("on");
-        $(this).closest("ul").siblings().find(".conBox").hide();
-
-        var activeTab = $(this).attr('rel');
-        $("#"+activeTab).fadeIn();
-        console.log(activeTab);
-    });
-
 
     // 청년공간 m_slide2
     $('.m_slide2').slick({
@@ -54,9 +65,19 @@ $(document).ready(function(){
         slidesToShow : 1,
         slidesToScroll : 1,
         dots: false,
+        // arrows: true,
         arrows: false,
         speed: 1000,
         autoplay: true,
+    });
+    $('.auto_control .btn').click(function(){
+        if($(this).hasClass('stop')){
+            $(this).removeClass('stop').addClass('play')
+            $('.m_slide2').slick('slickPause');
+        }else{
+            $('.m_slide2').slick('slickPlay');
+            $(this).removeClass('play').addClass('stop')
+        }
     });
 
      // 알림존 m_slide3
@@ -107,8 +128,6 @@ $(document).ready(function(){
                 $(this).removeClass('play').addClass('stop')
             }
         });
-         
-       
 
     };
     

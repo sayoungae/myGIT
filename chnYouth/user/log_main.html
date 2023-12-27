@@ -1,0 +1,102 @@
+<!-- 20231016 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/common.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/respon.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/login.css"/>
+
+        <!-- JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/slick.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>    
+        <script type="text/javascript" src="../js/common.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div class="user_banner">
+            <div class="inner">
+                <div class="content_in">
+                    <div class="icons"><img src="../images/sub_icon08.png" alt=""></div>
+                    <div class="txt_box">
+                        <h2>로그인</h2>
+                        <div class="sub_txt">충남청년포털 회원관리 페이지입니다.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="log_content">
+            <h2>로그인</h2>
+            <div class="inner">
+                <div class="memberSet">
+                    <div class="login">
+                        <form name="loginForm" id="loginForm" action="#"  method="post" class="loginForm">
+                            <h3>아이디/비밀번호</h3>
+                            <div class="input_box">
+                                <div>
+                                    <label for="username">아이디</label>
+                                    <input type="text" class="input" name="username" id="username" value="" placeholder="ID">
+                                </div>
+                                <div>
+                                    <label for="password">비밀번호</label>
+                                    <input type="password" class="input" name="password" id="password" value="" autocomplete="off" placeholder="PASSWORD">
+                                </div>
+                                <p class="caut">* 존재하지 않는 ID입니다.</p>
+                                <p class="caut">* 비밀번호가 일치하지 않습니다.</p>
+                            </div>
+                            <button type="submit" class="btn btn-lg">로그인</button>
+                            <div>
+                                <a href="./joinStep1Form.html" title="회원가입">회원가입</a>
+                                <a href="#none" title="아이디찾기">아이디 찾기</a>
+                                <a href="#none" title="비밀번호 찾기">비밀번호 찾기</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="socialSet">
+                    <div>
+                        <h3>간편로그인</h3>
+                        <div class="social_login">
+                            <ul>
+                                <li>
+                                    <a href="#none" title="네이버 로그인">
+                                        <p><img src="../images/naver.png" alt=""></p>
+                                        <span>네이버 로그인</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#none" title="카카오 로그인">
+                                        <p><img src="../images/kakao.png" alt=""></p>
+                                        <span>카카오 로그인</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <p>
+                                소셜계정으로 간편하게 로그인하세요.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="onePassSet">
+                        <h3>디지털원패스 로그인</h3>
+                        <div>
+                            <button type="button" title="디지털원패스 로그인">
+                                <span><img src="../images/onePassLogo.png" alt=""></span>
+                                <p>디지털원패스로 로그인</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
