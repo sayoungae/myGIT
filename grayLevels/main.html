@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gray Levels</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap" rel="stylesheet">
+</head>
+<style>
+    *{margin:0; padding:0; box-sizing: border-box; text-shadow: 0 0 0.5px;}
+    li{list-style: none;}
+    img{width: 100%;}
+    :root{
+        --mode1 :#000;
+        --mode2 :#191919;
+        --mode3 :#333;
+        --mode4 :#666;
+        --mode5 :#c2c2c2;
+        --mode6 :#ebebeb;
+        --wh-col:#fff;
+    }
+    input{
+        display: none;
+        width: 0;
+        height: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+    #wrap{width: 100%; height: 100vh; overflow: hidden;}
+    #container{height: 100%; font-size:15px; background-color: var(--mode1);  color:#C2C2C2; padding:60px 0;}
+    #container .inner{max-width:860px; height: 100%; margin:0 auto;}
+    #container .title{font-size: 2.0em;}
+    #container .title >span{display: inline-block; padding:0 5px; transform: scale(1.37, 0.65); font-weight: 600;}
+    #container .content{width: 100%; display: flex; gap: 40px;}
+    #container .content >div{padding-top:40px;}
+    .content_left{width: 60%; padding-right:30px;}
+    .content_left >p{font-style: italic;font-family: 'Open Sans', sans-serif;}
+    .content_left >p:nth-child(1){border-bottom:1px solid #333; padding-bottom:20px;}
+    .content_left >p:nth-child(2){padding:20px 0;}
+
+    .content_right{width: 40%; font-size:0.9em; margin-left:168px; position: relative;}
+    .content_right:before{
+        content:'';
+        display: inline-block;
+        width: 1px;
+        height: 100%;
+        background-color: #838383;
+        position: absolute;
+        left:0;
+        top:0;
+        transform: translateX(-50%);
+        z-index: 0;
+    }
+    .color_shade_wrap{height:calc(100% / 6 - 20px); margin-bottom:20px; position: relative;}
+    .color_shade{margin-left:40px; height: 100%; transform: rotate(20deg) translateX(-15px);}
+    .color_shade_inner{
+        display: block;
+        width: 160px;
+        height:100%;
+        transform: skew(-20deg, -20deg);
+        box-shadow: 0 0 50px 0px rgb(255 255 255 / 10%) inset;
+        cursor: pointer;
+        position: relative;
+    }
+    .color_shade_wrap:nth-child(6) .color_shade_inner{box-shadow: 0 0 50px 0px rgb(255 255 255 / 70%) inset;}
+    .color_shade_inner::before{
+        content:'';
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        background: url('./images/labelBg.png') center no-repeat;
+        opacity: 0;
+    }
+    .color_txt >p{
+        width: 100%;
+        text-align: right;
+        position: absolute;
+        left:-274px;
+        top:25px;
+        color:#969696;
+        transform: translate(8px, 0);
+        transition: 0.3s;
+    }
+    .color_txt > span{
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border:2px solid #828282;
+        text-indent: -9999px;
+        position: absolute;
+        left:-6px;
+        top:27px;
+        background-color: #828282;
+        transform: scale(0);
+        transition: 0.3s;
+    }
+
+    .color_shade_wrap:nth-child(1) .color_shade_inner{background-color: var(--mode1); z-index: 6;}
+    .color_shade_wrap:nth-child(2) .color_shade_inner{background-color: var(--mode2); z-index: 5;}
+    .color_shade_wrap:nth-child(3) .color_shade_inner{background-color: var(--mode3); z-index: 4;}
+    .color_shade_wrap:nth-child(4) .color_shade_inner{background-color: var(--mode4); z-index: 3;}
+    .color_shade_wrap:nth-child(5) .color_shade_inner{background-color: var(--mode5); z-index: 2;}
+    .color_shade_wrap:nth-child(6) .color_shade_inner{background-color: var(--mode6); z-index: 1;}
+
+    /* HOVER */
+    .color_shade_wrap:hover .color_txt > p{transform: translate(0, 0);}
+    .color_shade_wrap:hover .color_txt > span{opacity: 1; transform: scale(1); }
+    .color_shade_wrap:hover .color_shade_inner::before{opacity: 0.2;}
+
+    /* CHECKED */
+
+    #mode1:checked ~ #container .color_shade_wrap:hover .color_txt > p,
+    #mode1:checked ~ #container .color_shade_wrap:nth-child(1) .color_txt > p,
+    #mode2:checked ~ #container .color_shade_wrap:hover .color_txt > p,
+    #mode2:checked ~ #container .color_shade_wrap:nth-child(2) .color_txt > p,
+    #mode3:checked ~ #container .color_shade_wrap:hover .color_txt > p,
+    #mode3:checked ~ #container .color_shade_wrap:nth-child(3) .color_txt > p,
+    #mode4:checked ~ #container .color_shade_wrap:hover .color_txt > p,
+    #mode4:checked ~ #container .color_shade_wrap:nth-child(4) .color_txt > p{
+        color:#fff; transform: translate(0, 0);
+    }
+
+    #mode5:checked ~ #container,
+    #mode5:checked ~ #container .color_shade_wrap:hover  .color_txt >p,
+    #mode5:checked ~ #container .color_shade_wrap:nth-child(5) .color_txt > p,
+    #mode6:checked ~ #container,
+    #mode6:checked ~ #container .color_shade_wrap:hover  .color_txt >p,
+    #mode6:checked ~ #container .color_shade_wrap:nth-child(6) .color_txt > p{
+        color:#333; transform: translate(0, 0);
+    }
+
+
+    #mode1:checked ~ #container,
+    #mode1:checked ~ #container .color_shade_wrap:not(:nth-child(1)):hover .color_txt > span{background-color: var(--mode1);}
+    #mode2:checked ~ #container,
+    #mode2:checked ~ #container .color_shade_wrap:not(:nth-child(2)):hover .color_txt > span{background-color: var(--mode2);}
+    #mode3:checked ~ #container,
+    #mode3:checked ~ #container .color_shade_wrap:not(:nth-child(3)):hover .color_txt > span{background-color: var(--mode3);}
+    #mode4:checked ~ #container,
+    #mode4:checked ~ #container .color_shade_wrap:not(:nth-child(4)):hover .color_txt > span{background-color: var(--mode4);}
+    #mode5:checked ~ #container,
+    #mode5:checked ~ #container .color_shade_wrap:not(:nth-child(5)):hover .color_txt > span{background-color: var(--mode5);}
+    #mode6:checked ~ #container,
+    #mode6:checked ~ #container .color_shade_wrap:not(:nth-child(6)):hover .color_txt > span{background-color: var(--mode6);}
+
+
+
+
+    #mode1:checked ~ #container .color_shade_wrap:nth-child(1) .color_txt > span{opacity: 1; transform: scale(1);}
+    #mode2:checked ~ #container .color_shade_wrap:nth-child(2) .color_txt > span{opacity: 1; transform: scale(1);}
+    #mode3:checked ~ #container .color_shade_wrap:nth-child(3) .color_txt > span{opacity: 1; transform: scale(1);}
+    #mode4:checked ~ #container .color_shade_wrap:nth-child(4) .color_txt > span{opacity: 1; transform: scale(1);}
+    #mode5:checked ~ #container .color_shade_wrap:nth-child(5) .color_txt > span{opacity: 1; transform: scale(1);}
+    #mode6:checked ~ #container .color_shade_wrap:nth-child(6) .color_txt > span{opacity: 1; transform: scale(1);}
+    #mode7:checked ~ #container .color_shade_wrap:nth-child(7) .color_txt > span{opacity: 1; transform: scale(1);}
+
+
+</style>
+<body>
+    <!-- 출처, https://codepen.io/Azametzin/pen/LYaELWE-->
+    <div id="wrap">
+        <input type="radio" name="mode" id="mode1" checked="checked"/>
+        <input type="radio" name="mode" id="mode2"/>
+        <input type="radio" name="mode" id="mode3"/>
+        <input type="radio" name="mode" id="mode4"/>
+        <input type="radio" name="mode" id="mode5"/>
+        <input type="radio" name="mode" id="mode6"/>
+    
+        <div id="container">
+            <div class="inner">
+                <div class="title">Dark<span>-</span>Gray<span>-</span>Light</div>
+                <div class="content">
+                    <div class="content_left">
+                        <p>
+                            The Madonna della Pietà (Italian: [pjeˈta]; 1498–1499), informally known as La Pietà, is a marble sculpture of Jesus and Mary at Mount Golgotha representing the "Sixth Sorrow" of the Blessed Virgin Mary by Michelangelo Buonarroti, now in Saint Peter's Basilica, Vatican City. It is a key work of Italian Renaissance sculpture and often taken as the start of the High Renaissance.
+                        </p>
+                        <p>
+                            The sculpture captures the moment when Jesus, taken down from the cross, is given to his mother Mary. Mary looks younger than Jesus; art historians believe Michelangelo was inspired by a passage in Dante Alighieri's Divine Comedy: "O virgin mother, daughter of your Son...your merit so ennobled human nature that its divine Creator did not hesitate to become your creature" (Paradiso, Canto XXXIII). Michelangelo's aesthetic interpretation of the Pietà is unprecedented in Italian sculpture because it balances the Renaissance ideals of classical beauty with naturalism.
+                        </p>
+                        <p class="imgs"><img src="./images/pieta.png" alt="pieta"/></p>
+                    </div>
+                    <div class="content_right">
+                        <div class="color_shade_wrap">
+                            <div class="color_shade">
+                                <label for="mode1" class="color_shade_inner"></label>
+                            </div>
+                            <div class="color_txt">
+                                <p>Black – #000000</p>
+                                <span>dot</span>
+                            </div>
+                        </div>
+                        <div class="color_shade_wrap">
+                            <div class="color_shade">
+                                <label for="mode2" class="color_shade_inner"></label>
+                            </div>
+                            <div class="color_txt">
+                                <p>VERY DARK GRAY  – #191919</p>
+                                <span>dot</span>
+                            </div>
+                        </div>
+                        <div class="color_shade_wrap">
+                            <div class="color_shade">
+                                <label for="mode3" class="color_shade_inner"></label>
+                            </div>
+                            <div class="color_txt">
+                                <p>Dark Gray – #333333</p>
+                                <span>dot</span>
+                            </div>
+                        </div>
+                        <div class="color_shade_wrap">
+                            <div class="color_shade">
+                                <label for="mode4" class="color_shade_inner"></label>
+                            </div>
+                            <div class="color_txt">
+                                <p>Medium Gray – #666666</p>
+                                <span>dot</span>
+                            </div>
+                        </div>
+                        <div class="color_shade_wrap">
+                            <div class="color_shade">
+                                <label for="mode5" class="color_shade_inner"></label>
+                            </div>
+                            <div class="color_txt">
+                                <p>Light Gray – #C2C2C2</p>
+                                <span>dot</span>
+                            </div>
+                        </div>
+                        <div class="color_shade_wrap">
+                            <div class="color_shade">
+                                <label for="mode6" class="color_shade_inner"></label>
+                            </div>
+                            <div class="color_txt">
+                                <p>Lighter Gray – #EBEBEB</p>
+                                <span>dot</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
