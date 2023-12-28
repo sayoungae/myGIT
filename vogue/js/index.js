@@ -147,28 +147,6 @@ function TodayScrollTrigger(){
     .from('#footer a, .copyright', {
         opacity: 0, y: "130%", duration: 2.2, ease: "sine",
     });
-
-    gsap.to('body', {
-        scrollTrigger: {
-            trigger: 'body',
-            start: '80px 0%',
-            end: '100%-=200px 100%',
-            // toggleClass: {targets: '.btn_top', className: 'active',toggleActions: 'play none none none'},
-            markers: "true",
-        },
-        onEnter : function(){
-            gsap.to('#btn_top', {
-                className: 'active',
-            });
-        },
-        // onLeave : function() {
-        //     // 스크롤 트리거가 끝나면 실행될 추가 작업을 할 수 있습니다.
-        //     // console.log('Scroll Trigger Completed');
-        //     gsap.to('.btn_top', {
-        //         className: 'lock',
-        //     });
-        // }
-    });
     
 }
 
@@ -181,7 +159,6 @@ function setupSlider() {
     let i = 0;
 
     function goToSlide(index) {
-        // 현재 슬라이드 인덱스에 따라 이동
         slideWrap.style.marginLeft = `-${index * 4 * slideWidth}px`;
 
         // 마지막 슬라이드에 도달하면 next 버튼 비활성화
@@ -190,7 +167,6 @@ function setupSlider() {
         // 첫 번째 슬라이드에 도달하면 prev 버튼 비활성화
         slide1Prev.disabled = index === 0;
 
-        // console.log(`Index: ${index}, slide1Next.disabled: ${slide1Next.disabled}`);
     }
 
     // 다음 슬라이드로 이동
@@ -212,25 +188,81 @@ function setupSlider() {
     // 초기화 시에 버튼 상태 확인
     goToSlide(i);
 }
-function goToTop(){
-    let Top = document.querySelector('.btn_top');
-    // Footer 높이값
-    window.addEventListener('scroll', function(){
-        if(this.scrollY > 100){
-            Top.classList.add('on');
-        }
-        else{
-            Top.classList.remove('on','lock');
-        }
-    });
-    Top.addEventListener('click', function(e){
-        e.preventDefault();
-        window.scrollTo({top:0, behavior:'smooth'})
-    })
+// function goToTop(){
+//     let Top = document.querySelector('#btn_top');
+//     let pageHeight = Math.max(
+//         document.body.scrollHeight, document.documentElement.scrollHeight,
+//         document.body.offsetHeight, document.documentElement.offsetHeight,
+//         document.body.clientHeight, document.documentElement.clientHeight
+//     );
+//     let footerHeight = 321;
+//     let footerStart = pageHeight - footerHeight;
+    
+//     window.addEventListener('scroll', function () {
+//         console.log(footerStart) //9599
+//         console.log(this.scrollY) //9327
+//         if (this.scrollY > 100 && this.scrollY < footerStart) {
+//             Top.classList.add('on');
+//             Top.classList.remove('lock');
+//         } else if (this.scrollY >= footerStart) {
+//             Top.classList.remove('on');
+//             Top.classList.add('lock');
+//         } else {
+//             Top.classList.remove('on', 'lock');
+//         }
+//     });
+//     Top.addEventListener('click', function (e) {
+//         e.preventDefault();
+//         window.scrollTo({ top: 0, behavior: 'smooth' });
+//     });
+// }
+function checkVisible(element, check = 'above') {
+    const viewportHeight = window.innerHeight; // Viewport Height
+    const scrolltop = window.scrollY; // Scroll Top
+    const y = element.offsetTop;
+    const elementHeight = element.offsetHeight;
+    // console.log(scrolltop > 50)
+    // 반드시 요소가 화면에 보여야 할 경우
+    if (check === "visible")
+        return ((y < (viewportHeight + scrolltop)) && (y > (scrolltop - elementHeight)));
+
+    // 화면에 안 보여도 요소가 위에만 있으면 (페이지를 로드할 때 스크롤이 밑으로 내려가 요소를 지나쳐 버릴 경우)
+    if (check === "above")
+        return ((y < (viewportHeight + scrolltop)));
 }
+
+const func = function () {
+    const footer = document.getElementById('footer');
+    const goToTop = document.getElementById('btn_top');
+    const scrolltop = window.scrollY;
+
+    if( scrolltop > 50){
+        goToTop.classList.add('on');
+    }else if(scrolltop < 50){
+        goToTop.classList.remove('on');
+    }
+    if (!isVisible && checkVisible(footer, 'above')) {
+        goToTop.classList.add('lock');
+    }else{
+        goToTop.classList.remove('lock');
+    }
+
+    goToTop.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    
+    // 만일 리소스가 로드가 되면 더 이상 이벤트 스크립트가 필요하지 않으니 삭제
+    // isVisible && window.removeEventListener('scroll', func);
+};
+
+// 스크롤 이벤트 등록
+window.addEventListener('scroll', func);
+// 리소스가 로드 되면 함수 실행을 멈출지 말지 정하는 변수
+let isVisible = false;
 
 window.onload = () => {
     TodayScrollTrigger();
     setupSlider();
-    goToTop();
+    // goToTop();
 };
