@@ -117,7 +117,7 @@
     top:50%;
     transform: translate(-50%,-50%);
 }
-
+.web_publishing .content .mockup > video{width: 100%; }
 .web_publishing .content .desc_my_wep{width:calc(100% - 675px); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap:30px;  }
 .web_publishing .content .title_all{width:100%; border-bottom:1px solid #444; padding-bottom:30px;}
 .web_publishing .content .title_all h3{font-size:28px; letter-spacing: 0.1em; font-family: 'Do Hyeon', sans-serif;}
@@ -167,7 +167,20 @@
     background: #97a836;
     background: linear-gradient(to right, #97a836 0%, #70aa67 100%);
 }
-
+/* 남산 */
+.web_publishing.web3.on{color:var(--color-web3);}
+.web_publishing.web3.on .content .title_all{border-color:var(--color-web3);}
+.web_publishing.web3.on .bg_circle{
+    background: #97a836;
+    background: linear-gradient(to right, #EFB979 0%, #ffebd4 100%);
+}
+/* 보그 */
+.web_publishing.web4.on{color:var(--color-web4);}
+.web_publishing.web4.on .content .title_all{border-color:var(--color-web4);}
+.web_publishing.web4.on .bg_circle{
+    background: var(--color-web4);
+    background: linear-gradient(to right, #ccc 0%, #474747 100%);
+}
 
 
 /* persona project */
