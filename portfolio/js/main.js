@@ -5,7 +5,7 @@ $(document).ready(function(){
         navigation: true,
         navigationPosition: 'right',
         autoScrolling:true,
-        scrollHorizontally: true,
+        // scrollHorizontally: true,
         keyboardScrolling: true,
 		slidesNavigation: true,
 		slidesNavPosition: 'bottom',
