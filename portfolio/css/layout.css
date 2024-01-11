@@ -17,7 +17,7 @@ body{font-family: 'Noto Sans KR', sans-serif; color:#4f4f4f;}
 #header h1{font-family: 'Stylish', sans-serif; position: absolute; left: -135px;  top: 206px;  transform: rotate(90deg);letter-spacing: 0.2em; font-size:24px; color:#fff; text-shadow: 2px 3px 0px rgba(27, 27, 27, 0.6);}
 #header .nav > ul{display: flex; justify-content: space-between; align-items: center;}
 #header .nav > ul >li{text-align: center;  font-size:1.1em;}
-#header .nav > ul >li >a{display: block; padding:20px 30px; color:#fff; text-shadow: 0px 2px 5px rgba(87, 124, 147, 0.5); white-space: nowrap; font-weight: 500;}
+#header .nav > ul >li >a{display: block; padding:20px 30px; color:#fff; text-shadow: 0px 2px 5px rgba(87, 124, 147, 0.5); white-space: nowrap; font-weight: 500; text-transform: uppercase;}
 #header .nav > ul >li:hover{background-color:rgba(255, 255, 255, 0.4)}
 #header .nav > ul >li:hover >a{color:#72726c; }
 
